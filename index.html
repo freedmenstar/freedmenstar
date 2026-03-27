@@ -3,46 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FREEDMEN STAR | ADOS Heritage & Cultural Documentation</title>
+    <title>FREEDMEN STAR | Black American Life, History & Culture</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0d0d0d;
-            --card-bg: #1a1a1a;
-            --text: #e8e8e8;
-            --text-dim: #999;
-            --accent: #d4a574;
-            --accent-red: #8b2635;
-            --border: #2a2a2a;
-            --hero-height: 560px;
-            --video-opacity: 0.22;
+            --bg: #070604;
+            --surface: #0d0c09;
+            --surface2: #121009;
+            --text: #d8d2c8;
+            --text-dim: #7a7060;
+            --text-muted: #443e32;
+            --accent: #c8935a;
+            --accent-warm: #d4a574;
+            --accent-dim: rgba(200,147,90,0.1);
+            --accent-red: #7a1f2e;
+            --border: #1a1710;
+            --border-light: #221f16;
+            --hero-height: 580px;
+            --video-opacity: 0.30;
+            --max: 1160px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            /* Persistent grain over the entire page — ancestors never fully leave */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            background-size: 256px 256px;
         }
 
-        /* ─── Header ───────────────────────────────────────────── */
+        /* ─── GRAIN LAYER — persistent atmospheric texture ─── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* ─── HEADER ────────────────────────────────────────────── */
         header {
-            padding: 2rem;
+            padding: 1.4rem 2rem;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: rgba(13, 13, 13, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
+            background: rgba(7,6,4,0.97);
+            backdrop-filter: blur(16px);
+            z-index: 200;
         }
 
         .header-content {
-            max-width: 1200px;
+            max-width: var(--max);
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -51,55 +74,51 @@
 
         .logo {
             font-family: 'Crimson Pro', serif;
-            font-size: 1.75rem;
+            font-size: 1.55rem;
             font-weight: 400;
-            letter-spacing: 1px;
-            color: var(--accent);
+            letter-spacing: 2.5px;
+            color: var(--accent-warm);
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-red);
+            gap: 0.6rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1.5px solid var(--accent-red);
+            text-decoration: none;
         }
 
-        .logo::before {
-            content: '★';
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
+        .logo::before { content: '★'; font-size: 1rem; }
 
-        nav { display: flex; gap: 2rem; align-items: center; }
+        nav { display: flex; gap: 1.75rem; align-items: center; }
 
         nav a {
             color: var(--text-dim);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             transition: color 0.3s;
-            letter-spacing: 0.5px;
         }
 
-        nav a:hover { color: var(--text); }
+        nav a:hover { color: var(--accent-warm); }
 
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin-left: 1rem;
-            padding-left: 1rem;
-            border-left: 1px solid var(--border);
+            gap: 0.75rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid var(--border-light);
         }
 
         .social-links a {
-            color: var(--text-dim);
+            color: var(--text-muted);
             transition: color 0.3s;
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
-        .social-links a:hover { color: var(--accent); }
-        .social-links svg { width: 20px; height: 20px; fill: currentColor; }
+        .social-links a:hover { color: var(--accent-warm); }
+        .social-links svg { width: 17px; height: 17px; fill: currentColor; }
 
-        /* ─── Hero ─────────────────────────────────────────────── */
+        /* ─── HERO ──────────────────────────────────────────────── */
         .hero-wrapper {
             position: relative;
             width: 100%;
@@ -108,50 +127,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #080604; /* fallback while video loads */
+            background: #040302;
         }
 
-        /* ── Video layer ── */
+        /* Video */
         .hero-video-layer {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
 
-        /*
-         * The single <video> element whose src we swap at runtime.
-         * object-fit: cover handles all aspect ratio mismatches —
-         * landscape, portrait, anything — filling the container
-         * and cropping from center. This is what makes portrait
-         * videos usable: they fill width, excess height is cropped.
-         */
         .hero-video-layer video {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center center;
+            object-position: center;
             opacity: var(--video-opacity);
-            transition: opacity 1.2s ease;
-            /* Slight desaturate so old color footage reads as near-B&W
-               and blends with the site's sepia palette.
-               Remove filter if you want full color. */
-            filter: grayscale(60%) sepia(30%);
+            transition: opacity 1.4s ease;
+            /* Ancestral treatment — desaturate, age, haunt */
+            filter: grayscale(70%) sepia(25%) contrast(1.05);
         }
 
-        /* Fading state — JS adds/removes this during src swap */
-        .hero-video-layer video.fading {
-            opacity: 0;
-        }
+        .hero-video-layer video.fading { opacity: 0; }
 
-        /*
-         * Static image fallback — shown when:
-         * a) JS is disabled
-         * b) Connection is too slow (detected via Network API)
-         * c) Video fails to load
-         * Replace the SVG src with a real poster image path.
-         */
         .hero-video-layer .video-fallback {
             position: absolute;
             inset: 0;
@@ -159,762 +159,1183 @@
             height: 100%;
             object-fit: cover;
             opacity: var(--video-opacity);
-            filter: grayscale(60%) sepia(30%);
-            display: none; /* hidden by default, shown via JS if needed */
+            filter: grayscale(70%) sepia(25%);
+            display: none;
         }
 
-        /* Multi-layer gradient overlay — keeps text readable on any video */
+        /* Layered overlays — vignette + warm center glow */
         .hero-overlay {
             position: absolute;
             inset: 0;
             z-index: 1;
             background:
-                /* top edge darkening */
-                linear-gradient(to bottom,
-                    rgba(13,13,13,0.5) 0%,
-                    rgba(13,13,13,0.1) 30%,
-                    rgba(13,13,13,0.1) 60%,
-                    rgba(13,13,13,0.88) 100%
-                ),
-                /* subtle warm color cast matching the palette */
+                /* Strong vignette edges */
                 radial-gradient(ellipse at center,
-                    rgba(139, 38, 53, 0.08) 0%,
-                    transparent 70%
+                    rgba(7,6,4,0.0) 30%,
+                    rgba(7,6,4,0.55) 75%,
+                    rgba(7,6,4,0.88) 100%
+                ),
+                /* Top and bottom fade */
+                linear-gradient(to bottom,
+                    rgba(7,6,4,0.6) 0%,
+                    rgba(7,6,4,0.0) 25%,
+                    rgba(7,6,4,0.0) 65%,
+                    rgba(7,6,4,0.9) 100%
+                ),
+                /* Very faint warm amber center — like candlelight */
+                radial-gradient(ellipse at 50% 40%,
+                    rgba(180,110,40,0.06) 0%,
+                    transparent 60%
                 );
         }
 
-        /* Grain texture overlay — adds archival/film feel */
+        /* Grain on hero specifically */
         .hero-grain {
             position: absolute;
             inset: 0;
             z-index: 2;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.06;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
             background-size: 256px 256px;
             pointer-events: none;
         }
 
-        /* ── Hero content — sits above video ── */
+        /* Hero text */
         .hero-content {
             position: relative;
             z-index: 5;
             text-align: center;
-            padding: 3rem 2rem;
-            max-width: 860px;
+            padding: 2rem;
+            max-width: 780px;
             width: 100%;
-            animation: heroFadeIn 1.2s ease forwards;
+            animation: heroIn 1.6s ease forwards;
         }
 
-        @keyframes heroFadeIn {
-            from { opacity: 0; transform: translateY(16px); }
+        @keyframes heroIn {
+            from { opacity: 0; transform: translateY(12px); }
             to   { opacity: 1; transform: translateY(0); }
         }
 
         .hero-content h1 {
             font-family: 'Crimson Pro', serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
             font-weight: 400;
-            color: var(--accent);
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+            color: var(--accent-warm);
+            letter-spacing: 4px;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 2px 32px rgba(0,0,0,0.95), 0 0 80px rgba(180,110,40,0.15);
         }
 
-        .hero-content .tagline {
-            font-size: 0.85rem;
-            color: rgba(212, 165, 116, 0.7);
-            letter-spacing: 4px;
+        .hero-tagline {
+            font-size: 0.75rem;
+            color: rgba(200,147,90,0.55);
+            letter-spacing: 5px;
             text-transform: uppercase;
             font-weight: 300;
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
         }
 
-        .hero-content p {
-            font-size: clamp(0.95rem, 2vw, 1.05rem);
-            color: rgba(232, 232, 232, 0.75);
-            line-height: 1.9;
-            letter-spacing: 0.3px;
-            max-width: 720px;
+        .hero-desc {
+            font-size: clamp(0.88rem, 1.8vw, 0.98rem);
+            color: rgba(216,210,200,0.65);
+            line-height: 2;
+            max-width: 640px;
             margin: 0 auto;
-            text-shadow: 0 1px 12px rgba(0,0,0,0.7);
+            text-shadow: 0 1px 16px rgba(0,0,0,0.9);
+            font-weight: 300;
+            letter-spacing: 0.2px;
         }
 
-        /* ── Video status indicator (bottom of hero) ── */
-        .hero-status {
-            position: absolute;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0.4;
-            transition: opacity 0.3s;
-        }
-
-        .hero-status:hover { opacity: 0.8; }
-
-        .hero-status-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .hero-status-label {
-            font-size: 0.7rem;
-            color: var(--accent);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Progress bar — thin line at very bottom of hero */
+        /* Progress bar */
         .hero-progress-bar {
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 2px;
+            height: 1px;
             width: 0%;
-            background: linear-gradient(to right, var(--accent-red), var(--accent));
+            background: linear-gradient(to right, var(--accent-red), var(--accent-warm));
             z-index: 10;
-            transition: none; /* JS animates this directly */
+            opacity: 0.6;
         }
 
-        /* ─── Collections ──────────────────────────────────────── */
-        .collections {
-            max-width: 1200px;
-            margin: 0 auto 4rem;
-            padding: 0 2rem;
+        /* Status */
+        .hero-status {
+            position: absolute;
+            bottom: 1.2rem;
+            right: 1.5rem;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            opacity: 0.25;
         }
 
-        .collections h2 {
+        .hero-status-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent-warm);
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+
+        .hero-status-label {
+            font-size: 0.62rem;
+            color: var(--accent-warm);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        /* ─── PAGE WRAPPER ──────────────────────────────────────── */
+        .page {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        /* ─── SECTION DIVIDER ───────────────────────────────────── */
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 4rem 0 2rem;
+        }
+
+        .section-head h2 {
             font-family: 'Crimson Pro', serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 2rem;
-            text-align: center;
-            letter-spacing: 1px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
         }
 
-        .collections-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+        .section-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
         }
 
-        .collection-item {
-            background: var(--card-bg);
+        /* ─── FEATURED POST ─────────────────────────────────────── */
+        .featured-post {
+            background: var(--surface);
             border: 1px solid var(--border);
             overflow: hidden;
-            transition: all 0.3s;
             cursor: pointer;
+            transition: border-color 0.4s;
+            position: relative;
         }
 
-        .collection-item:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
+        .featured-post:hover {
+            border-color: rgba(200,147,90,0.25);
         }
 
-        .collection-preview {
+        /* Atmospheric photo — faded like a recovered document */
+        .featured-photo {
             width: 100%;
-            aspect-ratio: 4/3;
-            background: #0a0a0a;
+            aspect-ratio: 16/6;
             overflow: hidden;
+            background: #04030200;
+            position: relative;
         }
 
-        .collection-preview img {
+        .featured-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
+            display: block;
+            transition: transform 0.8s ease, filter 0.4s ease;
+            /* Archival treatment matching hero */
+            filter: grayscale(30%) sepia(15%) brightness(0.88);
         }
 
-        .collection-item:hover .collection-preview img { transform: scale(1.05); }
-
-        .collection-info { padding: 1rem; text-align: center; }
-
-        .collection-name {
-            font-size: 0.9rem;
-            color: var(--text);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
+        .featured-post:hover .featured-photo img {
+            transform: scale(1.015);
+            filter: grayscale(15%) sepia(10%) brightness(0.92);
         }
 
-        .collection-count { font-size: 0.75rem; color: var(--text-dim); }
-
-        /* ─── Main content ─────────────────────────────────────── */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
+        /* Gradient from photo into body — seamless, no hard edge */
+        .featured-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom,
+                    rgba(7,6,4,0) 40%,
+                    rgba(7,6,4,0.5) 75%,
+                    rgba(13,12,9,0.98) 100%
+                ),
+                linear-gradient(to right,
+                    rgba(7,6,4,0.3) 0%,
+                    rgba(7,6,4,0) 30%,
+                    rgba(7,6,4,0) 70%,
+                    rgba(7,6,4,0.3) 100%
+                );
         }
 
-        .section-title {
-            font-family: 'Crimson Pro', serif;
-            font-size: 2rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 2rem;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-
-        .post {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            margin-bottom: 3rem;
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        .post:hover { border-color: var(--accent); }
-
-        .post-media { width: 100%; background: #0a0a0a; }
-        .post-media img { width: 100%; height: auto; display: block; }
-        .post-content { padding: 2rem; }
-
-        .post-meta {
-            font-size: 0.75rem;
-            color: var(--text-dim);
+        /* Category stamp — archival feel */
+        .photo-stamp {
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            z-index: 2;
+            background: var(--accent-red);
+            color: rgba(255,255,255,0.9);
+            font-size: 0.62rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.25rem;
+            padding: 0.25rem 0.7rem;
+            font-weight: 400;
         }
 
-        .post h2 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 2rem;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 1.25rem;
-            line-height: 1.3;
+        .featured-body {
+            padding: 2rem 2.5rem 2.5rem;
         }
 
-        .post-text { font-size: 1rem; line-height: 1.8; color: var(--text-dim); }
-        .post-text p { margin-bottom: 1.25rem; }
-        .post-text p:last-child { margin-bottom: 0; }
-
-        /* ─── Newsletter ───────────────────────────────────────── */
-        .newsletter {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .newsletter h3 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .newsletter p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 1.5rem; }
-
-        .newsletter-form {
+        .post-meta-row {
             display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-            gap: 0.5rem;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
 
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.85rem 1.25rem;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-            font-size: 0.9rem;
-            font-family: inherit;
-        }
-
-        .newsletter-form input:focus { outline: none; border-color: var(--accent); }
-
-        .newsletter-form button {
-            padding: 0.85rem 2rem;
-            background: var(--accent);
-            border: none;
-            color: var(--bg);
-            font-weight: 500;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: opacity 0.3s;
-            letter-spacing: 0.5px;
-        }
-
-        .newsletter-form button:hover { opacity: 0.85; }
-
-        /* ─── Footer ───────────────────────────────────────────── */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .footer-about h4 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.25rem;
+        .post-cat {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 1rem;
-            font-weight: 500;
+            font-weight: 400;
         }
 
-        .footer-about p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.7; }
+        .meta-dot {
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            flex-shrink: 0;
+        }
 
-        .footer-links h5 {
+        .post-date {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+        }
+
+        .post-loc {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .featured-body h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+            font-weight: 400;
             color: var(--text);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            line-height: 1.2;
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.2px;
         }
 
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.75rem; }
-
-        .footer-links a {
+        .featured-body .excerpt {
+            font-size: 0.97rem;
             color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            max-width: 820px;
+            font-weight: 300;
         }
 
-        .footer-links a:hover { color: var(--accent); }
+        /* Byline */
+        .byline {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
 
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 2.5rem auto 0;
-            padding-top: 2rem;
+        .byline-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--accent-dim);
+            border: 1px solid rgba(200,147,90,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.95rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .byline-text { display: flex; flex-direction: column; gap: 0.1rem; }
+
+        .byline-name {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .byline-filed {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .read-more {
+            margin-left: auto;
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: gap 0.25s, color 0.25s;
+        }
+
+        .read-more:hover { gap: 0.75rem; color: var(--accent-warm); }
+
+        /* ─── CONTENT + SIDEBAR ─────────────────────────────────── */
+        .content-with-sidebar {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ─── FILTER BAR ────────────────────────────────────────── */
+        .filter-bar {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-right: 0.4rem;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.28rem 0.8rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        /* ─── POST GRID ─────────────────────────────────────────── */
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .post-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.35s, transform 0.35s;
+            position: relative;
+        }
+
+        .post-card:hover {
+            border-color: rgba(200,147,90,0.2);
+            transform: translateY(-2px);
+        }
+
+        .card-photo {
+            width: 100%;
+            aspect-ratio: 3/2;
+            overflow: hidden;
+            background: #04030200;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .card-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease, filter 0.4s ease;
+            /* Same archival treatment throughout — consistency of mood */
+            filter: grayscale(40%) sepia(20%) brightness(0.82);
+        }
+
+        .post-card:hover .card-photo img {
+            transform: scale(1.04);
+            filter: grayscale(20%) sepia(12%) brightness(0.88);
+        }
+
+        /* Gradient fade from photo into card body */
+        .card-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                rgba(7,6,4,0) 50%,
+                rgba(13,12,9,0.85) 100%
+            );
+        }
+
+        /* Category stamp on card */
+        .card-stamp {
+            position: absolute;
+            bottom: 0.7rem;
+            left: 0.8rem;
+            z-index: 2;
+            font-size: 0.6rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        .card-body {
+            padding: 1.1rem 1.25rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-date {
+            font-size: 0.67rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--text);
+            line-height: 1.3;
+            margin-bottom: 0.65rem;
+            letter-spacing: 0.1px;
+        }
+
+        .card-excerpt {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            flex: 1;
+            font-weight: 300;
+        }
+
+        .card-footer {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
             border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.85rem;
-            color: var(--text-dim);
         }
 
-        .footer-social { display: flex; gap: 1.5rem; }
+        .card-filed {
+            font-size: 0.67rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+        }
 
-        .footer-social a {
-            color: var(--text-dim);
-            transition: color 0.3s;
+        .card-arrow {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: color 0.25s, transform 0.25s;
+        }
+
+        .post-card:hover .card-arrow {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+
+        /* ─── SIDEBAR ───────────────────────────────────────────── */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            position: sticky;
+            top: 5.5rem;
+        }
+
+        .sidebar-block {
+            border: 1px solid var(--border);
+            background: var(--surface);
+            overflow: hidden;
+        }
+
+        .sidebar-heading {
+            padding: 0.75rem 1.1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.62rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* Correspondent */
+        .correspondent-block {
+            padding: 1.4rem 1.1rem;
+            text-align: center;
+        }
+
+        .correspondent-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-dim);
+            border: 1px solid rgba(200,147,90,0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid var(--border);
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin: 0 auto 0.9rem;
+        }
+
+        .correspondent-name {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.05rem;
+            color: var(--text);
+            margin-bottom: 0.15rem;
+            font-weight: 400;
+        }
+
+        .correspondent-title {
+            font-size: 0.62rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .correspondent-bio {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            font-weight: 300;
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        /* Recent posts list */
+        .sidebar-post-list { list-style: none; }
+
+        .sidebar-post-item {
+            padding: 0.85rem 1.1rem;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .sidebar-post-item:last-child { border-bottom: none; }
+        .sidebar-post-item:hover { background: rgba(255,255,255,0.015); }
+
+        .sidebar-post-cat {
+            font-size: 0.58rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .sidebar-post-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        .sidebar-post-date {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        /* Newsletter */
+        .newsletter-block { padding: 1.1rem; }
+
+        .newsletter-block p {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .newsletter-block input {
+            width: 100%;
+            padding: 0.65rem 0.9rem;
+            background: var(--bg);
+            border: 1px solid var(--border-light);
+            color: var(--text);
+            font-size: 0.8rem;
+            font-family: inherit;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .newsletter-block input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .newsletter-block button {
+            width: 100%;
+            padding: 0.65rem;
+            background: var(--accent-red);
+            border: none;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: inherit;
+        }
+
+        .newsletter-block button:hover { background: #9a2535; }
+
+        /* ─── FOOTER ────────────────────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3.5rem 2rem 2.5rem;
+            margin-top: 5rem;
+            background: var(--surface);
+        }
+
+        .footer-inner { max-width: var(--max); margin: 0 auto; }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .footer-brand h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--accent-warm);
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand h4::before { content: '★'; font-size: 0.85rem; }
+
+        .footer-brand p {
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            line-height: 1.85;
+            font-weight: 300;
+            max-width: 300px;
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .footer-col h5 {
+            font-size: 0.62rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.6rem; }
+
+        .footer-col a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.25s;
+        }
+
+        .footer-col a:hover { color: var(--accent-warm); }
+
+        .footer-bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .footer-social { display: flex; gap: 0.6rem; }
+
+        .footer-social a {
+            color: var(--text-muted);
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--border-light);
             border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.25s, border-color 0.25s;
         }
 
-        .footer-social a:hover { color: var(--accent); border-color: var(--accent); }
-        .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
-
-        /* ─── Responsive ───────────────────────────────────────── */
-        @media (max-width: 768px) {
-            :root { --hero-height: 480px; }
-
-            .header-content { flex-direction: column; gap: 1.5rem; }
-            nav { flex-direction: column; gap: 1rem; }
-
-            .social-links {
-                border-left: none;
-                border-top: 1px solid var(--border);
-                padding-left: 0;
-                padding-top: 1rem;
-                margin-left: 0;
-            }
-
-            .collections-grid { grid-template-columns: repeat(2, 1fr); }
-            .post-content { padding: 1.5rem; }
-            .newsletter { padding: 2rem 1.5rem; }
-            .newsletter-form { flex-direction: column; }
-            .footer-content { grid-template-columns: 1fr; gap: 2rem; }
-            .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
-
-            /* On mobile, bump video opacity slightly —
-               smaller screens benefit from a touch more visibility */
-            :root { --video-opacity: 0.28; }
+        .footer-social a:hover {
+            color: var(--accent-warm);
+            border-color: var(--accent-warm);
         }
 
-        /* ─── Page animations ──────────────────────────────────── */
-        .post, .collection-item {
-            animation: fadeIn 0.6s ease both;
-        }
+        .footer-social svg { width: 13px; height: 13px; fill: currentColor; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        /* ─── ANIMATIONS ────────────────────────────────────────── */
+        .featured-post { animation: fadeUp 0.7s ease both; }
+        .post-card { animation: fadeUp 0.6s ease both; }
+        .post-card:nth-child(2) { animation-delay: 0.07s; }
+        .post-card:nth-child(3) { animation-delay: 0.14s; }
+        .post-card:nth-child(4) { animation-delay: 0.21s; }
+        .post-card:nth-child(5) { animation-delay: 0.28s; }
+        .post-card:nth-child(6) { animation-delay: 0.35s; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
             to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ─── RESPONSIVE ────────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .content-with-sidebar { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .collections-grid { grid-template-columns: repeat(4, 1fr); }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --hero-height: 480px; --video-opacity: 0.32; }
+            .header-content { flex-direction: column; gap: 0.9rem; align-items: flex-start; }
+            nav { gap: 1rem; }
+            .social-links { padding-left: 0; border-left: none; border-top: 1px solid var(--border); padding-top: 0.65rem; }
+            .post-grid { grid-template-columns: 1fr; }
+            .featured-body { padding: 1.4rem; }
+            .featured-body h2 { font-size: 1.65rem; }
+            .collections-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom-bar { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .page { padding: 0 1rem 4rem; }
+            .collections-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <div class="logo">FREEDMEN STAR</div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#collections">Collections</a>
-                <a href="#research">Research</a>
-                <a href="#about">About</a>
-                <div class="social-links">
-                    <a href="https://instagram.com/thefreedmenstar" target="_blank" title="Instagram">
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="https://tiktok.com/@thefreedmenstar" target="_blank" title="TikTok">
-                        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </header>
+<!-- ══════════════════════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════════════════════ -->
+<header>
+    <div class="header-content">
+        <a href="#" class="logo">FREEDMEN STAR</a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#">Archive</a>
+            <a href="#stories">Stories</a>
+            <a href="#about">About</a>
+            <div class="social-links">
+                <a href="https://instagram.com/thefreedmenstar" target="_blank" title="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://tiktok.com/@thefreedmenstar" target="_blank" title="TikTok">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         HERO — video background with rotation
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="home" class="hero-wrapper">
+<!-- ══════════════════════════════════════════════════════════════
+     HERO — rotating ancestral video
+══════════════════════════════════════════════════════════════ -->
+<section id="home" class="hero-wrapper">
+    <div class="hero-video-layer">
+        <video id="heroVideo" autoplay muted playsinline loop preload="auto">
+            <source src="https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/nmaah.mp4" type="video/mp4">
+        </video>
+        <img class="video-fallback"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect fill='%23070604' width='640' height='360'/%3E%3C/svg%3E"
+            alt="" aria-hidden="true">
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-progress-bar" id="heroProgressBar" aria-hidden="true"></div>
+    <div class="hero-status" aria-hidden="true">
+        <div class="hero-status-dot"></div>
+        <span class="hero-status-label" id="heroStatusLabel">Archive</span>
+    </div>
+    <div class="hero-content">
+        <h1>FREEDMEN STAR</h1>
+        <p class="hero-tagline">Culture &nbsp;·&nbsp; Lineage &nbsp;·&nbsp; Legacy</p>
+        <p class="hero-desc">
+            An independent archival and educational project preserving the history, culture, and
+            contributions of American Descendants of Slavery. Through photographs, documents,
+            research, and storytelling, we document the institutions built, innovations created,
+            and cultural traditions sustained across generations — creating a comprehensive record
+            for present and future understanding.
+        </p>
+    </div>
+</section>
 
-        <!-- Video layer -->
-        <div class="hero-video-layer">
+<!-- ══════════════════════════════════════════════════════════════
+     PAGE CONTENT
+══════════════════════════════════════════════════════════════ -->
+<div class="page">
+
+    <!-- ── FEATURED POST ── -->
+    <div class="section-head">
+        <h2>Latest</h2>
+        <div class="section-rule"></div>
+    </div>
+
+    <article class="featured-post" onclick="alert('Full post coming soon')">
+        <div class="featured-photo">
             <!--
-            ┌─────────────────────────────────────────────────────┐
-            │  HOW TO ADD YOUR VIDEOS                              │
-            │                                                      │
-            │  1. Process your files with FFmpeg:                  │
-            │                                                      │
-            │     Landscape (x.mp4):                              │
-            │     ffmpeg -i x.mp4 -an \                           │
-            │       -vf "scale=640:360" \                         │
-            │       -c:v libx264 -crf 30 \                        │
-            │       -preset slow \                                 │
-            │       -movflags +faststart \                         │
-            │       x_web.mp4                                      │
-            │                                                      │
-            │     Portrait/vertical (flh.mp4):                    │
-            │     ffmpeg -i flh.mp4 -an \                         │
-            │       -vf "scale=640:360:force_original_aspect_     │
-            │            ratio=increase,crop=640:360" \           │
-            │       -c:v libx264 -crf 30 \                        │
-            │       -preset slow \                                 │
-            │       -movflags +faststart \                         │
-            │       flh_web.mp4                                    │
-            │                                                      │
-            │  2. Place the files in the same folder as this HTML  │
-            │                                                      │
-            │  3. Update the VIDEO_CLIPS array in the JS below     │
-            │     — replace the placeholder paths with your real   │
-            │     filenames, e.g. 'x_web.mp4', 'flh_web.mp4'      │
-            │                                                      │
-            │  4. Optional: add a poster image (a still frame)     │
-            │     to the <video> tag as poster="your-still.jpg"   │
-            │     so something shows before the first video loads  │
-            └─────────────────────────────────────────────────────┘
+                REPLACE THIS IMAGE:
+                Swap the src below with your actual field photo.
+                Best size: 1200×500px or any wide landscape crop.
+                Example: src="photos/jxn-event-june2025.jpg"
             -->
-
-            <!--
-                Single video element — JS swaps src between clips.
-                Only one video is ever in memory at a time.
-                object-fit: cover in CSS handles ALL aspect ratios —
-                portrait, landscape, anything — automatically.
-
-                Attributes explained:
-                  autoplay   — starts playing immediately (required for bg video)
-                  muted      — REQUIRED for autoplay on mobile browsers
-                  playsinline — REQUIRED on iOS; prevents fullscreen takeover
-                  loop        — fallback in case JS rotation fails
-                  preload="auto" — browser decides how much to buffer;
-                                   only the first clip; others load on demand
-            -->
-            <video
-                id="heroVideo"
-                autoplay
-                muted
-                playsinline
-                loop
-                preload="auto"
-            >
-                <!--
-                    Replace these src values with your actual file paths.
-                    The <source> tag with webm first is optional but gives
-                    Chrome/Android a more efficient codec if you also run:
-                    ffmpeg -i x_web.mp4 -c:v libvpx-vp9 -crf 33 -b:v 0 x_web.webm
-
-                    If you only have mp4, just remove the webm <source> lines.
-                -->
-                <!-- <source src="x_web.webm" type="video/webm"> -->
-                <source src="https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/x.mp4" type="video/mp4">
-            </video>
-
-            <!-- Static image fallback for slow connections or JS disabled -->
-            <!-- Replace src with a real poster/still image when you have one -->
             <img
-                class="video-fallback"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect fill='%23100c08' width='640' height='360'/%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23604020'/%3E%3Cstop offset='100%25' stop-color='%23080604'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='640' height='360'/%3E%3C/svg%3E"
-                alt=""
-                aria-hidden="true"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 500'%3E%3Crect fill='%230a0806' width='1200' height='500'/%3E%3CradialGradient id='g' cx='45%25' cy='55%25' r='70%25'%3E%3Cstop offset='0%25' stop-color='%23402810'/%3E%3Cstop offset='100%25' stop-color='%23040302'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='1200' height='500'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23c8935a' font-size='14' font-family='serif' opacity='0.2'%3EReplace with your field photo%3C/text%3E%3C/svg%3E"
+                alt="JXN Project — Skipwith-Roper Cottage event, Richmond VA"
             >
+            <span class="photo-stamp">People & Places</span>
         </div>
-
-        <!-- Dark gradient + warm glow overlay -->
-        <div class="hero-overlay" aria-hidden="true"></div>
-
-        <!-- Film grain texture -->
-        <div class="hero-grain" aria-hidden="true"></div>
-
-        <!-- Progress bar — fills across the bottom as video plays -->
-        <div class="hero-progress-bar" id="heroProgressBar" aria-hidden="true"></div>
-
-        <!-- Status indicator — subtle pulse dot -->
-        <div class="hero-status" aria-hidden="true">
-            <div class="hero-status-dot"></div>
-            <span class="hero-status-label" id="heroStatusLabel">Archive</span>
-        </div>
-
-        <!-- Hero text content -->
-        <div class="hero-content">
-            <h1>FREEDMEN STAR</h1>
-            <p class="tagline">Culture · Lineage · Legacy</p>
-            <p>
-                An independent archival and educational project preserving the history, culture, and
-                contributions of American Descendants of Slavery. Through photographs, documents,
-                research, and storytelling, we document the institutions built, innovations created,
-                and cultural traditions sustained across generations — creating a comprehensive record
-                for present and future understanding.
+        <div class="featured-body">
+            <div class="post-meta-row">
+                <span class="post-cat">People & Places</span>
+                <span class="meta-dot"></span>
+                <span class="post-date">June 14, 2025</span>
+                <span class="meta-dot"></span>
+                <span class="post-loc">Richmond, Virginia</span>
+            </div>
+            <h2>The JXN Project: A Homecoming Built in Brick and Memory</h2>
+            <p class="excerpt">
+                The Skipwith-Roper Cottage and JXN Haus aren't renderings anymore —
+                they're happening. Designed by Burt Pinnock FAIA of Baskervill, this is
+                a community putting something permanent back where it belongs.
+                I was there. Here's what I saw.
             </p>
+            <div class="byline">
+                <div class="byline-avatar">R</div>
+                <div class="byline-text">
+                    <span class="byline-name">Ronnie Bailey</span>
+                    <span class="byline-filed">Richmond, Virginia</span>
+                </div>
+                <a href="#" class="read-more" onclick="event.stopPropagation()">Read &rarr;</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- ── RECENT POSTS + SIDEBAR ── -->
+    <div class="section-head" style="margin-top:3.5rem;" id="field-reports">
+        <h2>Recent</h2>
+        <div class="section-rule"></div>
+    </div>
+
+    <!-- Category filter -->
+    <div class="filter-bar">
+        <span class="filter-label">Browse</span>
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="people-places">People & Places</button>
+        <button class="filter-btn" data-cat="archive">Archive</button>
+        <button class="filter-btn" data-cat="commentary">Commentary</button>
+        <button class="filter-btn" data-cat="culture">Culture</button>
+    </div>
+
+    <div class="content-with-sidebar">
+
+        <!-- Post grid -->
+        <div>
+            <div class="post-grid" id="postGrid">
+
+                <!--
+                ╔═══════════════════════════════════════════════════╗
+                ║  HOW TO ADD A NEW POST                            ║
+                ║                                                   ║
+                ║  1. Copy one <article class="post-card"> block    ║
+                ║  2. Set data-cat to one of:                       ║
+                ║     field-report | archive | commentary | culture ║
+                ║  3. Replace: photo src, category label, date,     ║
+                ║     location, title, excerpt, filed-from text     ║
+                ║  4. Save and push to GitHub — done.               ║
+                ╚═══════════════════════════════════════════════════╝
+                -->
+
+                <article class="post-card" data-cat="archive" onclick="alert('Full post coming soon')">
+                    <div class="card-photo">
+                        <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%230a0806' width='600' height='400'/%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23382010'/%3E%3Cstop offset='100%25' stop-color='%23040302'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='600' height='400'/%3E%3C/svg%3E"
+                            alt="Memorial Day origins"
+                        >
+                        <div class="card-stamp">Archive</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-date">May 26, 2025</div>
+                        <h3 class="card-title">The True Origins of Memorial Day</h3>
+                        <p class="card-excerpt">
+                            On May 1, 1865, over 10,000 newly freed Black Americans gathered in Charleston
+                            to honor Union soldiers — an act of remembrance that history almost forgot.
+                        </p>
+                        <div class="card-footer">
+                            <span class="card-filed">Charleston, SC</span>
+                            <span class="card-arrow">→</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-cat="culture" onclick="alert('Full post coming soon')">
+                    <div class="card-photo">
+                        <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%230a0806' width='600' height='400'/%3E%3CradialGradient id='g' cx='35%25' cy='60%25' r='65%25'%3E%3Cstop offset='0%25' stop-color='%23301520'/%3E%3Cstop offset='100%25' stop-color='%23040204'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='600' height='400'/%3E%3C/svg%3E"
+                            alt="Those who broke barriers"
+                        >
+                        <div class="card-stamp">Culture</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-date">April 28, 2025</div>
+                        <h3 class="card-title">Those Who Broke Barriers</h3>
+                        <p class="card-excerpt">
+                            They opened doors most people never knew were closed.
+                            What they built — and how they built it — is still here.
+                        </p>
+                        <div class="card-footer">
+                            <span class="card-filed">Richmond, Virginia</span>
+                            <span class="card-arrow">→</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Placeholder cards — replace as you publish -->
+
+                <article class="post-card" data-cat="commentary" onclick="alert('Coming soon')">
+                    <div class="card-photo">
+                        <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%230a0906' width='600' height='400'/%3E%3CradialGradient id='g' cx='60%25' cy='40%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23202e18'/%3E%3Cstop offset='100%25' stop-color='%23030503'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='600' height='400'/%3E%3C/svg%3E"
+                            alt="Placeholder"
+                        >
+                        <div class="card-stamp">Commentary</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-date">— Coming Soon —</div>
+                        <h3 class="card-title">Your Next Post Title</h3>
+                        <p class="card-excerpt">
+                            Replace with your excerpt — two or three sentences,
+                            enough to pull someone in.
+                        </p>
+                        <div class="card-footer">
+                            <span class="card-filed">—</span>
+                            <span class="card-arrow">→</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-cat="people-places" onclick="alert('Coming soon')">
+                    <div class="card-photo">
+                        <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%230b0a07' width='600' height='400'/%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23402e14'/%3E%3Cstop offset='100%25' stop-color='%23050402'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='600' height='400'/%3E%3C/svg%3E"
+                            alt="Placeholder"
+                        >
+                        <div class="card-stamp">People & Places</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-date">— Coming Soon —</div>
+                        <h3 class="card-title">Your Next Post Title</h3>
+                        <p class="card-excerpt">
+                            Replace with your excerpt — two or three sentences,
+                            enough to pull someone in.
+                        </p>
+                        <div class="card-footer">
+                            <span class="card-filed">—</span>
+                            <span class="card-arrow">→</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-cat="archive" onclick="alert('Coming soon')">
+                    <div class="card-photo">
+                        <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%230a090c' width='600' height='400'/%3E%3CradialGradient id='g' cx='40%25' cy='55%25' r='65%25'%3E%3Cstop offset='0%25' stop-color='%23281430'/%3E%3Cstop offset='100%25' stop-color='%23040305'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='600' height='400'/%3E%3C/svg%3E"
+                            alt="Placeholder"
+                        >
+                        <div class="card-stamp">Archive</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-date">— Coming Soon —</div>
+                        <h3 class="card-title">Your Next Post Title</h3>
+                        <p class="card-excerpt">
+                            Replace with your excerpt — two or three sentences,
+                            enough to pull someone in.
+                        </p>
+                        <div class="card-footer">
+                            <span class="card-filed">—</span>
+                            <span class="card-arrow">→</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card" data-cat="culture" onclick="alert('Coming soon')">
+                    <div class="card-photo">
+                        <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%230a0c0a' width='600' height='400'/%3E%3CradialGradient id='g' cx='55%25' cy='45%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%23143028'/%3E%3Cstop offset='100%25' stop-color='%23030504'/%3E%3C/radialGradient%3E%3Crect fill='url(%23g)' width='600' height='400'/%3E%3C/svg%3E"
+                            alt="Placeholder"
+                        >
+                        <div class="card-stamp">Culture</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-date">— Coming Soon —</div>
+                        <h3 class="card-title">Your Next Post Title</h3>
+                        <p class="card-excerpt">
+                            Replace with your excerpt — two or three sentences,
+                            enough to pull someone in.
+                        </p>
+                        <div class="card-footer">
+                            <span class="card-filed">—</span>
+                            <span class="card-arrow">→</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div><!-- /post-grid -->
         </div>
 
-    </section>
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-
-    <!-- ═══════════════════════════════════════════════════════════
-         COLLECTIONS
-         ═══════════════════════════════════════════════════════════ -->
-    <section class="collections" id="collections">
-        <h2>Explore the Archive</h2>
-        <div class="collections-grid">
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EHistorical Documents%3C/text%3E%3C/svg%3E" alt="Documents">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Documents</div>
-                    <div class="collection-count">Historical records</div>
+            <div class="sidebar-block">
+                <div class="sidebar-heading">Ronnie Bailey</div>
+                <div class="correspondent-block">
+                    <div class="correspondent-avatar">R</div>
+                    <div class="correspondent-title">Richmond, Virginia</div>
+                    <p class="correspondent-bio">
+                        Documenting the places, people, institutions, and culture
+                        of Black American life — from Richmond, Virginia.
+                    </p>
                 </div>
             </div>
 
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EArchival Photography%3C/text%3E%3C/svg%3E" alt="Photographs">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Photographs</div>
-                    <div class="collection-count">Visual archive</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='60' fill='%23d4a574' opacity='0.2'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EMusic%3C/text%3E%3C/svg%3E" alt="Music">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Music</div>
-                    <div class="collection-count">Audio recordings</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Crect x='100' y='80' width='200' height='140' fill='%23d4a574' opacity='0.2'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EFilms%3C/text%3E%3C/svg%3E" alt="Films">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Films</div>
-                    <div class="collection-count">Video content</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Crect x='80' y='60' width='240' height='180' fill='%23d4a574' opacity='0.1'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EBooks%3C/text%3E%3C/svg%3E" alt="Books">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Books</div>
-                    <div class="collection-count">Publications</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Cpath d='M150 100 L250 100 L200 200 Z' fill='%23d4a574' opacity='0.2'/%3E%3Ctext x='50%25' y='70%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EArtworks%3C/text%3E%3C/svg%3E" alt="Artworks">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Artworks</div>
-                    <div class="collection-count">Visual art</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Ccircle cx='120' cy='120' r='30' fill='%23d4a574' opacity='0.2'/%3E%3Ccircle cx='280' cy='180' r='30' fill='%23d4a574' opacity='0.2'/%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='14' font-family='serif' opacity='0.4'%3EOral Histories%3C/text%3E%3C/svg%3E" alt="Oral Histories">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Oral Histories</div>
-                    <div class="collection-count">Testimonies</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Cpath d='M100 200 L150 100 L200 150 L250 80 L300 130' stroke='%23d4a574' stroke-width='3' fill='none' opacity='0.3'/%3E%3Ctext x='50%25' y='70%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EResearch%3C/text%3E%3C/svg%3E" alt="Research">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Research</div>
-                    <div class="collection-count">Studies & analysis</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Crect x='100' y='80' width='200' height='140' fill='none' stroke='%23d4a574' stroke-width='4' opacity='0.3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='14' font-family='serif' opacity='0.4'%3EExhibitions%3C/text%3E%3C/svg%3E" alt="Exhibitions">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Exhibitions</div>
-                    <div class="collection-count">Curated displays</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Crect x='80' y='60' width='240' height='180' fill='%23d4a574' opacity='0.08'/%3E%3Cline x1='90' y1='80' x2='310' y2='80' stroke='%23d4a574' stroke-width='2' opacity='0.3'/%3E%3Cline x1='90' y1='110' x2='310' y2='110' stroke='%23d4a574' stroke-width='2' opacity='0.3'/%3E%3Ctext x='50%25' y='70%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3ENews%3C/text%3E%3C/svg%3E" alt="News">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">News</div>
-                    <div class="collection-count">Current coverage</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Crect x='120' y='100' width='160' height='100' fill='%23d4a574' opacity='0.15'/%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='14' font-family='serif' opacity='0.4'%3EPresentations%3C/text%3E%3C/svg%3E" alt="Presentations">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Presentations</div>
-                    <div class="collection-count">Talks & lectures</div>
-                </div>
-            </div>
-
-            <div class="collection-item">
-                <div class="collection-preview">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a1410' width='400' height='300'/%3E%3Ccircle cx='200' cy='150' r='70' fill='none' stroke='%23d4a574' stroke-width='3' opacity='0.3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='16' font-family='serif' opacity='0.4'%3EEvents%3C/text%3E%3C/svg%3E" alt="Events">
-                </div>
-                <div class="collection-info">
-                    <div class="collection-name">Events</div>
-                    <div class="collection-count">Programs & gatherings</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════════════════════════════
-         RECENT UPDATES
-         ═══════════════════════════════════════════════════════════ -->
-    <main class="container">
-        <h2 class="section-title">Recent Updates</h2>
-
-        <article class="post">
-            <div class="post-media">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'%3E%3Crect fill='%230a0a0a' width='1200' height='675'/%3E%3Cg opacity='0.2'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23d4a574' font-size='24' font-family='serif'%3EMonument%3C/text%3E%3C/g%3E%3C/svg%3E" alt="Historical monument">
-            </div>
-            <div class="post-content">
-                <div class="post-meta">April 28, 2025</div>
-                <h2>Those Who Broke Barriers</h2>
-                <div class="post-text">
-                    <p>Honoring those who broke barriers and dreamed beyond them. Their courage opened doors. It's up to us to build the bridges.</p>
-                    <p>This monument stands as testament to the generations who created institutions, built economic systems, and sustained culture under conditions designed to prevent exactly that.</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="post">
-            <div class="post-content">
-                <div class="post-meta">May 26, 2025</div>
-                <h2>The True Origins of Memorial Day</h2>
-                <div class="post-text">
-                    <p>Memorial Day's origins are deeply intertwined with the efforts of freedmen, particularly in Charleston, South Carolina.</p>
-                    <p>On May 1, 1865, a group of newly emancipated slaves, along with white missionaries, organized a ceremony to honor and properly bury Union soldiers who had died in a Confederate prison camp. This event is considered the first Memorial Day observance.</p>
-                    <p>The ceremony drew over 10,000 people, most of them newly freed Black Americans. They understood what these soldiers had died for. They knew what their sacrifice meant. And they made sure those men were honored properly.</p>
-                </div>
-            </div>
-        </article>
-
-        <section class="newsletter">
-            <h3>Stay Connected</h3>
-            <p>Receive research, stories, and archival updates directly to your inbox.</p>
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
-    </main>
-
-
-    <!-- ═══════════════════════════════════════════════════════════
-         FOOTER
-         ═══════════════════════════════════════════════════════════ -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-about">
-                <h4>FREEDMEN STAR</h4>
-                <p>
-                    An independent archival and educational project documenting ADOS heritage.
-                    Based in Richmond, Virginia, this work preserves the history, culture, and
-                    contributions that have shaped American life through careful research,
-                    collection, and storytelling.
-                </p>
-            </div>
-            <div class="footer-links">
-                <h5>Explore</h5>
-                <ul>
-                    <li><a href="#collections">Collections</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#about">About</a></li>
+            <div class="sidebar-block">
+                <div class="sidebar-heading">Also In The Archive</div>
+                <ul class="sidebar-post-list">
+                    <li class="sidebar-post-item" onclick="alert('Coming soon')">
+                        <span class="sidebar-post-cat">Archive</span>
+                        <span class="sidebar-post-title">The True Origins of Memorial Day</span>
+                        <span class="sidebar-post-date">May 26, 2025</span>
+                    </li>
+                    <li class="sidebar-post-item" onclick="alert('Coming soon')">
+                        <span class="sidebar-post-cat">Culture</span>
+                        <span class="sidebar-post-title">Those Who Broke Barriers</span>
+                        <span class="sidebar-post-date">April 28, 2025</span>
+                    </li>
+                    <li class="sidebar-post-item" onclick="alert('Coming soon')">
+                        <span class="sidebar-post-cat">People & Places</span>
+                        <span class="sidebar-post-title">Your next post will appear here</span>
+                        <span class="sidebar-post-date">— Coming Soon —</span>
+                    </li>
                 </ul>
             </div>
-            <div class="footer-links">
+
+            <div class="sidebar-block">
+                <div class="sidebar-heading">Stay Connected</div>
+                <div class="newsletter-block">
+                    <p>Stories, places, and updates — straight to your inbox.</p>
+                    <form onsubmit="event.preventDefault(); alert('Connect your email service here.')">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+
+</div><!-- /page -->
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h4>FREEDMEN STAR</h4>
+                <p>
+                    An independent archival and educational project preserving the history,
+                    culture, and contributions of American Descendants of Slavery.
+                    Based in Richmond, Virginia.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Browse</h5>
+                <ul>
+                    <li><a href="#stories">People & Places</a></li>
+                    <li><a href="#">Commentary</a></li>
+                    <li><a href="#">Culture</a></li>
+                    <li><a href="#">Archive</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
                 <h5>Connect</h5>
                 <ul>
-                    <li><a href="#newsletter">Newsletter</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Contact</a></li>
                     <li><a href="https://instagram.com/thefreedmenstar" target="_blank">Instagram</a></li>
                     <li><a href="https://tiktok.com/@thefreedmenstar" target="_blank">TikTok</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 FREEDMEN STAR. Richmond, Virginia.</p>
+        <div class="footer-bottom-bar">
+            <p>&copy; 2025 Freedmen Star. Richmond, Virginia.</p>
             <div class="footer-social">
                 <a href="https://instagram.com/thefreedmenstar" target="_blank" title="Instagram">
                     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -922,223 +1343,128 @@
                 <a href="https://tiktok.com/@thefreedmenstar" target="_blank" title="TikTok">
                     <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
                 </a>
-                <a href="#rss" title="RSS Feed">
+                <a href="#rss" title="RSS">
                     <svg viewBox="0 0 24 24"><path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
                 </a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
+<script>
+/* ════════════════════════════════════════════════════════════════
+   VIDEO ROTATION
+════════════════════════════════════════════════════════════════ */
+const VIDEO_CLIPS = [
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/fh.mp4',    label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/flh.mp4',   label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/jb.mp4',    label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/x.mp4',     label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/mj.mp4',    label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/mlk.mp4',   label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/nmaah.mp4', label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/mmm.mp4',   label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/tm.mp4',    label: 'Archive' },
+    { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/wh.mp4',    label: 'Archive' },
+];
 
-    <script>
-    /* ════════════════════════════════════════════════════════════
-       VIDEO ROTATION SYSTEM
-       ════════════════════════════════════════════════════════════
+const FADE_MS = 1400;
+const video       = document.getElementById('heroVideo');
+const progressBar = document.getElementById('heroProgressBar');
+const statusLabel = document.getElementById('heroStatusLabel');
+const fallbackImg = document.querySelector('.video-fallback');
+let clips = [], clipIndex = 0, progressRAF = null, isTransition = false;
 
-       HOW IT WORKS:
-       - One <video> element lives in the DOM at all times
-       - JS shuffles the clip list randomly on page load
-       - When a clip ends, we fade out, swap src, fade back in
-       - Only one video file is ever in memory — mobile friendly
-       - Slow connections get the static fallback image instead
-       - Progress bar fills across the bottom synced to playback
-
-       TO ADD YOUR VIDEOS:
-       Edit the VIDEO_CLIPS array below.
-       Add one entry per clip. Format:
-         { src: 'filename.mp4', label: 'Brief description' }
-
-       The label appears in the subtle status indicator bottom-right.
-       It's very faint — use short archival-style descriptions.
-    ════════════════════════════════════════════════════════════ */
-
-    const VIDEO_CLIPS = [
-        // ── Hosted on GitHub Releases — edit URLs here if you add more ──
-        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/fh.mp4',  label: 'Archive I'   },
-        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/flh.mp4', label: 'Archive II'  },
-        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/jb.mp4',  label: 'Archive III' },
-        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/mlk.mp4', label: 'Archive IV'  },
-        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/x.mp4',   label: 'Archive V'   },
-    ];
-
-    // ── Config ──────────────────────────────────────────────────
-    const FADE_DURATION_MS  = 1200;  // crossfade time in ms
-    const MIN_PLAY_MS       = 8000;  // minimum time before switching (ms)
-                                     // clips shorter than this play in full
-                                     // before switching; longer clips switch
-                                     // after they naturally end via 'ended' event
-
-    // ── Elements ────────────────────────────────────────────────
-    const video       = document.getElementById('heroVideo');
-    const progressBar = document.getElementById('heroProgressBar');
-    const statusLabel = document.getElementById('heroStatusLabel');
-    const fallbackImg = document.querySelector('.video-fallback');
-
-    // ── State ───────────────────────────────────────────────────
-    let clips        = [];   // shuffled copy of VIDEO_CLIPS
-    let clipIndex    = 0;
-    let progressRAF  = null; // requestAnimationFrame handle
-    let isTransition = false;
-
-    // ── Shuffle array in place (Fisher-Yates) ───────────────────
-    function shuffle(arr) {
-        for (let i = arr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-        return arr;
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+    return arr;
+}
 
-    // ── Check connection speed ───────────────────────────────────
-    // If the browser reports a slow connection, skip video entirely
-    // and show the static fallback image instead.
-    function isSlowConnection() {
-        const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        if (!conn) return false;
-        return conn.effectiveType === '2g' || conn.effectiveType === 'slow-2g' || conn.saveData === true;
+function isSlowConnection() {
+    const c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    return c && (c.effectiveType === '2g' || c.effectiveType === 'slow-2g' || c.saveData);
+}
+
+function showFallback() {
+    video.style.display = 'none';
+    fallbackImg.style.display = 'block';
+    if (progressBar) progressBar.style.display = 'none';
+}
+
+function animateProgress() {
+    if (progressRAF) cancelAnimationFrame(progressRAF);
+    function step() {
+        if (!video.duration || isNaN(video.duration)) { progressRAF = requestAnimationFrame(step); return; }
+        progressBar.style.width = (video.currentTime / video.duration * 100) + '%';
+        if (video.currentTime < video.duration) progressRAF = requestAnimationFrame(step);
     }
+    progressRAF = requestAnimationFrame(step);
+}
 
-    // ── Show fallback image (slow connection or video error) ─────
-    function showFallback() {
-        video.style.display = 'none';
-        fallbackImg.style.display = 'block';
-        if (progressBar) progressBar.style.display = 'none';
-    }
+function loadClip(i) {
+    const clip = clips[i];
+    if (!clip) return;
+    if (statusLabel) statusLabel.textContent = clip.label;
+    progressBar.style.transition = 'none';
+    progressBar.style.width = '0%';
+    void progressBar.offsetWidth;
+    video.src = clip.src;
+    video.load();
+    video.play().then(animateProgress).catch(() => showFallback());
+}
 
-    // ── Animate progress bar ─────────────────────────────────────
-    function animateProgress() {
-        if (progressRAF) cancelAnimationFrame(progressRAF);
-
-        function step() {
-            if (!video.duration || isNaN(video.duration)) {
-                progressRAF = requestAnimationFrame(step);
-                return;
-            }
-            const pct = (video.currentTime / video.duration) * 100;
-            progressBar.style.width = pct + '%';
-
-            if (video.currentTime < video.duration) {
-                progressRAF = requestAnimationFrame(step);
-            }
-        }
-
-        progressRAF = requestAnimationFrame(step);
-    }
-
-    // ── Load and play a clip by index ───────────────────────────
-    function loadClip(index) {
-        const clip = clips[index];
-        if (!clip) return;
-
-        // Update status label
-        if (statusLabel) statusLabel.textContent = clip.label;
-
-        // Reset progress bar instantly (no transition)
-        progressBar.style.transition = 'none';
-        progressBar.style.width = '0%';
-        // Force reflow so the reset lands before animation starts
-        void progressBar.offsetWidth;
-
-        // Swap video src
-        video.src = clip.src;
-        video.load();
-
-        video.play().then(() => {
-            animateProgress();
-        }).catch(err => {
-            // Autoplay blocked or file not found — show fallback
-            console.warn('Video play failed:', err);
-            showFallback();
-        });
-    }
-
-    // ── Crossfade to next clip ───────────────────────────────────
-    function nextClip() {
-        if (isTransition) return;
-        isTransition = true;
-
-        // Fade out
-        video.classList.add('fading');
-
-        setTimeout(() => {
-            clipIndex = (clipIndex + 1) % clips.length;
-
-            // Re-shuffle when we've cycled through all clips
-            // so it never repeats in the same order twice in a row
-            if (clipIndex === 0) shuffle(clips);
-
-            loadClip(clipIndex);
-
-            // Fade back in
-            video.classList.remove('fading');
-            isTransition = false;
-        }, FADE_DURATION_MS);
-    }
-
-    // ── Init ────────────────────────────────────────────────────
-    function init() {
-        if (VIDEO_CLIPS.length === 0) {
-            showFallback();
-            return;
-        }
-
-        // Slow connection — skip video
-        if (isSlowConnection()) {
-            showFallback();
-            return;
-        }
-
-        // Shuffle clips for random order
-        clips = shuffle([...VIDEO_CLIPS]);
-        clipIndex = 0;
-
-        // When a clip ends naturally, move to next
-        video.addEventListener('ended', nextClip);
-
-        // Handle load errors gracefully
-        video.addEventListener('error', () => {
-            console.warn('Video load error for:', clips[clipIndex]?.src);
-            // Try next clip; if all fail, show fallback
-            if (clipIndex < clips.length - 1) {
-                clipIndex++;
-                loadClip(clipIndex);
-            } else {
-                showFallback();
-            }
-        });
-
-        // Start with first clip
+function nextClip() {
+    if (isTransition) return;
+    isTransition = true;
+    video.classList.add('fading');
+    setTimeout(() => {
+        clipIndex = (clipIndex + 1) % clips.length;
+        if (clipIndex === 0) shuffle(clips);
         loadClip(clipIndex);
-    }
+        video.classList.remove('fading');
+        isTransition = false;
+    }, FADE_MS);
+}
 
-    init();
-
-    /* ════════════════════════════════════════════════════════════
-       GENERAL UI
-    ════════════════════════════════════════════════════════════ */
-
-    // Newsletter form
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Newsletter signup — connect to your email service here.');
+function initVideo() {
+    if (!VIDEO_CLIPS.length || isSlowConnection()) { showFallback(); return; }
+    clips = shuffle([...VIDEO_CLIPS]);
+    video.addEventListener('ended', nextClip);
+    video.addEventListener('error', () => {
+        if (clipIndex < clips.length - 1) { clipIndex++; loadClip(clipIndex); }
+        else showFallback();
     });
+    loadClip(0);
+}
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+initVideo();
+
+/* ════════════════════════════════════════════════════════════════
+   CATEGORY FILTER
+════════════════════════════════════════════════════════════════ */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const cat = this.dataset.cat;
+        document.querySelectorAll('#postGrid .post-card').forEach(card => {
+            card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
         });
     });
+});
 
-    // Collection item clicks
-    document.querySelectorAll('.collection-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const name = this.querySelector('.collection-name').textContent;
-            alert(`${name} collection — content coming soon.`);
-        });
+/* ════════════════════════════════════════════════════════════════
+   SMOOTH SCROLL
+════════════════════════════════════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
-    </script>
+});
+</script>
 </body>
 </html>
