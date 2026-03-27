@@ -662,7 +662,7 @@
                     If you only have mp4, just remove the webm <source> lines.
                 -->
                 <!-- <source src="x_web.webm" type="video/webm"> -->
-                <source src="x_web.mp4" type="video/mp4">
+                <source src="x.mp4" type="video/mp4">
             </video>
 
             <!-- Static image fallback for slow connections or JS disabled -->
@@ -953,19 +953,17 @@
     ════════════════════════════════════════════════════════════ */
 
     const VIDEO_CLIPS = [
-        // ── Add your processed video files here ──────────────────
-        // These are your two files after FFmpeg processing.
-        // The portrait video (flh) will be force-cropped to landscape
-        // by FFmpeg before you upload it, so it works fine here.
+        // ── Your current video files in the repo ─────────────────
+        // These match the filenames at the root of your GitHub repo.
+        // Add more entries here as you upload additional clips —
+        // just drop the mp4 into the repo and add a line below.
+        { src: 'x.mp4',   label: 'Archive I'  },
+        { src: 'flh.mp4', label: 'Archive II' },
         //
-        // Example entries — replace with your real filenames:
-        { src: 'x_web.mp4',   label: 'Archive I'   },
-        { src: 'flh_web.mp4', label: 'Archive II'  },
-        //
-        // Add more clips as you process them:
-        // { src: 'clip3_web.mp4', label: 'Richmond 1920' },
-        // { src: 'clip4_web.mp4', label: 'Reconstruction' },
-        // { src: 'clip5_web.mp4', label: 'Community'      },
+        // Future clips — uncomment and rename as you add them:
+        // { src: 'clip3.mp4', label: 'Richmond 1920'  },
+        // { src: 'clip4.mp4', label: 'Reconstruction' },
+        // { src: 'clip5.mp4', label: 'Community'      },
     ];
 
     // ── Config ──────────────────────────────────────────────────
