@@ -662,7 +662,7 @@
                     If you only have mp4, just remove the webm <source> lines.
                 -->
                 <!-- <source src="x_web.webm" type="video/webm"> -->
-                <source src="x.mp4" type="video/mp4">
+                <source src="https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/x.mp4" type="video/mp4">
             </video>
 
             <!-- Static image fallback for slow connections or JS disabled -->
@@ -953,17 +953,12 @@
     ════════════════════════════════════════════════════════════ */
 
     const VIDEO_CLIPS = [
-        // ── Your current video files in the repo ─────────────────
-        // These match the filenames at the root of your GitHub repo.
-        // Add more entries here as you upload additional clips —
-        // just drop the mp4 into the repo and add a line below.
-        { src: 'x.mp4',   label: 'Archive I'  },
-        { src: 'flh.mp4', label: 'Archive II' },
-        //
-        // Future clips — uncomment and rename as you add them:
-        // { src: 'clip3.mp4', label: 'Richmond 1920'  },
-        // { src: 'clip4.mp4', label: 'Reconstruction' },
-        // { src: 'clip5.mp4', label: 'Community'      },
+        // ── Hosted on GitHub Releases — edit URLs here if you add more ──
+        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/fh.mp4',  label: 'Archive I'   },
+        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/flh.mp4', label: 'Archive II'  },
+        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/jb.mp4',  label: 'Archive III' },
+        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/mlk.mp4', label: 'Archive IV'  },
+        { src: 'https://github.com/freedmenstar/freedmenstar/releases/download/v1.0/x.mp4',   label: 'Archive V'   },
     ];
 
     // ── Config ──────────────────────────────────────────────────
