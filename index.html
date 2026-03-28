@@ -1454,26 +1454,72 @@ function onCanPlay() {
 function attemptPlay() {
     const p = video.play();
     if (p !== undefined) {
-        p.then(animateProgress).catch(err => {
-            // Safari sometimes blocks autoplay even with muted.
-            // If blocked, wait for first user interaction then retry.
-            if (err.name === 'NotAllowedError') {
-                document.addEventListener('click', retryOnInteraction, { once: true });
-                document.addEventListener('touchstart', retryOnInteraction, { once: true });
+        p.then(() => {
+            animateProgress();
+            hideTapOverlay();
+        }).catch(err => {
+            // Safari blocks autoplay — show tap overlay to get user gesture
+            if (err.name === 'NotAllowedError' || err.name === 'AbortError') {
+                showTapOverlay();
             } else {
-                // Different error — try next clip
                 if (clipIndex < clips.length - 1) { clipIndex++; loadClip(clipIndex); }
                 else showFallback();
             }
         });
     } else {
-        // Older Safari returns undefined from play()
         animateProgress();
+        hideTapOverlay();
     }
 }
 
 function retryOnInteraction() {
-    video.play().then(animateProgress).catch(() => showFallback());
+    video.play().then(() => { animateProgress(); hideTapOverlay(); }).catch(() => showFallback());
+}
+
+// ── Tap-to-start overlay for Safari ─────────────────────────
+function showTapOverlay() {
+    let overlay = document.getElementById('tapOverlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'tapOverlay';
+        overlay.style.cssText = `
+            position: absolute;
+            inset: 0;
+            z-index: 8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: transparent;
+        `;
+        // Subtle tap hint — doesn't break the aesthetic
+        const hint = document.createElement('div');
+        hint.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.5;
+            animation: pulse 2s ease-in-out infinite;
+        `;
+        hint.innerHTML = `
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#d4a574" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="10,8 16,12 10,16" fill="#d4a574" stroke="none"/>
+            </svg>
+            <span style="font-family:'Inter',sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#d4a574;">Tap to play</span>
+        `;
+        overlay.appendChild(hint);
+        document.querySelector('.hero-wrapper').appendChild(overlay);
+        overlay.addEventListener('click', retryOnInteraction, { once: true });
+        overlay.addEventListener('touchstart', retryOnInteraction, { once: true });
+    }
+    overlay.style.display = 'flex';
+}
+
+function hideTapOverlay() {
+    const overlay = document.getElementById('tapOverlay');
+    if (overlay) overlay.style.display = 'none';
 }
 
 function nextClip() {
