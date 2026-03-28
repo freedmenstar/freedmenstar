@@ -992,7 +992,7 @@
 ══════════════════════════════════════════════════════════════ -->
 <section id="home" class="hero-wrapper">
     <div class="hero-video-layer">
-        <video id="heroVideo" autoplay muted playsinline loop preload="none"></video>
+        <video id="heroVideo" autoplay muted playsinline webkit-playsinline loop preload="metadata"></video>
         <img class="video-fallback"
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect fill='%23070604' width='640' height='360'/%3E%3C/svg%3E"
             alt="" aria-hidden="true">
@@ -1425,20 +1425,55 @@ function loadClip(i) {
     progressBar.style.width = '0%';
     void progressBar.offsetWidth;
 
-    // Remove old source, set new src directly on the element
-    video.removeAttribute('src');
-    video.load();
+    // Clean up any pending canplay listener
+    video.removeEventListener('canplay', onCanPlay);
+    video.removeEventListener('canplaythrough', onCanPlay);
+
+    // Set src and load — only call load() ONCE
     video.src = clip.src;
-
-    // Use canplay event for mobile reliability — fires as soon as
-    // the browser has enough data to start playing
-    const onCanPlay = () => {
-        video.removeEventListener('canplay', onCanPlay);
-        video.play().then(animateProgress).catch(() => showFallback());
-    };
-
-    video.addEventListener('canplay', onCanPlay);
     video.load();
+
+    // Safari needs canplaythrough more reliably than canplay
+    video.addEventListener('canplaythrough', onCanPlay, { once: true });
+    video.addEventListener('canplay', onCanPlay, { once: true });
+
+    // Fallback timeout — if Safari stalls, try playing anyway after 3s
+    clearTimeout(video._safariTimeout);
+    video._safariTimeout = setTimeout(() => {
+        video.removeEventListener('canplay', onCanPlay);
+        video.removeEventListener('canplaythrough', onCanPlay);
+        attemptPlay();
+    }, 3000);
+}
+
+function onCanPlay() {
+    clearTimeout(video._safariTimeout);
+    attemptPlay();
+}
+
+function attemptPlay() {
+    const p = video.play();
+    if (p !== undefined) {
+        p.then(animateProgress).catch(err => {
+            // Safari sometimes blocks autoplay even with muted.
+            // If blocked, wait for first user interaction then retry.
+            if (err.name === 'NotAllowedError') {
+                document.addEventListener('click', retryOnInteraction, { once: true });
+                document.addEventListener('touchstart', retryOnInteraction, { once: true });
+            } else {
+                // Different error — try next clip
+                if (clipIndex < clips.length - 1) { clipIndex++; loadClip(clipIndex); }
+                else showFallback();
+            }
+        });
+    } else {
+        // Older Safari returns undefined from play()
+        animateProgress();
+    }
+}
+
+function retryOnInteraction() {
+    video.play().then(animateProgress).catch(() => showFallback());
 }
 
 function nextClip() {
@@ -1459,6 +1494,7 @@ function initVideo() {
     clips = shuffle([...VIDEO_CLIPS]);
     video.addEventListener('ended', nextClip);
     video.addEventListener('error', () => {
+        clearTimeout(video._safariTimeout);
         if (clipIndex < clips.length - 1) { clipIndex++; loadClip(clipIndex); }
         else showFallback();
     });
