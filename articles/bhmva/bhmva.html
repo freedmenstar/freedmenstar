@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Jackson Ward Holds | FREEDMEN STAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #070604;
+            --surface: #0d0c09;
+            --surface2: #111008;
+            --text: #d8d2c8;
+            --text-dim: #7a7060;
+            --text-muted: #443e32;
+            --accent: #c8935a;
+            --accent-warm: #d4a574;
+            --accent-dim: rgba(200,147,90,0.1);
+            --accent-red: #7a1f2e;
+            --border: #1a1710;
+            --border-light: #221f16;
+            --max-article: 760px;
+            --max-wide: 1100px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            background-size: 256px 256px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* ─── HEADER ────────────────────────────────────────────── */
+        header {
+            padding: 1.4rem 2rem;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(7,6,4,0.97);
+            backdrop-filter: blur(16px);
+            z-index: 200;
+        }
+
+        .header-content {
+            max-width: var(--max-wide);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.55rem;
+            font-weight: 400;
+            letter-spacing: 2.5px;
+            color: var(--accent-warm);
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            text-decoration: none;
+        }
+
+        .logo-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-line {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background: var(--accent-red);
+        }
+
+        nav { display: flex; gap: 1.75rem; align-items: center; }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.88rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-warm); }
+
+        .nav-back {
+            color: var(--text-muted) !important;
+            font-size: 0.78rem !important;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s, gap 0.2s !important;
+        }
+
+        .nav-back:hover {
+            color: var(--accent) !important;
+            gap: 0.6rem !important;
+        }
+
+        /* ─── ARTICLE HERO ──────────────────────────────────────── */
+        .article-hero {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: #040302;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+            filter: grayscale(35%) sepia(20%) brightness(0.75) contrast(1.05);
+            animation: heroReveal 1.4s ease forwards;
+        }
+
+        @keyframes heroReveal {
+            from { opacity: 0; transform: scale(1.03); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom,
+                    rgba(7,6,4,0.3) 0%,
+                    rgba(7,6,4,0.0) 30%,
+                    rgba(7,6,4,0.0) 55%,
+                    rgba(7,6,4,0.95) 100%
+                );
+        }
+
+        .hero-meta {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: var(--max-article);
+            padding: 0 2rem;
+            animation: fadeUp 1s ease 0.4s both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+            to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .article-cat {
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .article-cat::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(--accent-red);
+        }
+
+        .article-hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 400;
+            color: var(--text);
+            line-height: 1.15;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 24px rgba(0,0,0,0.9);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-sub {
+            font-size: 1.05rem;
+            color: rgba(216,210,200,0.6);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+            font-weight: 300;
+        }
+
+        /* ─── ARTICLE META BAR ──────────────────────────────────── */
+        .article-meta-bar {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            background: var(--surface);
+        }
+
+        .article-meta-inner {
+            max-width: var(--max-article);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-byline {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .meta-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid rgba(200,147,90,0.2);
+            flex-shrink: 0;
+            background: var(--accent-dim);
+        }
+
+        .meta-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: grayscale(40%) sepia(20%) brightness(0.85);
+        }
+
+        .meta-name {
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            font-weight: 400;
+        }
+
+        .meta-sep {
+            width: 1px;
+            height: 18px;
+            background: var(--border-light);
+            flex-shrink: 0;
+        }
+
+        .meta-info {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+        }
+
+        .meta-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+            margin-left: auto;
+        }
+
+        /* ─── ARTICLE BODY ──────────────────────────────────────── */
+        .article-wrapper {
+            max-width: var(--max-article);
+            margin: 0 auto;
+            padding: 3.5rem 2rem 5rem;
+        }
+
+        /* Drop cap on first paragraph */
+        .article-body > p:first-of-type::first-letter {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4.2rem;
+            font-weight: 500;
+            color: var(--accent-warm);
+            float: left;
+            line-height: 0.75;
+            margin-right: 0.1em;
+            margin-top: 0.12em;
+        }
+
+        .article-body p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            line-height: 1.85;
+            color: var(--text-dim);
+            margin-bottom: 1.75rem;
+            font-weight: 300;
+        }
+
+        .article-body p strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* Pull quote */
+        .pull-quote {
+            border-left: 3px solid var(--accent-red);
+            margin: 2.5rem 0;
+            padding: 0.5rem 0 0.5rem 1.75rem;
+        }
+
+        .pull-quote p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.45rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.55;
+            font-weight: 400;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .pull-quote cite {
+            font-size: 0.8rem;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-style: normal;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Section heading within article */
+        .article-section-head {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0 1.5rem;
+        }
+
+        .article-section-head h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--text);
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .section-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ─── INLINE PHOTO ──────────────────────────────────────── */
+        .article-photo {
+            margin: 2.5rem -1rem;
+            cursor: zoom-in;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-photo img {
+            width: 100%;
+            display: block;
+            filter: grayscale(30%) sepia(15%) brightness(0.82) contrast(1.05);
+            transition: filter 0.4s ease, transform 0.5s ease;
+        }
+
+        .article-photo:hover img {
+            filter: grayscale(15%) sepia(8%) brightness(0.9);
+            transform: scale(1.01);
+        }
+
+        .article-photo figcaption {
+            padding: 0.65rem 1rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            line-height: 1.5;
+        }
+
+        /* ─── PHOTO GRID ────────────────────────────────────────── */
+        .photo-grid {
+            display: grid;
+            gap: 0.5rem;
+            margin: 2.5rem -1rem;
+        }
+
+        .photo-grid-2 { grid-template-columns: 1fr 1fr; }
+        .photo-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+        .photo-grid figure {
+            cursor: zoom-in;
+            overflow: hidden;
+            position: relative;
+            background: var(--surface);
+        }
+
+        .photo-grid figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            display: block;
+            filter: grayscale(35%) sepia(18%) brightness(0.8) contrast(1.05);
+            transition: filter 0.4s ease, transform 0.5s ease;
+        }
+
+        .photo-grid figure:hover img {
+            filter: grayscale(15%) sepia(10%) brightness(0.88);
+            transform: scale(1.03);
+        }
+
+        .photo-grid figure figcaption {
+            padding: 0.5rem 0.65rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            line-height: 1.4;
+        }
+
+        /* Wide photo — bleeds past article max-width */
+        .article-photo-wide {
+            margin: 2.5rem calc((100vw - var(--max-article)) / -2 - 2rem);
+            cursor: zoom-in;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-photo-wide img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(30%) sepia(15%) brightness(0.8) contrast(1.05);
+            transition: filter 0.4s ease;
+        }
+
+        .article-photo-wide:hover img {
+            filter: grayscale(15%) sepia(8%) brightness(0.88);
+        }
+
+        .article-photo-wide figcaption {
+            padding: 0.65rem 1.5rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: 'Crimson Pro', serif;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+        }
+
+        /* ─── LIGHTBOX ──────────────────────────────────────────── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(4,3,2,0.95);
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            cursor: zoom-out;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+            object-fit: contain;
+            filter: grayscale(20%) sepia(10%) brightness(0.9);
+            box-shadow: 0 8px 60px rgba(0,0,0,0.9);
+            animation: lbIn 0.3s ease;
+        }
+
+        @keyframes lbIn {
+            from { transform: scale(0.96); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 600px;
+            padding: 0 2rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: 1px solid var(--border-light);
+            color: var(--text-dim);
+            font-size: 1rem;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: 1px solid var(--border-light);
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .lightbox-nav:hover { color: var(--accent); border-color: var(--accent); }
+        .lightbox-prev { left: 1.5rem; }
+        .lightbox-next { right: 1.5rem; }
+
+        /* ─── ARTICLE FOOTER ────────────────────────────────────── */
+        .article-end {
+            max-width: var(--max-article);
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+            padding: 0.25rem 0.75rem;
+            transition: color 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+
+        .tag:hover { color: var(--accent); border-color: var(--accent); }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.25s, gap 0.2s;
+        }
+
+        .back-link:hover { color: var(--accent); gap: 0.75rem; }
+
+        /* ─── PAGE FOOTER ───────────────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            background: var(--surface);
+        }
+
+        .footer-inner {
+            max-width: var(--max-wide);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            color: var(--accent-warm);
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ─── RESPONSIVE ────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .article-photo-wide {
+                margin: 2rem -2rem;
+            }
+
+            .article-photo {
+                margin: 2rem -2rem;
+            }
+
+            .photo-grid {
+                margin: 2rem -2rem;
+            }
+
+            .photo-grid-3 { grid-template-columns: 1fr 1fr; }
+
+            .header-content { flex-direction: column; gap: 0.9rem; align-items: flex-start; }
+
+            .article-hero h1 { font-size: 2rem; }
+
+            .hero-meta { padding: 0 1.25rem; }
+
+            .article-wrapper { padding: 2.5rem 1.25rem 4rem; }
+
+            .article-end { padding: 0 1.25rem 3rem; }
+
+            .meta-location { margin-left: 0; }
+
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .photo-grid-3 { grid-template-columns: 1fr; }
+            .photo-grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">›</button>
+    <p class="lightbox-caption" id="lbCaption"></p>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="header-content">
+        <a href="../../index.html" class="logo">
+            <span class="logo-inner">
+                <span>★</span>
+                FREEDMEN STAR
+            </span>
+            <span class="logo-line"></span>
+        </a>
+        <nav>
+            <a href="../../index.html" class="nav-back">← Back</a>
+            <a href="../../index.html#stories">Stories</a>
+            <a href="../../index.html">Home</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ARTICLE HERO IMAGE -->
+<div class="article-hero">
+    <img
+        class="hero-img"
+        src="bhmva-exterior.jpg"
+        alt="Black History Museum and Cultural Center of Virginia, Jackson Ward, Richmond"
+        data-caption="Black History Museum & Cultural Center of Virginia — Jackson Ward, Richmond"
+    >
+    <div class="hero-gradient"></div>
+    <div class="hero-meta">
+        <div class="article-cat">People & Places</div>
+        <h1>What Jackson Ward Holds</h1>
+        <p class="article-sub">A walk through the Black History Museum and Cultural Center of Virginia</p>
+    </div>
+</div>
+
+<!-- META BAR -->
+<div class="article-meta-bar">
+    <div class="article-meta-inner">
+        <div class="meta-byline">
+            <div class="meta-avatar">
+                <img src="../../Ron.png" alt="Ronnie Bailey">
+            </div>
+            <span class="meta-name">Ronnie Bailey</span>
+        </div>
+        <div class="meta-sep"></div>
+        <span class="meta-info">October 2024</span>
+        <div class="meta-sep"></div>
+        <span class="meta-info">People &amp; Places</span>
+        <span class="meta-location">Richmond, Virginia</span>
+    </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<article class="article-wrapper">
+    <div class="article-body">
+
+        <p>
+            Jackson Ward sits in Richmond the way old things tend to sit — quietly, without
+            announcing itself, letting whoever passes decide how much attention to pay.
+            The sign at the entrance calls it a National Historic Landmark District.
+            That's accurate and also undersells it considerably.
+        </p>
+
+        <p>
+            The Black History Museum and Cultural Center of Virginia is inside that district,
+            on Clay Street, in a building that manages to feel both permanent and purposeful
+            at the same time. I went on a weekday. The parking lot was mostly empty.
+            The entrance is unassuming — brick, glass, a banner with the BHMVA logo.
+            Inside is something else.
+        </p>
+
+        <figure class="article-photo" data-index="0">
+            <img
+                src="bhmva-jackson-ward-sign.jpg"
+                alt="Jackson Ward National Historic Landmark District sign"
+                data-caption="Jackson Ward — National Historic Landmark District, Richmond, Virginia"
+            >
+            <figcaption>Jackson Ward — National Historic Landmark District</figcaption>
+        </figure>
+
+        <div class="article-section-head">
+            <h2>The Building</h2>
+            <div class="section-rule"></div>
+        </div>
+
+        <p>
+            The museum occupies a converted armory. You feel the bones of it when you walk in —
+            high ceilings, exposed beams, wide open gallery floors. What was built to store
+            weapons now stores something more durable. The architects kept the industrial shell
+            and let the history fill it. That combination works.
+        </p>
+
+        <p>
+            What strikes you first is how much ground the collection covers. This is not a
+            single-era institution. The museum moves through time the way a family moves through
+            a house — room by room, generation by generation, with evidence of all of it still visible.
+        </p>
+
+        <div class="article-section-head">
+            <h2>The Rooms</h2>
+            <div class="section-rule"></div>
+        </div>
+
+        <p>
+            The Reconstruction era gallery is where the building feels most alive. The space is
+            wide, lit from above by track lighting, and along the walls are digital displays
+            and framed documents and a historical marker for John Mitchell Jr., the
+            Richmond Planet editor who used his newspaper to document and resist during a period
+            when that combination required extraordinary nerve. His marker stands in the gallery
+            like a piece of the street brought inside.
+        </p>
+
+        <figure class="article-photo" data-index="1">
+            <img
+                src="bhmva-reconstruction-gallery.jpg"
+                alt="Reconstruction era gallery at BHMVA"
+                data-caption="The Reconstruction era gallery — John Mitchell Jr. historical marker visible at right"
+            >
+            <figcaption>Reconstruction era gallery — John Mitchell Jr. historical marker at right</figcaption>
+        </figure>
+
+        <p>
+            The Jim Crow era wall is dense. Photographs arranged in clusters, archival and
+            unsparing. A store front, a portrait, a group of men seated together. Text panels
+            with W.E.B. Du Bois and Booker T. Washington. The weight of this section comes
+            not from shock but from accumulation — the sheer number of lives documented,
+            the ordinary detail of each one.
+        </p>
+
+        <div class="photo-grid photo-grid-2">
+            <figure data-index="2">
+                <img
+                    src="bhmva-jim-crow-wall.jpg"
+                    alt="Jim Crow era exhibition wall"
+                    data-caption="Jim Crow era exhibition — photographs, archival documents, and Du Bois and Washington texts"
+                >
+                <figcaption>Jim Crow era exhibition</figcaption>
+            </figure>
+            <figure data-index="3">
+                <img
+                    src="bhmva-civil-war-display.jpg"
+                    alt="Civil War era display with Frederick Douglass quote"
+                    data-caption="Civil War display — five generations of an enslaved family, Powhatan Beaty's portrait, and the Frederick Douglass quote from July 6, 1863"
+                >
+                <figcaption>Civil War era display — five generations, one frame</figcaption>
+            </figure>
+        </div>
+
+        <div class="pull-quote">
+            <p>"Once let the black man get upon his person the brass letters, U.S., let him get an eagle on his button, and a musket on his shoulder and bullets in his pocket, there is no power on earth, or under the earth that can deny that he has earned the right to citizenship in the United States."</p>
+            <cite>Frederick Douglass, July 6, 1863</cite>
+        </div>
+
+        <p>
+            One photograph stops you cold. Five generations of one enslaved family,
+            photographed on the Smith Plantation in Beaufort, South Carolina, 1862.
+            Five generations alive at the same time. The oldest and the youngest in the same
+            frame. The museum's label is matter-of-fact about what it is. The photograph
+            doesn't need any help.
+        </p>
+
+        <p>
+            Nearby, Powhatan Beaty — Richmond native, Sergeant, 5th U.S. Colored Infantry,
+            Medal of Honor recipient, Battle of New Market Heights, September 29, 1864.
+            His portrait is clean and formal. He looks directly at whoever is looking at him.
+        </p>
+
+        <div class="article-section-head">
+            <h2>Arthur Ashe</h2>
+            <div class="section-rule"></div>
+        </div>
+
+        <p>
+            There is a room with a sculpture of Arthur Ashe that is unlike any memorial
+            I have seen for him. It is full-size, all white, rendered in a tracksuit,
+            one arm raised holding a book, the other holding a tennis racket. The posture
+            is triumphant without being theatrical. Ashe was born in Richmond.
+            He grew up in segregated parks and tennis courts. The sculpture stands in
+            a museum in the neighborhood that shaped the city that shaped him.
+            The circularity of that is not subtle and doesn't need to be.
+        </p>
+
+        <figure class="article-photo" data-index="4">
+            <img
+                src="bhmva-arthur-ashe.jpg"
+                alt="Arthur Ashe sculpture at BHMVA"
+                data-caption="Arthur Ashe sculpture — book in one hand, racket in the other. Richmond-born, Wimbledon champion, civil rights voice."
+            >
+            <figcaption>Arthur Ashe — Richmond born, Wimbledon champion, civil rights voice</figcaption>
+        </figure>
+
+        <div class="article-section-head">
+            <h2>What Gets Kept</h2>
+            <div class="section-rule"></div>
+        </div>
+
+        <p>
+            A bound journal from 1850 to 1888 sits in a glass case near a window.
+            The handwriting is careful, dense, slanted. It belongs to John McGill,
+            James Gibbons, and John Joseph Keane of the Catholic Diocese of Richmond.
+            Outside the window is Jackson Ward. The journal recorded the same neighborhood
+            it overlooks. That kind of continuity — object and place sharing the same
+            physical space across 170 years — is what museums at their best actually do.
+        </p>
+
+        <figure class="article-photo" data-index="5">
+            <img
+                src="bhmva-bound-journal.jpg"
+                alt="Bound journal 1850-1888 on display"
+                data-caption="Bound Journal, 1850–1888 — John McGill, James Gibbons and John Joseph Keane. Courtesy of the Catholic Diocese of Richmond."
+            >
+            <figcaption>Bound Journal, 1850–1888 — the handwriting still legible after 170 years</figcaption>
+        </figure>
+
+        <p>
+            The community room holds large-format black and white photographs of Black
+            social life — formal gatherings, dancing, crowds dressed for occasions.
+            These photographs are not in cases. They hang on the wall the way family
+            photos hang in a hallway. The effect is intentional and correct.
+            This is not documentation of an extinct people. This is family.
+        </p>
+
+        <figure class="article-photo" data-index="6">
+            <img
+                src="bhmva-community-room.jpg"
+                alt="Community room with large archival photographs of Black social life"
+                data-caption="The community room — large-format archival photographs of Black social gatherings in Richmond"
+            >
+            <figcaption>Community room — Black social life at scale</figcaption>
+        </figure>
+
+        <div class="article-section-head">
+            <h2>The Woolworth's Counter</h2>
+            <div class="section-rule"></div>
+        </div>
+
+        <p>
+            The museum has a recreation of a Woolworth's luncheonette — the booths,
+            the chrome trim, the original signage mounted behind glass.
+            The sit-ins happened at counters like this one. The museum doesn't
+            dramatize it. The sign says <strong>Visit Woolworth's Luncheonette</strong>
+            in the original font, in the original colors, and the ordinary cheerfulness
+            of that advertisement is the whole point. The counter was ordinary.
+            What happened at it was not. The recreation holds both things at once.
+        </p>
+
+        <figure class="article-photo" data-index="7">
+            <img
+                src="bhmva-woolworths.jpg"
+                alt="Woolworth's Luncheonette recreation at BHMVA"
+                data-caption="Woolworth's Luncheonette recreation — the same cheerful signage, the same booths, the same history"
+            >
+            <figcaption>Woolworth's Luncheonette recreation — the ordinary made historic</figcaption>
+        </figure>
+
+        <div class="photo-grid photo-grid-3">
+            <figure data-index="8">
+                <img
+                    src="bhmva-school-deseg.jpg"
+                    alt="Virginia school desegregation cases and civil rights photos"
+                    data-caption="Virginia school desegregation cases — Spottswood Robinson III, Oliver Hill Sr., and the students who walked into those courtrooms"
+                >
+                <figcaption>Virginia school desegregation</figcaption>
+            </figure>
+            <figure data-index="9">
+                <img
+                    src="bhmva-quotes-wall.jpg"
+                    alt="Wall of quotes from Black figures"
+                    data-caption="Quote wall — Malcolm X, Ruby Bridges, Douglas Wilder, Langston Hughes, Serena Williams, Michael Jordan and others"
+                >
+                <figcaption>Quote wall — the range of Black voice</figcaption>
+            </figure>
+            <figure data-index="10">
+                <img
+                    src="bhmva-freedom-panel.jpg"
+                    alt="In Pursuit of Freedom, Justice and Equality panel"
+                    data-caption="Exhibition panel — In Pursuit of Freedom, Justice and Equality"
+                >
+                <figcaption>In Pursuit of Freedom, Justice and Equality</figcaption>
+            </figure>
+        </div>
+
+        <div class="article-section-head">
+            <h2>What It Is</h2>
+            <div class="section-rule"></div>
+        </div>
+
+        <p>
+            The BHMVA is not a place that asks you to feel bad.
+            It asks you to pay attention. The difference matters.
+            The collection does not lead with suffering. It leads with presence —
+            this person lived here, did this, built that, said this, survived this,
+            kept going. The suffering is part of the record but it is not the point of it.
+        </p>
+
+        <p>
+            Jackson Ward produced Maggie Walker, the first woman to charter and serve as
+            president of a bank in the United States. It produced Bill "Bojangles" Robinson.
+            It produced a density of Black-owned enterprise that earned it the name
+            <strong>the Black Wall Street of the South</strong> before that phrase was
+            applied anywhere else. The museum holds that history without apology and without
+            performance. It simply keeps it. That is enough.
+        </p>
+
+        <p>
+            I left through the same parking lot I came in through. The Jackson Ward sign
+            was visible from the car. I had walked past it on the way in without stopping.
+            I stopped on the way out.
+        </p>
+
+    </div>
+</article>
+
+<!-- TAGS + BACK LINK -->
+<div class="article-end">
+    <div class="article-tags">
+        <span class="tag">Richmond</span>
+        <span class="tag">Virginia</span>
+        <span class="tag">Jackson Ward</span>
+        <span class="tag">Museums</span>
+        <span class="tag">History</span>
+        <span class="tag">People & Places</span>
+    </div>
+    <a href="../../index.html" class="back-link">← Return to Freedmen Star</a>
+</div>
+
+<!-- PAGE FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">★ FREEDMEN STAR</div>
+        <span class="footer-copy">&copy; 2025 Freedmen Star. Richmond, Virginia.</span>
+    </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   LIGHTBOX
+   All clickable images register themselves. Clicking any opens
+   the lightbox. Arrow keys and prev/next buttons navigate.
+   Click outside image or press Escape to close.
+══════════════════════════════════════════════════════════════ */
+const lightbox    = document.getElementById('lightbox');
+const lbImg       = document.getElementById('lbImg');
+const lbCaption   = document.getElementById('lbCaption');
+const lbClose     = document.getElementById('lbClose');
+const lbPrev      = document.getElementById('lbPrev');
+const lbNext      = document.getElementById('lbNext');
+
+// Collect all lightbox-able images in document order
+const lbImages = [];
+
+document.querySelectorAll('[data-index]').forEach(el => {
+    const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+    if (!img) return;
+    lbImages.push({
+        src:     img.src,
+        caption: img.dataset.caption || el.querySelector('figcaption')?.textContent || ''
+    });
+    el.addEventListener('click', () => openLightbox(parseInt(el.dataset.index)));
+});
+
+let currentIndex = 0;
+
+function openLightbox(index) {
+    currentIndex = index;
+    showSlide(currentIndex);
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function showSlide(index) {
+    currentIndex = (index + lbImages.length) % lbImages.length;
+    lbImg.src = lbImages[currentIndex].src;
+    lbCaption.textContent = lbImages[currentIndex].caption;
+}
+
+lbClose.addEventListener('click', closeLightbox);
+lbPrev.addEventListener('click', (e) => { e.stopPropagation(); showSlide(currentIndex - 1); });
+lbNext.addEventListener('click', (e) => { e.stopPropagation(); showSlide(currentIndex + 1); });
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  showSlide(currentIndex - 1);
+    if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+});
+</script>
+
+</body>
+</html>
