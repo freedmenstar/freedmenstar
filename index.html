@@ -714,18 +714,12 @@
         }
 
         .correspondent-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
+            width: 100%;
+            aspect-ratio: 4/3;
             background: var(--accent-dim);
             border: 1px solid rgba(200,147,90,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin: 0 auto 0.9rem;
+            overflow: hidden;
+            margin: 0 0 0.9rem;
         }
 
         .correspondent-name {
@@ -866,7 +860,7 @@
             gap: 0.5rem;
         }
 
-        .footer-brand h4::before { content: '★'; font-size: 0.85rem; }
+        .footer-brand h4::before { content: ''; }
 
         .footer-brand p {
             font-size: 0.82rem;
@@ -1258,7 +1252,20 @@
             <div class="sidebar-block">
                 <div class="sidebar-heading">Ronnie Bailey</div>
                 <div class="correspondent-block">
-                    <div class="correspondent-avatar">R</div>
+                    <div class="correspondent-avatar">
+                        <img
+                            src="Ron.png"
+                            alt="Ronnie Bailey"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center top;
+                                display: block;
+                                filter: grayscale(40%) sepia(20%) brightness(0.85) contrast(1.05);
+                            "
+                        >
+                    </div>
                     <div class="correspondent-title">Richmond, Virginia</div>
                     <p class="correspondent-bio">
                         Documenting the places, people, institutions, and culture
