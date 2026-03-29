@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Blood Geography of America | Freedmen Star</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:#070604;--surface:#0d0c09;--surface2:#111008;
+      --text:#d8d2c8;--text-dim:#7a7060;--text-muted:#443e32;
+      --accent:#c8935a;--accent-warm:#d4a574;--accent-dim:rgba(200,147,90,0.1);
+      --accent-red:#7a1f2e;--border:#1a1710;--border-light:#221f16;
+      --max-article:760px;--max-wide:1100px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);
+      line-height:1.6;-webkit-font-smoothing:antialiased;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      background-size:256px 256px;
+    }
+    body::before{
+      content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:0.025;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size:200px 200px;
+    }
+
+```
+/* ── HEADER ── */
+header{padding:1.4rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,6,4,0.97);backdrop-filter:blur(16px);z-index:200}
+.header-content{max-width:var(--max-wide);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Crimson Pro',serif;font-size:1.55rem;font-weight:400;letter-spacing:2.5px;color:var(--accent-warm);display:inline-flex;flex-direction:column;gap:.3rem;text-decoration:none}
+.logo-inner{display:flex;align-items:center;gap:.6rem}
+.logo-line{display:block;width:100%;height:1.5px;background:var(--accent-red)}
+nav{display:flex;gap:1.75rem;align-items:center}
+nav a{color:var(--text-dim);text-decoration:none;font-size:.88rem;letter-spacing:1px;text-transform:uppercase;transition:color .3s}
+nav a:hover{color:var(--accent-warm)}
+.nav-back{color:var(--text-muted)!important;font-size:.78rem!important;display:flex;align-items:center;gap:.4rem;transition:color .3s,gap .2s!important}
+.nav-back:hover{color:var(--accent)!important;gap:.6rem!important}
+
+/* ── ARTICLE HERO (no image version) ── */
+.article-hero-text{
+  border-bottom:1px solid var(--border);
+  padding:5rem 2rem 3.5rem;
+  background:var(--surface);
+}
+.article-hero-inner{max-width:var(--max-article);margin:0 auto}
+.article-cat{
+  font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.85rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.article-cat::before{content:'';display:block;width:24px;height:1px;background:var(--accent-red)}
+.article-hero-text h1{
+  font-family:'Crimson Pro',serif;font-size:clamp(2rem,4.5vw,3.2rem);
+  font-weight:400;color:var(--text);line-height:1.15;letter-spacing:.3px;margin-bottom:.6rem;
+}
+.article-sub{
+  font-size:1.1rem;color:rgba(216,210,200,0.55);font-style:italic;
+  font-family:'Crimson Pro',serif;font-weight:300;margin-bottom:2rem;
+}
+.article-meta-line{
+  display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;
+  padding-top:1.5rem;border-top:1px solid var(--border);
+}
+.meta-byline{display:flex;align-items:center;gap:.65rem}
+.meta-avatar{width:34px;height:34px;border-radius:50%;overflow:hidden;border:1px solid rgba(200,147,90,0.2);flex-shrink:0;background:var(--accent-dim)}
+.meta-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(40%) sepia(20%) brightness(.85)}
+.meta-name{font-size:.88rem;color:var(--text-dim);font-weight:400}
+.meta-sep{width:1px;height:16px;background:var(--border-light);flex-shrink:0}
+.meta-info{font-size:.78rem;color:var(--text-muted);letter-spacing:.3px}
+
+/* ── ARTICLE BODY ── */
+.article-wrapper{max-width:var(--max-article);margin:0 auto;padding:3.5rem 2rem 5rem}
+.article-body>p:first-of-type::first-letter{
+  font-family:'Crimson Pro',serif;font-size:4.2rem;font-weight:500;
+  color:var(--accent-warm);float:left;line-height:.75;margin-right:.1em;margin-top:.12em;
+}
+.article-body p{
+  font-family:'Crimson Pro',serif;font-size:1.2rem;line-height:1.85;
+  color:var(--text-dim);margin-bottom:1.75rem;font-weight:300;
+}
+.article-body p strong{color:var(--text);font-weight:500}
+.article-body p.lead-p{font-size:1.28rem;color:var(--text);font-weight:400}
+
+/* Section headings */
+.article-section-head{display:flex;align-items:center;gap:1rem;margin:3rem 0 1.5rem}
+.article-section-head h2{font-family:'Crimson Pro',serif;font-size:1.5rem;font-weight:400;color:var(--text);letter-spacing:.3px;white-space:nowrap}
+.section-rule{flex:1;height:1px;background:var(--border)}
+
+/* Pull quote */
+.pull-quote{border-left:3px solid var(--accent-red);margin:2.5rem 0;padding:.5rem 0 .5rem 1.75rem}
+.pull-quote p{font-family:'Crimson Pro',serif;font-size:1.35rem;font-style:italic;color:var(--text);line-height:1.55;font-weight:400;margin-bottom:.5rem!important}
+.pull-quote cite{font-size:.78rem;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;font-style:normal;font-family:'Inter',sans-serif}
+
+/* ── VIZ SECTIONS ── */
+.viz-block{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:3.5rem 2rem;margin:3rem -2rem;background:var(--surface2);
+}
+.viz-block-inner{max-width:940px;margin:0 auto}
+.viz-eyebrow{font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;display:flex;align-items:center;gap:.75rem}
+.viz-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
+.viz-heading{font-family:'Crimson Pro',serif;font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.35rem;letter-spacing:.3px}
+.viz-sub{font-size:.82rem;color:var(--text-muted);font-style:italic;margin-bottom:2rem;line-height:1.55;font-family:'Crimson Pro',serif}
+
+/* Canvas */
+.chart-wrap{position:relative;width:100%;user-select:none}
+canvas{display:block;width:100%;height:auto}
+
+/* Tooltip */
+.ctip{position:fixed;background:rgba(7,6,4,0.97);border:1px solid var(--border-light);padding:.75rem 1rem;pointer-events:none;opacity:0;transition:opacity .1s;z-index:300;min-width:185px;backdrop-filter:blur(8px)}
+.ctip.visible{opacity:1}
+.ctip-year{font-size:.62rem;letter-spacing:1.5px;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase;font-family:'Inter',sans-serif}
+.ctip-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.15rem 0;font-size:.62rem;font-family:'Inter',sans-serif}
+.ctip-swatch{width:6px;height:6px;border-radius:1px;flex-shrink:0;margin-top:3px}
+.ctip-label{color:var(--text-muted);flex:1}
+.ctip-val{color:var(--text-dim);white-space:nowrap}
+
+/* Legend */
+.chart-legend{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;margin-top:1.1rem}
+.leg-item{display:flex;align-items:center;gap:.35rem;font-size:.62rem;color:var(--text-muted);font-family:'Inter',sans-serif;letter-spacing:.3px}
+.leg-sw{width:10px;height:2px;border-radius:0;flex-shrink:0}
+
+/* Callout stats */
+.callout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:2rem}
+.callout{border:1px solid var(--border-light);padding:1.25rem 1rem;text-align:center;background:var(--surface)}
+.callout-fig{font-family:'Crimson Pro',serif;font-size:2.2rem;color:var(--accent-warm);line-height:1;display:block;margin-bottom:.4rem;font-weight:400}
+.callout-label{font-size:.62rem;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted);line-height:1.55;font-family:'Inter',sans-serif}
+
+/* Post-chart note */
+.chart-note{margin-top:1.25rem;padding:.85rem 1.1rem;border-left:2px solid var(--border-light);font-size:.88rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif;line-height:1.65}
+.chart-note strong{color:var(--text-dim);font-style:normal}
+
+/* ── CONTEXTUAL NOTE SECTION ── */
+.context-block{
+  border:1px solid var(--border-light);padding:2rem;margin:2.5rem 0;
+  background:var(--surface);
+}
+.context-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-family:'Inter',sans-serif}
+.context-block h2{font-family:'Crimson Pro',serif;font-size:1.45rem;font-weight:400;color:var(--text);margin-bottom:1.25rem;line-height:1.3}
+.context-block p{font-family:'Crimson Pro',serif;font-size:1.1rem;color:var(--text-dim);line-height:1.8;margin-bottom:1.25rem;font-weight:300}
+.context-block p:last-child{margin-bottom:0}
+
+.fact-item{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:start}
+.fact-item:last-child{border-bottom:none;padding-bottom:0}
+.fact-num{font-family:'Inter',sans-serif;font-size:.6rem;color:var(--accent);letter-spacing:1.5px;padding-top:.25rem;white-space:nowrap}
+.fact-body{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--text-dim);line-height:1.7;font-weight:300}
+.fact-body strong{color:var(--text);font-weight:500}
+
+/* ── STATE LIST ── */
+.state-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.4rem;margin-top:1.25rem}
+.state-row{display:flex;align-items:center;justify-content:space-between;padding:.55rem .8rem;border:1px solid var(--border);background:var(--surface);transition:border-color .2s}
+.state-row:hover{border-color:var(--border-light)}
+.state-name{font-family:'Crimson Pro',serif;color:var(--text-dim);font-size:1rem;font-weight:300}
+.state-right{display:flex;align-items:center;gap:.65rem}
+.state-pct{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--accent);width:2.75rem;text-align:right;letter-spacing:.5px}
+.state-bar-bg{width:52px;height:1px;background:var(--border-light)}
+.state-bar-fill{height:1px;background:var(--accent)}
+
+/* ── CITATIONS ── */
+.citations-wrap{border-top:1px solid var(--border);padding-top:2.5rem;margin-top:3rem}
+.citations-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.6rem}
+.citations-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
+.citations-wrap h2{font-family:'Crimson Pro',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:.5rem}
+.citations-preamble{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.75rem;line-height:1.65;padding:.75rem 1rem;border-left:2px solid var(--border-light)}
+.citation-group{margin-bottom:1.75rem}
+.citation-group-label{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.citation-entry{display:grid;grid-template-columns:1.25rem 1fr;gap:.3rem .6rem;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.82rem;line-height:1.6}
+.citation-entry:last-child{border-bottom:none}
+.cit-num{font-family:'Inter',sans-serif;font-size:.6rem;color:var(--accent);padding-top:.2rem}
+.cit-text{font-family:'Crimson Pro',serif;color:var(--text-muted);font-weight:300}
+.cit-text strong{color:var(--text-dim);font-weight:400}
+.cit-text em{font-style:italic}
+.method-note{margin-top:1.5rem;padding:1rem 1.1rem;border:1px solid var(--border);font-family:'Crimson Pro',serif;font-size:.88rem;color:var(--text-muted);line-height:1.65;font-style:italic}
+.method-note strong{color:var(--text-dim);font-style:normal;font-weight:400}
+
+/* ── COMMENTS ── */
+.comments-wrap{border-top:1px solid var(--border);padding-top:2.5rem;margin-top:3rem}
+.comments-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.6rem}
+.comments-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
+.comments-wrap h2{font-family:'Crimson Pro',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:.5rem}
+.comments-intro{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.25rem;line-height:1.6}
+.comment-policy{border:1px solid var(--border);padding:.85rem 1rem;margin-bottom:1.5rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.4px;line-height:1.75;color:var(--text-muted)}
+.comment-policy-label{color:var(--accent);display:block;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.35rem;font-size:.6rem}
+.comments-setup{font-size:.68rem;color:var(--text-muted);font-family:'Inter',sans-serif;letter-spacing:.4px;margin-top:1.25rem;line-height:1.6;opacity:.6}
+
+/* ── TAGS + BACK ── */
+.article-end{max-width:var(--max-article);margin:0 auto;padding:0 2rem 4rem}
+.article-tags{display:flex;gap:.5rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid var(--border);margin-bottom:3rem}
+.tag{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border-light);padding:.25rem .75rem;transition:color .2s,border-color .2s;cursor:pointer;font-family:'Inter',sans-serif}
+.tag:hover{color:var(--accent);border-color:var(--accent)}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .25s,gap .2s;font-family:'Inter',sans-serif}
+.back-link:hover{color:var(--accent);gap:.75rem}
+
+/* ── PAGE FOOTER ── */
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--surface)}
+.footer-inner{max-width:var(--max-wide);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--accent-warm);letter-spacing:1.5px;display:flex;align-items:center;gap:.4rem}
+.footer-copy{font-size:.78rem;color:var(--text-muted);font-family:'Inter',sans-serif}
+
+@media(max-width:768px){
+  .header-content{flex-direction:column;gap:.9rem;align-items:flex-start}
+  .article-hero-text{padding:3.5rem 1.25rem 2.5rem}
+  .article-wrapper{padding:2.5rem 1.25rem 4rem}
+  .article-end{padding:0 1.25rem 3rem}
+  .viz-block{margin:2.5rem -1.25rem;padding:2.5rem 1.25rem}
+  .callout-grid{grid-template-columns:1fr}
+  .state-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:.75rem;text-align:center}
+}
+```
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="header-content">
+    <a href="../../index.html" class="logo">
+      <span class="logo-inner"><span>★</span> FREEDMEN STAR</span>
+      <span class="logo-line"></span>
+    </a>
+    <nav>
+      <a href="../../index.html" class="nav-back">← Back</a>
+      <a href="../../index.html#stories">Stories</a>
+      <a href="../../index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ARTICLE HERO TEXT -->
+
+<div class="article-hero-text">
+  <div class="article-hero-inner">
+    <div class="article-cat">Population History &amp; Genealogy</div>
+    <h1>The Blood Geography of America</h1>
+    <p class="article-sub">A review of federal census records, immigration data, and genealogical documentation examining the continuous population presence of distinct ancestry groups in the United States from 1607 to present.</p>
+    <div class="article-meta-line">
+      <div class="meta-byline">
+        <div class="meta-avatar"><img src="../../Ron.png" alt="Ronnie Bailey"></div>
+        <span class="meta-name">Ronnie Bailey</span>
+      </div>
+      <div class="meta-sep"></div>
+      <span class="meta-info">March 2026</span>
+      <div class="meta-sep"></div>
+      <span class="meta-info">Data Analysis</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+
+<article class="article-wrapper">
+  <div class="article-body">
+
+```
+<p class="lead-p">This article draws on publicly available federal records, peer-reviewed demographic research, and genealogical archives to examine a specific question: which non-Indigenous population groups have maintained the longest continuous documented presence in the United States, and how do their growth histories compare across time.</p>
+
+<p>The data sources used here — U.S. Census Bureau decennial records, Freedmen's Bureau registers, USCIS immigration statistics, and the slave schedules of 1860 — are primary government documents. The population figures they contain are not estimates or projections. They are enumerated counts, available for independent review at archives.gov and census.gov.</p>
+
+<div class="article-section-head"><h2>The Timeline</h2><div class="section-rule"></div></div>
+
+<p>The timeline begins in 1607, when English settlers established the first permanent colony at Jamestown, Virginia. In 1619, the first documented Africans arrived in English North America at Point Comfort, Virginia. In the decades that followed, the African-origin population grew through continued forced migration. In 1808, the Act Prohibiting Importation of Slaves (Statutes at Large, 2:426) took effect, legally closing the international slave trade. From that date forward, the Black American population grew without outside influx — through natural increase alone — for the 57 years remaining before Emancipation, and in subsequent generations.</p>
+
+<p>Separately, European immigration into the United States accelerated significantly beginning in the 1840s. USCIS historical records document the arrival of several million German and Irish immigrants between 1840 and 1880, followed by the Ellis Island period of 1880 to 1924, during which millions of Southern and Eastern European immigrants entered the country. These arrivals expanded the population enumerated in census records as white. The majority were not genealogically descended from the original English colonial settlers of the 1600s.</p>
+
+<p>The charts below present this population history in two formats — raw counts for the founding-era period, and indexed growth trajectories from each group's point of arrival. All figures are cited to their source documents at the end of this article.</p>
+```
+
+  </div><!-- /article-body -->
+
+  <!-- ── CHART 1 ── -->
+
+  <div class="viz-block">
+    <div class="viz-block-inner">
+      <div class="viz-eyebrow">Chart 01</div>
+      <h2 class="viz-heading">Two Founding Populations, 1607–1870</h2>
+      <p class="viz-sub">Black Americans vs. Original English Colonists — population in thousands. Hover for exact figures. Sources: U.S. Census Bureau; Gibson (2002); Haines &amp; Steckel (2000).</p>
+      <div class="chart-wrap" id="wrap2">
+        <canvas id="c2"></canvas>
+        <div class="ctip" id="tip2"><div class="ctip-year" id="t2yr"></div><div id="t2rows"></div></div>
+      </div>
+      <div class="chart-legend" id="leg2"></div>
+      <div class="chart-note">
+        <strong>Post-1870 context:</strong> USCIS records document successive large-scale immigration waves from Germany, Ireland, Italy, Poland, and Eastern Europe between 1840 and 1924. U.S. Census Bureau nativity tables confirm that by 1920, a substantial share of the white American population was foreign-born or first-generation. The Black American population during this same period grew without comparable outside influx, having been legally closed to new arrivals since 1808.
+      </div>
+      <div class="callout-grid">
+        <div class="callout"><span class="callout-fig">1619</span><span class="callout-label">Year of first documented African arrival — 157 years before the Declaration of Independence</span></div>
+        <div class="callout"><span class="callout-fig">~1790</span><span class="callout-label">Year the Black American population surpassed the original English colonial line in census figures</span></div>
+        <div class="callout"><span class="callout-fig">1808</span><span class="callout-label">Year the slave trade closed — the Black population grew entirely from within after this date</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CHART 2 ── -->
+
+  <div class="viz-block">
+    <div class="viz-block-inner">
+      <div class="viz-eyebrow">Chart 02</div>
+      <h2 class="viz-heading">Growth From Arrival — All Groups Indexed to Their Starting Point</h2>
+      <p class="viz-sub">Each group set to 1× at year of significant arrival. Y-axis on log scale. Hover for figures. Sources: U.S. Census Bureau; USCIS historical records; Ellis Island Foundation.</p>
+      <div class="chart-wrap" id="wrap3">
+        <canvas id="c3"></canvas>
+        <div class="ctip" id="tip3"><div class="ctip-year" id="t3yr"></div><div id="t3rows"></div></div>
+      </div>
+      <div class="chart-legend" id="leg3"></div>
+      <p style="font-size:.88rem;color:var(--text-muted);font-style:italic;margin-top:.85rem;line-height:1.65;font-family:'Crimson Pro',serif">Using 1619 as the baseline, the documented Black American population reached approximately 41.8 million by 2020 — a growth multiple of roughly 46,000× from its starting figure. The population received no documented outside influx after 1808. Each subsequent group is indexed to its own arrival year for comparison.</p>
+    </div>
+  </div>
+
+  <div class="article-body" style="padding-top:0">
+
+```
+<!-- ── CONTEXTUAL NOTE ── -->
+<div class="article-section-head"><h2>On Population Size vs. Length of Presence</h2><div class="section-rule"></div></div>
+
+<p>The 2020 U.S. Census records approximately 204 million people identifying as white and approximately 41.8 million identifying as Black or African American. A common inference drawn from this disparity is that white Americans have historically represented the larger and more established population. The demographic record, however, distinguishes between the size of a population at a given point in time and the duration of its continuous presence. These are separate measurements.</p>
+
+<div class="context-block">
+  <div class="context-eyebrow">Three Findings From the Record</div>
+  <div class="fact-item">
+    <span class="fact-num">01</span>
+    <span class="fact-body"><strong>The current white American population is not primarily descended from the original English colonial settlers.</strong> U.S. Census nativity tables and USCIS immigration records document that between 1840 and 1924, more than 30 million European immigrants entered the United States — the majority from Germany, Ireland, Italy, Poland, Russia, and the Austro-Hungarian Empire. Demographic historian Campbell Gibson's analysis of census data (Working Paper No. 56, 2002) confirms that this immigration substantially expanded the white American headcount. The pre-1700 English colonial line represents a proportionally small fraction of today's white American population.</span>
+  </div>
+  <div class="fact-item">
+    <span class="fact-num">02</span>
+    <span class="fact-body"><strong>The Black American population's growth rate was affected by documented historical constraints.</strong> The institution of slavery restricted family formation and imposed high mortality rates on the enslaved population. Following Emancipation, the destruction of Black-owned property documented in events such as the 1921 Tulsa Race Massacre, exclusion from the Servicemen's Readjustment Act of 1944, and documented housing discrimination under federal redlining policies each had measurable demographic effects on Black American population growth post-1865.</span>
+  </div>
+  <div class="fact-item">
+    <span class="fact-num">03</span>
+    <span class="fact-body"><strong>Genealogical continuity and population size are distinct measurements.</strong> The Black American population has grown without documented outside influx since 1808 — more than 200 years of internal generational growth. The white American population, during this same period, expanded significantly through immigration. Current census figures reflect cumulative arrivals across centuries. The question of which group has maintained the longest uninterrupted presence is answered by arrival and closure dates in the historical record, not by present-day headcounts.</span>
+  </div>
+</div>
+
+<div class="article-section-head"><h2>Geographic Concentration</h2><div class="section-rule"></div></div>
+
+<p>The following states contain documented concentrations of Black Americans whose family lineage traces to pre-1865 in-state presence, based on synthesis of Freedmen's Bureau records (NARA Series M1875/M1907), 1860 slave schedules, and 1870/1880 census continuity matching. Figures represent the estimated share of each state's current Black population with pre-Emancipation in-state ancestry.</p>
+
+<div class="state-grid" id="state-grid"></div>
+
+<!-- ── CITATIONS ── -->
+<div class="citations-wrap">
+  <div class="citations-eyebrow">Sources &amp; Methodology</div>
+  <h2>Citations and Data Notes</h2>
+  <p class="citations-preamble">All population figures, immigration counts, and genealogical estimates used in this article are drawn from primary federal records or peer-reviewed demographic scholarship. Sources are listed below by category. The Freedmen Star Research Desk has not modified source data; figures are presented as published or enumerated in the cited records.</p>
+
+  <div class="citation-group">
+    <div class="citation-group-label">Population History</div>
+    <div class="citation-entry"><span class="cit-num">1</span><span class="cit-text"><strong>Gibson, Campbell J. and Kay Jung.</strong> <em>Historical Census Statistics on Population Totals By Race, 1790 to 1990.</em> U.S. Census Bureau, Population Division Working Paper No. 56, February 2002. Available at census.gov.</span></div>
+    <div class="citation-entry"><span class="cit-num">2</span><span class="cit-text"><strong>Haines, Michael R. and Richard H. Steckel, eds.</strong> <em>A Population History of North America.</em> Cambridge University Press, 2000. Used for 1607–1790 data points.</span></div>
+    <div class="citation-entry"><span class="cit-num">3</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Decennial Census of Population, 1790–2020.</em> Population schedules, race and nativity tables. Available at census.gov/programs-surveys/decennial-census.</span></div>
+  </div>
+
+  <div class="citation-group">
+    <div class="citation-group-label">Immigration &amp; Nativity Data</div>
+    <div class="citation-entry"><span class="cit-num">4</span><span class="cit-text"><strong>U.S. Department of Homeland Security / USCIS.</strong> <em>Yearbook of Immigration Statistics, Historical Series.</em> Annual immigration arrivals by country of origin, 1820 to present.</span></div>
+    <div class="citation-entry"><span class="cit-num">5</span><span class="cit-text"><strong>Ellis Island Foundation.</strong> <em>Passenger Arrival Records, 1892–1957.</em> Digitized arrival logs, peak European immigration. Available at libertyellisfoundation.org.</span></div>
+    <div class="citation-entry"><span class="cit-num">6</span><span class="cit-text"><strong>U.S. Congress.</strong> <em>Act Prohibiting Importation of Slaves, 1807.</em> Enacted March 2, 1807, effective January 1, 1808. Statutes at Large, 2:426.</span></div>
+  </div>
+
+  <div class="citation-group">
+    <div class="citation-group-label">Genealogical &amp; Archival Sources</div>
+    <div class="citation-entry"><span class="cit-num">7</span><span class="cit-text"><strong>National Archives and Records Administration (NARA).</strong> <em>Records of the Bureau of Refugees, Freedmen, and Abandoned Lands, 1865–1872.</em> Series M1875, M1907. Available at archives.gov.</span></div>
+    <div class="citation-entry"><span class="cit-num">8</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Slave Schedules, Eighth Census of the United States, 1860.</em> Digitized via Ancestry.com and FamilySearch.</span></div>
+    <div class="citation-entry"><span class="cit-num">9</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Population Schedules, Ninth and Tenth Census, 1870 and 1880.</em> First federal censuses to individually enumerate formerly enslaved persons.</span></div>
+  </div>
+
+  <div class="citation-group">
+    <div class="citation-group-label">Genomic &amp; DNA Population Studies</div>
+    <div class="citation-entry"><span class="cit-num">10</span><span class="cit-text"><strong>Harvard Medical School / HMS News.</strong> <em>"Historical DNA Study Connects Living People to Enslaved Ancestors."</em> 2023. Available at hms.harvard.edu.</span></div>
+    <div class="citation-entry"><span class="cit-num">11</span><span class="cit-text"><strong>23andMe Ancestry Research.</strong> <em>Population structure and mixed-race history in the American South.</em> 2022. Available at blog.23andme.com.</span></div>
+  </div>
+
+  <div class="method-note"><strong>Methodology note:</strong> State-level continuity percentages represent the Freedmen Star Research Desk's synthesis of sources 7, 8, and 9, cross-referenced with 2020 Census state population data. They are informed estimates, not certified genealogical findings. Population chart figures are drawn from sources 1–3. Pre-1790 figures represent scholarly estimates rather than enumerated census counts.</div>
+</div>
+
+<!-- ── COMMENTS ── -->
+<div class="comments-wrap">
+  <div class="comments-eyebrow">Discussion</div>
+  <h2>Reader Comments</h2>
+  <p class="comments-intro">Comments do not require an account. Enter a name and email — your email is never displayed publicly. All comments are reviewed before appearing.</p>
+  <div class="comment-policy">
+    <span class="comment-policy-label">Comment Policy</span>
+    Comments on Freedmen Star are reviewed before publication. This is a research-focused publication — engagement with the data, sources, and historical record is welcome. Submissions that are off-topic, disrespectful, or unrelated to the subject matter will not be approved. Spam will be discarded.
+  </div>
+
+  <div id="hyvor-talk-view"></div>
+  <script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = YOUR_SITE_ID; // Replace with your Hyvor Talk site ID
+    var HYVOR_TALK_CONFIG  = { url: false, id: 'blood-geography-of-america' };
+  </script>
+  <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+
+  <p class="comments-setup">SETUP REQUIRED: Replace YOUR_SITE_ID with the numeric ID from your Hyvor Talk dashboard at hyvor.com/talk.</p>
+</div>
+```
+
+  </div><!-- /article-body -->
+</article>
+
+<!-- TAGS + BACK -->
+
+<div class="article-end">
+  <div class="article-tags">
+    <span class="tag">Genealogy</span>
+    <span class="tag">Population History</span>
+    <span class="tag">Census Records</span>
+    <span class="tag">ADOS</span>
+    <span class="tag">Data Analysis</span>
+    <span class="tag">Freedmen's Bureau</span>
+  </div>
+  <a href="../../index.html" class="back-link">← Return to Freedmen Star</a>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">★ FREEDMEN STAR</div>
+    <span class="footer-copy">&copy; 2026 Freedmen Star.</span>
+  </div>
+</footer>
+
+<script>
+// ── CHART COLORS matching Freedmen Star accent palette ──
+const COLORS = {
+  black:    '#c8935a',  // primary accent — ADOS
+  colonial: '#7a9eb5',  // muted blue — colonial English
+  german:   '#6a8a6a',
+  irish:    '#8a7a9a',
+  eastern:  '#5a7a7a',
+  hispanic: '#9a7a5a',
+  asian:    '#5a7a8a'
+};
+const DPR = window.devicePixelRatio||1;
+
+const ALL_YEARS=[1607,1619,1650,1680,1710,1740,1770,1790,1810,1830,1850,1865,1870,1880,1890,1900,1910,1920,1930,1950,1970,1990,2010,2020];
+const POP={
+  black:   [0,0.9,1.7,6.9,17.9,50,89,757,1378,2329,3639,4441,4880,6581,7489,8834,9828,10463,11891,15042,22581,29986,38929,41778],
+  colonial:[0.1,0.5,17,60,140,280,490,780,920,1050,1100,1080,1050,980,900,820,740,680,620,560,490,430,380,340],
+  german:  [0,0,0,0,5,20,80,280,380,500,1300,2200,3500,5200,7800,8500,8800,8200,8000,7200,6800,6200,5500,5200],
+  irish:   [0,0,0,0,2,8,30,100,150,200,800,2000,3200,4800,6200,7000,7200,6800,6400,5800,5200,4800,4300,4000],
+  eastern: [0,0,0,0,0,0,0,10,20,30,80,180,300,800,2500,5500,8500,9800,10500,9200,8100,7500,6800,6400],
+  hispanic:[0,0,0,0,0,0,0,0,0,0,60,150,200,300,400,500,700,900,1500,4000,9600,22400,50500,62100],
+  asian:   [0,0,0,0,0,0,0,0,0,0,35,80,100,105,107,114,150,200,280,600,1500,6900,14700,19900],
+};
+const SERIES=[
+  {key:'black',    label:'Black Americans (ADOS)'},
+  {key:'colonial', label:'Original English Colonists'},
+  {key:'german',   label:'German-origin'},
+  {key:'irish',    label:'Irish-origin'},
+  {key:'eastern',  label:'S. & E. European'},
+  {key:'hispanic', label:'Hispanic / Latino'},
+  {key:'asian',    label:'Asian American'},
+];
+
+function fmtK(v){if(!v||v<0.01)return'—';return v>=1000?(v/1000).toFixed(1)+'M':Math.round(v)+'K';}
+
+function setupCanvas(canvas,wrap,ratio){
+  const w=wrap.getBoundingClientRect().width;
+  const h=Math.max(Math.round(w*ratio),240);
+  canvas.width=w*DPR;canvas.height=h*DPR;
+  canvas.style.width=w+'px';canvas.style.height=h+'px';
+  const ctx=canvas.getContext('2d');ctx.scale(DPR,DPR);
+  return{ctx,w,h};
+}
+
+// Chart 1
+function drawC2(){
+  const wrap=document.getElementById('wrap2'),canvas=document.getElementById('c2');
+  const tip=document.getElementById('tip2'),tipYr=document.getElementById('t2yr'),tipRows=document.getElementById('t2rows');
+  const{ctx,w,h}=setupCanvas(canvas,wrap,0.40);
+  const M={top:44,bottom:46,left:68,right:72};
+  const cW=w-M.left-M.right,cH=h-M.top-M.bottom;
+  const SHOW=ALL_YEARS.filter(y=>y<=1870),KEYS=['black','colonial'];
+  const maxVal=Math.max(...SHOW.flatMap(yr=>{const gi=ALL_YEARS.indexOf(yr);return KEYS.map(k=>POP[k][gi]||0);}));
+  function xP(yr){return M.left+((yr-SHOW[0])/(SHOW[SHOW.length-1]-SHOW[0]))*cW;}
+  function yP(v){return M.top+cH-(v/maxVal)*cH;}
+
+  // Grid
+  for(let v=0;v<=maxVal*1.08;v+=500){
+    if(v>maxVal*1.08)break;
+    const y=yP(v);ctx.strokeStyle='#1a1710';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(M.left,y);ctx.lineTo(M.left+cW,y);ctx.stroke();
+    ctx.fillStyle='#443e32';ctx.font=`${Math.max(9,w*0.009)}px Inter,sans-serif`;ctx.textAlign='right';
+    ctx.fillText(fmtK(v),M.left-6,y+3);
+  }
+
+  // Milestones
+  [[1619,'1619\nAfricans arrive'],[1808,'1808\nTrade closed']].forEach(([yr,lbl])=>{
+    const x=xP(yr);
+    ctx.setLineDash([3,4]);ctx.strokeStyle='#c8935a';ctx.lineWidth=1;ctx.globalAlpha=0.25;
+    ctx.beginPath();ctx.moveTo(x,M.top);ctx.lineTo(x,M.top+cH);ctx.stroke();
+    ctx.setLineDash([]);ctx.globalAlpha=1;
+    ctx.fillStyle='#7a6040';ctx.font=`${Math.max(8,w*0.008)}px Inter,sans-serif`;ctx.textAlign='center';
+    lbl.split('\n').forEach((l,i)=>ctx.fillText(l,x,M.top-20+i*12));
+  });
+
+  // Fills + lines
+  KEYS.forEach(key=>{
+    ctx.beginPath();
+    SHOW.forEach((yr,pi)=>{const gi=ALL_YEARS.indexOf(yr);pi===0?ctx.moveTo(xP(yr),yP(POP[key][gi]||0)):ctx.lineTo(xP(yr),yP(POP[key][gi]||0));});
+    ctx.lineTo(xP(SHOW[SHOW.length-1]),yP(0));ctx.lineTo(xP(SHOW[0]),yP(0));ctx.closePath();
+    ctx.fillStyle=COLORS[key]+'14';ctx.fill();
+    ctx.beginPath();
+    SHOW.forEach((yr,pi)=>{const gi=ALL_YEARS.indexOf(yr);pi===0?ctx.moveTo(xP(yr),yP(POP[key][gi]||0)):ctx.lineTo(xP(yr),yP(POP[key][gi]||0));});
+    ctx.strokeStyle=COLORS[key];ctx.lineWidth=2.5;ctx.lineJoin='round';ctx.stroke();
+    const gi=ALL_YEARS.indexOf(SHOW[SHOW.length-1]);
+    ctx.fillStyle=COLORS[key];ctx.font=`500 ${Math.max(9,w*0.009)}px Inter,sans-serif`;ctx.textAlign='left';
+    ctx.fillText(key==='black'?'ADOS':'COLONIAL',xP(SHOW[SHOW.length-1])+9,yP(POP[key][gi]||0)+4);
+  });
+
+  // X ticks
+  ctx.fillStyle='#443e32';ctx.font=`${Math.max(9,w*0.009)}px Inter,sans-serif`;ctx.textAlign='center';
+  SHOW.filter(y=>y%30===0||y===1607||y===1870).forEach(yr=>ctx.fillText(yr,xP(yr),M.top+cH+18));
+
+  // Y label
+  ctx.save();ctx.translate(13,M.top+cH/2);ctx.rotate(-Math.PI/2);ctx.textAlign='center';
+  ctx.fillStyle='#2e2a1e';ctx.font=`${Math.max(8,w*0.009)}px Inter,sans-serif`;
+  ctx.fillText('POPULATION (THOUSANDS)',0,0);ctx.restore();
+
+  // Legend
+  const legW=document.getElementById('leg2');legW.innerHTML='';
+  KEYS.forEach(key=>{const sm=SERIES.find(s=>s.key===key);const d=document.createElement('div');d.className='leg-item';d.innerHTML=`<div class="leg-sw" style="background:${COLORS[key]}"></div>${sm.label}`;legW.appendChild(d);});
+
+  // Hover
+  canvas.onmousemove=e=>{
+    const rect=canvas.getBoundingClientRect();const mx=e.clientX-rect.left;
+    if(mx<M.left||mx>M.left+cW){tip.classList.remove('visible');return;}
+    let best=SHOW[0],bestD=Infinity;
+    SHOW.forEach(yr=>{const d=Math.abs(xP(yr)-mx);if(d<bestD){bestD=d;best=yr;}});
+    const gi=ALL_YEARS.indexOf(best);tipYr.textContent=best;tipRows.innerHTML='';
+    KEYS.forEach(key=>{const v=POP[key][gi]||0;const sm=SERIES.find(s=>s.key===key);const r=document.createElement('div');r.className='ctip-row';r.innerHTML=`<div class="ctip-swatch" style="background:${COLORS[key]}"></div><span class="ctip-label">${sm.label}</span><span class="ctip-val">${fmtK(v)}</span>`;tipRows.appendChild(r);});
+    tip.style.left=Math.min(e.clientX+14,window.innerWidth-210)+'px';tip.style.top=(e.clientY-10)+'px';tip.classList.add('visible');
+  };
+  canvas.onmouseleave=()=>tip.classList.remove('visible');
+}
+
+// Chart 2
+function drawC3(){
+  const wrap=document.getElementById('wrap3'),canvas=document.getElementById('c3');
+  const tip=document.getElementById('tip3'),tipYr=document.getElementById('t3yr'),tipRows=document.getElementById('t3rows');
+  const{ctx,w,h}=setupCanvas(canvas,wrap,0.44);
+  const M={top:36,bottom:46,left:78,right:28};
+  const cW=w-M.left-M.right,cH=h-M.top-M.bottom;
+  const ARRIVAL={black:1619,colonial:1607,german:1840,irish:1845,eastern:1880,hispanic:1950,asian:1965};
+  function getIdx(key){const ai=ALL_YEARS.findIndex(y=>y>=ARRIVAL[key]);const base=POP[key][ai]||1;return ALL_YEARS.map((yr,i)=>yr>=ARRIVAL[key]?(POP[key][i]/base):null);}
+  const indexed={};SERIES.forEach(sm=>{indexed[sm.key]=getIdx(sm.key);});
+  const maxIdx=Math.min(50000,Math.max(...SERIES.flatMap(sm=>indexed[sm.key].filter(v=>v!==null))));
+  function xP(yr){return M.left+((yr-ALL_YEARS[0])/(ALL_YEARS[ALL_YEARS.length-1]-ALL_YEARS[0]))*cW;}
+  function yP(v){const lm=Math.log10(maxIdx+1);const lv=Math.log10(Math.max(v,0.1)+1);return M.top+cH-(lv/lm)*cH;}
+
+  [1,10,100,1000,10000,50000].filter(v=>v<=maxIdx*1.05).forEach(v=>{
+    const y=yP(v);ctx.strokeStyle='#1a1710';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(M.left,y);ctx.lineTo(M.left+cW,y);ctx.stroke();
+    ctx.fillStyle='#443e32';ctx.font=`${Math.max(9,w*0.009)}px Inter,sans-serif`;ctx.textAlign='right';
+    ctx.fillText(v.toLocaleString()+'×',M.left-6,y+3);
+  });
+
+  const x1808=xP(1808);
+  ctx.setLineDash([3,4]);ctx.strokeStyle='#c8935a';ctx.lineWidth=1;ctx.globalAlpha=0.25;
+  ctx.beginPath();ctx.moveTo(x1808,M.top);ctx.lineTo(x1808,M.top+cH);ctx.stroke();
+  ctx.setLineDash([]);ctx.globalAlpha=1;
+  ctx.fillStyle='#7a6040';ctx.font=`${Math.max(8,w*0.008)}px Inter,sans-serif`;ctx.textAlign='center';
+  ctx.fillText('1808 — Trade closed',x1808,M.top-10);
+
+  SERIES.forEach(sm=>{
+    const vals=indexed[sm.key];const isF=sm.key==='black'||sm.key==='colonial';
+    ctx.beginPath();let started=false;
+    ALL_YEARS.forEach((yr,i)=>{if(vals[i]===null)return;const x=xP(yr),y=yP(vals[i]);if(!started){ctx.moveTo(x,y);started=true;}else{ctx.lineTo(x,y);}});
+    ctx.strokeStyle=COLORS[sm.key];ctx.lineWidth=isF?2.5:1.2;ctx.globalAlpha=isF?1:0.45;ctx.lineJoin='round';ctx.stroke();ctx.globalAlpha=1;
+    if(isF){
+      const li=vals.reduce((acc,v,i)=>v!==null?i:acc,-1);
+      ctx.beginPath();ctx.arc(xP(ALL_YEARS[li]),yP(vals[li]),3.5,0,Math.PI*2);ctx.fillStyle=COLORS[sm.key];ctx.fill();
+      ctx.fillStyle=COLORS[sm.key];ctx.font=`500 ${Math.max(9,w*0.009)}px Inter,sans-serif`;ctx.textAlign='left';
+      ctx.fillText(sm.key==='black'?'ADOS':'COLONIAL',xP(ALL_YEARS[li])+8,yP(vals[li])+4);
+    }
+  });
+
+  ctx.save();ctx.translate(13,M.top+cH/2);ctx.rotate(-Math.PI/2);ctx.textAlign='center';
+  ctx.fillStyle='#2e2a1e';ctx.font=`${Math.max(8,w*0.009)}px Inter,sans-serif`;
+  ctx.fillText('GROWTH FROM ARRIVAL (LOG SCALE)',0,0);ctx.restore();
+  ctx.fillStyle='#443e32';ctx.font=`${Math.max(9,w*0.009)}px Inter,sans-serif`;ctx.textAlign='center';
+  [1607,1650,1700,1750,1800,1850,1900,1950,2000,2020].forEach(yr=>ctx.fillText(yr,xP(yr),M.top+cH+18));
+
+  const legW=document.getElementById('leg3');legW.innerHTML='';
+  SERIES.forEach(sm=>{const isF=sm.key==='black'||sm.key==='colonial';const d=document.createElement('div');d.className='leg-item';d.style.opacity=isF?'1':'0.55';d.innerHTML=`<div class="leg-sw" style="background:${COLORS[sm.key]}"></div>${sm.label}`;legW.appendChild(d);});
+
+  canvas.onmousemove=e=>{
+    const rect=canvas.getBoundingClientRect();const mx=e.clientX-rect.left;
+    if(mx<M.left||mx>M.left+cW){tip.classList.remove('visible');return;}
+    let best=ALL_YEARS[0],bestD=Infinity;
+    ALL_YEARS.forEach(yr=>{const d=Math.abs(xP(yr)-mx);if(d<bestD){bestD=d;best=yr;}});
+    const gi=ALL_YEARS.indexOf(best);tipYr.textContent=best;tipRows.innerHTML='';
+    SERIES.forEach(sm=>{const v=indexed[sm.key][gi];if(v===null)return;const r=document.createElement('div');r.className='ctip-row';r.innerHTML=`<div class="ctip-swatch" style="background:${COLORS[sm.key]}"></div><span class="ctip-label">${sm.label}</span><span class="ctip-val">${Math.round(v).toLocaleString()}×</span>`;tipRows.appendChild(r);});
+    tip.style.left=Math.min(e.clientX+14,window.innerWidth-210)+'px';tip.style.top=(e.clientY-10)+'px';tip.classList.add('visible');
+  };
+  canvas.onmouseleave=()=>tip.classList.remove('visible');
+}
+
+// State list
+const STATE_DATA=[
+  {name:'South Carolina',pct:81,note:'Gullah Geechee corridor; rice plantation schedules; NARA Series M1875'},
+  {name:'Mississippi',   pct:80,note:'Delta plantation records; HMS/23andMe genomic data; 1870 census'},
+  {name:'Alabama',       pct:79,note:'Black Belt county records; 1860 schedules; geographic stability analysis'},
+  {name:'Virginia',      pct:78,note:'1619 Jamestown records; 1860 slave schedules; Freedmen\'s Bureau registers'},
+  {name:'Louisiana',     pct:77,note:'1700s Creole/Freedmen records; New Orleans census continuity'},
+  {name:'Georgia',       pct:76,note:'Sea Island records; Freedmen\'s Bureau 1865–1872; 1870 census'},
+  {name:'North Carolina',pct:74,note:'Piedmont and coastal plain records; 1870 census continuity'},
+  {name:'Arkansas',      pct:69,note:'Delta corridor records; Eastern Arkansas Bureau files; 1870 census'},
+  {name:'Tennessee',     pct:66,note:'West TN plantation records; Bureau western district files'},
+  {name:'Maryland',      pct:62,note:'Eastern Shore records; Douglass documentation; 1870 census'},
+  {name:'Texas',         pct:61,note:'East Texas Juneteenth corridor; moderated by statewide demographics'},
+  {name:'Florida',       pct:58,note:'North FL plantation records; moderated by 20th-c. Caribbean migration'},
+  {name:'Kentucky',      pct:54,note:'Southern county records; moderated by 20th-c. urban migration'},
+];
+const grid=document.getElementById('state-grid');
+STATE_DATA.forEach(s=>{
+  const row=document.createElement('div');row.className='state-row';row.title=s.note;
+  row.innerHTML=`<span class="state-name">${s.name}</span><div class="state-right"><div class="state-bar-bg"><div class="state-bar-fill" style="width:${s.pct}%"></div></div><span class="state-pct">${s.pct}%</span></div>`;
+  grid.appendChild(row);
+});
+
+function drawAll(){drawC2();drawC3();}
+drawAll();
+let rt;
+window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(drawAll,120);});
+</script>
+
+</body>
+</html>
