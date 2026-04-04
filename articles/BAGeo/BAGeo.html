@@ -184,10 +184,8 @@
     .book-author{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--text-muted);margin-bottom:.7rem;line-height:1.5}
     .book-desc{font-family:'Crimson Pro',serif;font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-bottom:.5rem;font-weight:300}
     .book-rel{font-family:'Crimson Pro',serif;font-size:.85rem;color:var(--text-muted);font-style:italic;line-height:1.6;border-left:2px solid var(--border-light);padding-left:.75rem}
-    .book-cover-placeholder{width:100px;min-height:140px;background:var(--surface2);border:1px solid var(--border-light);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:.5rem;text-align:center;gap:.4rem;transition:border-color .2s}
-    .book-cover-placeholder:hover{border-color:var(--accent)}
-    .book-cover-placeholder span{font-family:'Crimson Pro',serif;font-size:.8rem;color:var(--text-dim);line-height:1.3}
-    .book-cover-auth{font-family:'Inter',sans-serif!important;font-size:.58rem!important;color:var(--accent)!important;letter-spacing:.5px;text-transform:uppercase}
+    .book-cover{width:100px;height:auto;display:block;filter:brightness(.88) contrast(1.05);transition:filter .2s}
+    .book-cover-link:hover .book-cover{filter:brightness(.95) contrast(1.08)}
     /* ── INSTITUTIONAL ── */
     .inst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.5rem;margin:1.5rem 0}
     .inst-card{display:block;border:1px solid var(--border);padding:1rem 1.1rem;text-decoration:none;background:var(--surface);transition:border-color .2s}
@@ -345,13 +343,11 @@
 
   <!-- IMAGE 1: 1861 Coast Survey Map -->
   <figure class="article-photo" data-index="0">
-    <a href="https://www.loc.gov/item/99447026/" target="_blank" rel="noopener">
-      <img
-        src="https://tile.loc.gov/storage-services/service/gmd/gmd386m/g3861m/g3861em/cw0013200/cw0013200.jpg"
-        alt="Map showing the distribution of the slave population of the southern states, U.S. Coast Survey, 1861"
-        data-caption="Map Showing the Distribution of the Slave Population of the Southern States of the United States. Compiled from the Census of 1860. Edwin Hergesheimer, U.S. Coast Survey, 1861. Verified by the Superintendent of the Census and used by President Abraham Lincoln during the Civil War. The shading shows percentage of enslaved population per county. The darkest concentrations -- the Mississippi Delta, coastal South Carolina, and the Virginia Tidewater -- correspond precisely to the states with the highest documented Black American population continuity in this article's analysis. Library of Congress Geography and Map Division. No known restrictions on publication."
-      >
-    </a>
+    <img
+      src="https://tile.loc.gov/image-services/iiif/service:gmd:gmd386:g3861:g3861e:cw0013200/full/pct:25/0/default.jpg"
+      alt="Map showing the distribution of the slave population of the southern states, U.S. Coast Survey, 1861"
+      data-caption="Map Showing the Distribution of the Slave Population of the Southern States of the United States. Compiled from the Census of 1860. Edwin Hergesheimer, U.S. Coast Survey, 1861. Verified by the Superintendent of the Census and used by President Abraham Lincoln during the Civil War. The shading shows percentage of enslaved population per county. The darkest concentrations -- the Mississippi Delta, coastal South Carolina, and the Virginia Tidewater -- correspond precisely to the states with the highest documented Black American population continuity in this article's analysis. Library of Congress Geography and Map Division. No known restrictions on publication."
+    >
     <figcaption>
       <strong>Distribution of the Slave Population of the Southern States</strong> -- U.S. Coast Survey, compiled from the 1860 Census. Verified by the Superintendent of the Census and used by President Lincoln. The geographic density matches the 13 states documented in this article.
       <span style="display:block;margin-top:.4rem;font-size:.78rem">Library of Congress Geography and Map Division -- <a href="https://www.loc.gov/item/99447026/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">loc.gov/item/99447026</a> -- No known restrictions on publication</span>
@@ -362,13 +358,11 @@
 
   <!-- IMAGE 2: Five Generations -->
   <figure class="article-photo" data-index="1">
-    <a href="https://www.loc.gov/item/98504449/" target="_blank" rel="noopener">
-      <img
-        src="https://tile.loc.gov/storage-services/service/pnp/ppmsc/00000/00057v.jpg"
-        alt="Five generations on Smith's Plantation, Beaufort, South Carolina, Timothy H. O'Sullivan, 1862"
-        data-caption="Five Generations on Smith's Plantation, Beaufort, South Carolina. Photographed by Timothy H. O'Sullivan, 1862. Five generations of one enslaved family, alive simultaneously, documented at a single location in Beaufort County. The oldest person in this photograph was born approximately in the 1780s. The youngest was born in the 1860s. That span represents roughly 80 years of continuous family presence in one county, in one state, before Emancipation. South Carolina records the highest in-state Black American population continuity of any state in this article's analysis, at an estimated 81 percent. Library of Congress Prints and Photographs Division, Civil War Photographs Collection. No known restrictions on publication. LC-DIG-ppmsc-00057."
-      >
-    </a>
+    <img
+      src="https://tile.loc.gov/image-services/iiif/service:pnp:ppmsc:00000:00057/full/pct:25/0/default.jpg"
+      alt="Five generations on Smith's Plantation, Beaufort, South Carolina, Timothy H. O'Sullivan, 1862"
+      data-caption="Five Generations on Smith's Plantation, Beaufort, South Carolina. Photographed by Timothy H. O'Sullivan, 1862. Five generations of one enslaved family, alive simultaneously, documented at a single location in Beaufort County. The oldest person in this photograph was born approximately in the 1780s. The youngest was born in the 1860s. That span represents roughly 80 years of continuous family presence in one county, in one state, before Emancipation. South Carolina records the highest in-state Black American population continuity of any state in this article's analysis, at an estimated 81 percent. Library of Congress Prints and Photographs Division, Civil War Photographs Collection. No known restrictions on publication. LC-DIG-ppmsc-00057."
+    >
     <figcaption>
       <strong>Five Generations on Smith's Plantation</strong> -- Timothy H. O'Sullivan, Beaufort, South Carolina, 1862. Five generations of one family, alive at the same time, in one location.
       <span style="display:block;margin-top:.4rem;font-size:.78rem">Library of Congress Prints and Photographs Division -- <a href="https://www.loc.gov/item/98504449/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">loc.gov/item/98504449</a> -- No known restrictions on publication</span>
@@ -380,22 +374,18 @@
   <!-- GRID: Gordon + First Vote -->
   <div class="photo-grid photo-grid-2">
     <figure data-index="2">
-      <a href="https://www.loc.gov/item/2018648117/" target="_blank" rel="noopener">
-        <img
-          src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/54300/54375v.jpg"
-          alt="Gordon, escaped enslaved man, showing scarred back, Baton Rouge Louisiana, April 2, 1863"
-          data-caption="Gordon, also known as 'Whipped Peter.' Photographed by McPherson and Oliver, Baton Rouge, Louisiana, April 2, 1863. The verso of this photograph carries a facsimile of the original medical report to Colonel L.B. Marsh from J.W. Mercer, assistant surgeon with the 47th Massachusetts Volunteers. The photograph was published in Harper's Weekly on July 4, 1863. Gordon subsequently enlisted in the Union Army. Library of Congress, Liljenquist Family Collection of Civil War Photographs. No known restrictions on publication. LC-DIG-ppmsca-54375."
-        >
-      </a>
+      <img
+        src="https://tile.loc.gov/image-services/iiif/service:pnp:ppmsca:54300:54375/full/pct:25/0/default.jpg"
+        alt="Gordon, escaped enslaved man, showing scarred back, Baton Rouge Louisiana, April 2, 1863"
+        data-caption="Gordon, also known as 'Whipped Peter.' Photographed by McPherson and Oliver, Baton Rouge, Louisiana, April 2, 1863. The verso of this photograph carries a facsimile of the original medical report to Colonel L.B. Marsh from J.W. Mercer, assistant surgeon with the 47th Massachusetts Volunteers. The photograph was published in Harper's Weekly on July 4, 1863. Gordon subsequently enlisted in the Union Army. Library of Congress, Liljenquist Family Collection of Civil War Photographs. No known restrictions on publication. LC-DIG-ppmsca-54375."
+      >
       <figcaption>Gordon (Whipped Peter) -- McPherson and Oliver, Baton Rouge, Louisiana, April 2, 1863. The verso carries the original military medical report. Published Harper's Weekly, July 4, 1863. Source: <a href="https://www.loc.gov/item/2018648117/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">loc.gov/item/2018648117</a></figcaption>
     </figure>
     <figure data-index="3">
-      <a href="https://www.loc.gov/item/2011648984/" target="_blank" rel="noopener">
-        <img
-          src="https://tile.loc.gov/storage-services/service/pnp/ppmsca/31500/31598v.jpg"
-          data-caption="The First Vote. Drawn by Alfred R. Waud. Harper's Weekly, November 16, 1867. The illustration shows a queue of Black American men -- a laborer, a businessman, a Union Army soldier, and a farmer -- casting ballots for the first time under the Reconstruction Acts. This image appeared on the cover of Harper's Weekly and was later exhibited at the Capitol Visitor Center at the U.S. Capitol, Washington, D.C. The people depicted had been continuously present on American soil for over two centuries before being permitted to vote. Library of Congress Prints and Photographs Division. No known restrictions on publication. LC-DIG-ppmsca-31598."
-        >
-      </a>
+      <img
+        src="https://tile.loc.gov/image-services/iiif/service:pnp:ppmsca:31500:31598/full/pct:25/0/default.jpg"
+        data-caption="The First Vote. Drawn by Alfred R. Waud. Harper's Weekly, November 16, 1867. The illustration shows a queue of Black American men -- a laborer, a businessman, a Union Army soldier, and a farmer -- casting ballots for the first time under the Reconstruction Acts. This image appeared on the cover of Harper's Weekly and was later exhibited at the Capitol Visitor Center at the U.S. Capitol, Washington, D.C. The people depicted had been continuously present on American soil for over two centuries before being permitted to vote. Library of Congress Prints and Photographs Division. No known restrictions on publication. LC-DIG-ppmsca-31598."
+      >
       <figcaption>The First Vote -- Alfred R. Waud, Harper's Weekly, November 16, 1867. Later exhibited at the U.S. Capitol Visitor Center. Source: <a href="https://www.loc.gov/item/2011648984/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">loc.gov/item/2011648984</a></figcaption>
     </figure>
   </div>
@@ -404,13 +394,11 @@
 
   <!-- IMAGE 4: 1870 Statistical Atlas -->
   <figure class="article-photo" data-index="4">
-    <a href="https://www.loc.gov/item/05019329/" target="_blank" rel="noopener">
-      <img
-        src="https://tile.loc.gov/image-services/iiif/service:gmd:gmd370m:g3701m:g3701gm:gct00008:ca000001/full/pct:25/0/default.jpg"
-        alt="Distribution of the Colored Population, Statistical Atlas of the United States, 1870 Census, Francis A. Walker, 1874"
-        data-caption="Distribution of the Colored Population. Plate from the Statistical Atlas of the United States Based on the Results of the Ninth Census, 1870. Prepared under the authority of Congress by Francis A. Walker, Superintendent of the Census. Published 1874. The geographic concentration of the Black American population five years after Emancipation. The density in the Mississippi Delta, coastal South Carolina, and the Virginia Tidewater corresponds precisely to the states analyzed in this article. Library of Congress Geography and Map Division. Public domain."
-      >
-    </a>
+    <img
+      src="https://tile.loc.gov/image-services/iiif/service:gmd:gmd370m:g3701m:g3701gm:gct00008:ca000001/full/pct:25/0/default.jpg"
+      alt="Distribution of the Colored Population, Statistical Atlas of the United States, 1870 Census, Francis A. Walker, 1874"
+      data-caption="Distribution of the Colored Population. Plate from the Statistical Atlas of the United States Based on the Results of the Ninth Census, 1870. Prepared under the authority of Congress by Francis A. Walker, Superintendent of the Census. Published 1874. The geographic concentration of the Black American population five years after Emancipation. The density in the Mississippi Delta, coastal South Carolina, and the Virginia Tidewater corresponds precisely to the states analyzed in this article. Library of Congress Geography and Map Division. Public domain."
+    >
     <figcaption>
       <strong>Distribution of the Colored Population</strong> -- Statistical Atlas of the United States, 1870 Census. U.S. Census Bureau, 1874. Five years after Emancipation, the same geographic concentration is documented.
       <span style="display:block;margin-top:.4rem;font-size:.78rem">Library of Congress Geography and Map Division -- <a href="https://www.loc.gov/item/05019329/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">loc.gov/item/05019329</a> -- Public domain. <em>If the image does not load, view it directly at the source link.</em></span>
@@ -554,10 +542,7 @@
 
     <div class="book-card">
       <a href="https://www.penguinrandomhouse.com/books/601164/the-african-americans-by-henry-louis-gates-jr-and-donald-yacovone/" target="_blank" rel="noopener" class="book-cover-link">
-        <div class="book-cover-placeholder">
-          <span>The African Americans</span>
-          <span class="book-cover-auth">Gates Jr.</span>
-        </div>
+        <img src="https://books.google.com/books/content?id=qL93tgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="The African Americans: Many Rivers to Cross" class="book-cover" onerror="this.style.display='none'">
       </a>
       <div class="book-info">
         <div class="book-eye">Population History -- Companion to PBS Series</div>
@@ -570,10 +555,7 @@
 
     <div class="book-card">
       <a href="https://www.penguinrandomhouse.com/books/557952/stony-the-road-by-henry-louis-gates-jr/" target="_blank" rel="noopener" class="book-cover-link">
-        <div class="book-cover-placeholder">
-          <span>Stony the Road</span>
-          <span class="book-cover-auth">Gates Jr.</span>
-        </div>
+        <img src="https://books.google.com/books/content?id=0LNiDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="Stony the Road" class="book-cover" onerror="this.style.display='none'">
       </a>
       <div class="book-info">
         <div class="book-eye">Post-Emancipation Suppression -- Why the Numbers Are What They Are</div>
@@ -586,10 +568,7 @@
 
     <div class="book-card">
       <a href="https://www.amazon.com/dp/0679724656" target="_blank" rel="noopener" class="book-cover-link">
-        <div class="book-cover-placeholder">
-          <span>The Warmth of Other Suns</span>
-          <span class="book-cover-auth">Wilkerson</span>
-        </div>
+        <img src="https://books.google.com/books/content?id=HjmIMdOx6-cC&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="The Warmth of Other Suns" class="book-cover" onerror="this.style.display='none'">
       </a>
       <div class="book-info">
         <div class="book-eye">The Great Migration -- Why People Left and What They Left Behind</div>
@@ -602,10 +581,7 @@
 
     <div class="book-card">
       <a href="https://www.amazon.com/dp/0399590986" target="_blank" rel="noopener" class="book-cover-link">
-        <div class="book-cover-placeholder">
-          <span>Caste</span>
-          <span class="book-cover-auth">Wilkerson</span>
-        </div>
+        <img src="https://books.google.com/books/content?id=HcLNDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="Caste: The Origins of Our Discontents" class="book-cover" onerror="this.style.display='none'">
       </a>
       <div class="book-info">
         <div class="book-eye">Structural Analysis -- How Continuity Became Hierarchy</div>
@@ -618,10 +594,7 @@
 
     <div class="book-card">
       <a href="https://www.amazon.com/dp/0385540302" target="_blank" rel="noopener" class="book-cover-link">
-        <div class="book-cover-placeholder">
-          <span>Roots</span>
-          <span class="book-cover-auth">Haley</span>
-        </div>
+        <img src="https://books.google.com/books/content?id=aHZKDgAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="Roots: The Saga of an American Family" class="book-cover" onerror="this.style.display='none'">
       </a>
       <div class="book-info">
         <div class="book-eye">Personal Genealogy -- What Continuity Looks Like From Inside a Family</div>
@@ -634,10 +607,7 @@
 
     <div class="book-card">
       <a href="https://www.amazon.com/dp/0521496667" target="_blank" rel="noopener" class="book-cover-link">
-        <div class="book-cover-placeholder">
-          <span>A Population History of North America</span>
-          <span class="book-cover-auth">Haines / Steckel</span>
-        </div>
+        <img src="https://books.google.com/books/content?id=BPdgiysIVcgC&printsec=frontcover&img=1&zoom=1&source=gbs_api" alt="A Population History of North America" class="book-cover" onerror="this.style.display='none'">
       </a>
       <div class="book-info">
         <div class="book-eye">Primary Demographic Source -- The Numbers Behind Chart 01</div>
