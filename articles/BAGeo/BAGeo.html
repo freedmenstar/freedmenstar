@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -21,196 +20,199 @@
     body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");background-size:256px 256px;}
     body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-size:200px 200px;}
 
-```
-header{padding:1.4rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,6,4,0.97);backdrop-filter:blur(16px);z-index:200}
-.header-content{max-width:var(--max-wide);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:'Crimson Pro',serif;font-size:1.55rem;font-weight:400;letter-spacing:2.5px;color:var(--accent-warm);display:inline-flex;flex-direction:column;gap:.3rem;text-decoration:none}
-.logo-inner{display:flex;align-items:center;gap:.6rem}
-.logo-line{display:block;width:100%;height:1.5px;background:var(--accent-red)}
-nav{display:flex;gap:1.75rem;align-items:center}
-nav a{color:var(--text-dim);text-decoration:none;font-size:.88rem;letter-spacing:1px;text-transform:uppercase;transition:color .3s}
-nav a:hover{color:var(--accent-warm)}
-.nav-back{color:var(--text-muted)!important;font-size:.78rem!important;display:flex;align-items:center;gap:.4rem;transition:color .3s,gap .2s!important}
-.nav-back:hover{color:var(--accent)!important;gap:.6rem!important}
+    header{padding:1.4rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,6,4,0.97);backdrop-filter:blur(16px);z-index:200}
+    .header-content{max-width:var(--max-wide);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Crimson Pro',serif;font-size:1.55rem;font-weight:400;letter-spacing:2.5px;color:var(--accent-warm);display:inline-flex;flex-direction:column;gap:.3rem;text-decoration:none}
+    .logo-inner{display:flex;align-items:center;gap:.6rem}
+    .logo-line{display:block;width:100%;height:1.5px;background:var(--accent-red)}
+    nav{display:flex;gap:1.75rem;align-items:center}
+    nav a{color:var(--text-dim);text-decoration:none;font-size:.88rem;letter-spacing:1px;text-transform:uppercase;transition:color .3s}
+    nav a:hover{color:var(--accent-warm)}
+    .nav-back{color:var(--text-muted)!important;font-size:.78rem!important;display:flex;align-items:center;gap:.4rem;transition:color .3s,gap .2s!important}
+    .nav-back:hover{color:var(--accent)!important;gap:.6rem!important}
 
-.article-hero-text{border-bottom:1px solid var(--border);padding:5rem 2rem 3.5rem;background:var(--surface)}
-.article-hero-inner{max-width:var(--max-article);margin:0 auto}
-.article-cat{font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
-.article-cat::before{content:'';display:block;width:24px;height:1px;background:var(--accent-red)}
-.article-hero-text h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;color:var(--text);line-height:1.15;letter-spacing:.3px;margin-bottom:.6rem}
-.article-sub{font-size:1.1rem;color:rgba(216,210,200,0.55);font-style:italic;font-family:'Crimson Pro',serif;font-weight:300;margin-bottom:2rem}
-.article-meta-line{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid var(--border)}
-.meta-byline{display:flex;align-items:center;gap:.65rem}
-.meta-avatar{width:34px;height:34px;border-radius:50%;overflow:hidden;border:1px solid rgba(200,147,90,0.2);flex-shrink:0;background:var(--accent-dim)}
-.meta-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(40%) sepia(20%) brightness(.85)}
-.meta-name{font-size:.88rem;color:var(--text-dim);font-weight:400}
-.meta-sep{width:1px;height:16px;background:var(--border-light);flex-shrink:0}
-.meta-info{font-size:.78rem;color:var(--text-muted);letter-spacing:.3px}
+    .article-hero-text{border-bottom:1px solid var(--border);padding:5rem 2rem 3.5rem;background:var(--surface)}
+    .article-hero-inner{max-width:var(--max-article);margin:0 auto}
+    .article-cat{font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
+    .article-cat::before{content:'';display:block;width:24px;height:1px;background:var(--accent-red)}
+    .article-hero-text h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;color:var(--text);line-height:1.15;letter-spacing:.3px;margin-bottom:.6rem}
+    .article-sub{font-size:1.1rem;color:rgba(216,210,200,0.55);font-style:italic;font-family:'Crimson Pro',serif;font-weight:300;margin-bottom:2rem}
+    .article-meta-line{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid var(--border)}
+    .meta-byline{display:flex;align-items:center;gap:.65rem}
+    .meta-avatar{width:34px;height:34px;border-radius:50%;overflow:hidden;border:1px solid rgba(200,147,90,0.2);flex-shrink:0;background:var(--accent-dim)}
+    .meta-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(40%) sepia(20%) brightness(.85)}
+    .meta-name{font-size:.88rem;color:var(--text-dim);font-weight:400}
+    .meta-sep{width:1px;height:16px;background:var(--border-light);flex-shrink:0}
+    .meta-info{font-size:.78rem;color:var(--text-muted);letter-spacing:.3px}
 
-.article-wrapper{max-width:var(--max-article);margin:0 auto;padding:3.5rem 2rem 5rem}
-.article-body>p:first-of-type::first-letter{font-family:'Crimson Pro',serif;font-size:4.2rem;font-weight:500;color:var(--accent-warm);float:left;line-height:.75;margin-right:.1em;margin-top:.12em}
-.article-body p{font-family:'Crimson Pro',serif;font-size:1.2rem;line-height:1.85;color:var(--text-dim);margin-bottom:1.75rem;font-weight:300}
-.article-body p strong{color:var(--text);font-weight:500}
-.article-body p.lead-p{font-size:1.28rem;color:var(--text);font-weight:400}
-.article-section-head{display:flex;align-items:center;gap:1rem;margin:3rem 0 1.5rem}
-.article-section-head h2{font-family:'Crimson Pro',serif;font-size:1.5rem;font-weight:400;color:var(--text);letter-spacing:.3px;white-space:nowrap}
-.section-rule{flex:1;height:1px;background:var(--border)}
-.pull-quote{border-left:3px solid var(--accent-red);margin:2.5rem 0;padding:.5rem 0 .5rem 1.75rem}
-.pull-quote p{font-family:'Crimson Pro',serif;font-size:1.35rem;font-style:italic;color:var(--text);line-height:1.55;font-weight:400;margin-bottom:.5rem!important}
+    .article-wrapper{max-width:var(--max-article);margin:0 auto;padding:3.5rem 2rem 5rem}
+    .article-body>p:first-of-type::first-letter{font-family:'Crimson Pro',serif;font-size:4.2rem;font-weight:500;color:var(--accent-warm);float:left;line-height:.75;margin-right:.1em;margin-top:.12em}
+    .article-body p{font-family:'Crimson Pro',serif;font-size:1.2rem;line-height:1.85;color:var(--text-dim);margin-bottom:1.75rem;font-weight:300}
+    .article-body p strong{color:var(--text);font-weight:500}
+    .article-body p.lead-p{font-size:1.28rem;color:var(--text);font-weight:400}
+    .article-section-head{display:flex;align-items:center;gap:1rem;margin:3rem 0 1.5rem}
+    .article-section-head h2{font-family:'Crimson Pro',serif;font-size:1.5rem;font-weight:400;color:var(--text);letter-spacing:.3px;white-space:nowrap}
+    .section-rule{flex:1;height:1px;background:var(--border)}
+    .pull-quote{border-left:3px solid var(--accent-red);margin:2.5rem 0;padding:.5rem 0 .5rem 1.75rem}
+    .pull-quote p{font-family:'Crimson Pro',serif;font-size:1.35rem;font-style:italic;color:var(--text);line-height:1.55;font-weight:400;margin-bottom:.5rem!important}
 
-.viz-block{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3.5rem 2rem;margin:3rem -2rem;background:var(--surface2)}
-.viz-block-inner{max-width:940px;margin:0 auto}
-.viz-eyebrow{font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;display:flex;align-items:center;gap:.75rem}
-.viz-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
-.viz-heading{font-family:'Crimson Pro',serif;font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.35rem;letter-spacing:.3px}
-.viz-sub{font-size:.82rem;color:var(--text-muted);font-style:italic;margin-bottom:2rem;line-height:1.55;font-family:'Crimson Pro',serif}
-.chart-wrap{position:relative;width:100%;user-select:none}
-canvas{display:block;width:100%;height:auto}
-.ctip{position:fixed;background:rgba(7,6,4,0.97);border:1px solid var(--border-light);padding:.75rem 1rem;pointer-events:none;opacity:0;transition:opacity .1s;z-index:300;min-width:185px;backdrop-filter:blur(8px)}
-.ctip.visible{opacity:1}
-.ctip-year{font-size:.62rem;letter-spacing:1.5px;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase;font-family:'Inter',sans-serif}
-.ctip-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.15rem 0;font-size:.62rem;font-family:'Inter',sans-serif}
-.ctip-swatch{width:6px;height:6px;border-radius:1px;flex-shrink:0;margin-top:3px}
-.ctip-label{color:var(--text-muted);flex:1}
-.ctip-val{color:var(--text-dim);white-space:nowrap}
-.chart-legend{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;margin-top:1.1rem}
-.leg-item{display:flex;align-items:center;gap:.35rem;font-size:.62rem;color:var(--text-muted);font-family:'Inter',sans-serif;letter-spacing:.3px}
-.leg-sw{width:10px;height:2px;border-radius:0;flex-shrink:0}
-.callout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:2rem}
-.callout{border:1px solid var(--border-light);padding:1.25rem 1rem;text-align:center;background:var(--surface)}
-.callout-fig{font-family:'Crimson Pro',serif;font-size:2.2rem;color:var(--accent-warm);line-height:1;display:block;margin-bottom:.4rem;font-weight:400}
-.callout-label{font-size:.62rem;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted);line-height:1.55;font-family:'Inter',sans-serif}
-.chart-note{margin-top:1.25rem;padding:.85rem 1.1rem;border-left:2px solid var(--border-light);font-size:.9rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif;line-height:1.65}
-.chart-note strong{color:var(--text-dim);font-style:normal}
+    .viz-block{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3.5rem 2rem;margin:3rem -2rem;background:var(--surface2)}
+    .viz-block-inner{max-width:940px;margin:0 auto}
+    .viz-eyebrow{font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;display:flex;align-items:center;gap:.75rem}
+    .viz-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
+    .viz-heading{font-family:'Crimson Pro',serif;font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.35rem;letter-spacing:.3px}
+    .viz-sub{font-size:.82rem;color:var(--text-muted);font-style:italic;margin-bottom:2rem;line-height:1.55;font-family:'Crimson Pro',serif}
+    .chart-wrap{position:relative;width:100%;user-select:none}
+    canvas{display:block;width:100%;height:auto}
+    .ctip{position:fixed;background:rgba(7,6,4,0.97);border:1px solid var(--border-light);padding:.75rem 1rem;pointer-events:none;opacity:0;transition:opacity .1s;z-index:300;min-width:185px;backdrop-filter:blur(8px)}
+    .ctip.visible{opacity:1}
+    .ctip-year{font-size:.62rem;letter-spacing:1.5px;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase;font-family:'Inter',sans-serif}
+    .ctip-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.15rem 0;font-size:.62rem;font-family:'Inter',sans-serif}
+    .ctip-swatch{width:6px;height:6px;border-radius:1px;flex-shrink:0;margin-top:3px}
+    .ctip-label{color:var(--text-muted);flex:1}
+    .ctip-val{color:var(--text-dim);white-space:nowrap}
+    .chart-legend{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;margin-top:1.1rem}
+    .leg-item{display:flex;align-items:center;gap:.35rem;font-size:.62rem;color:var(--text-muted);font-family:'Inter',sans-serif;letter-spacing:.3px}
+    .leg-sw{width:10px;height:2px;border-radius:0;flex-shrink:0}
+    .callout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:2rem}
+    .callout{border:1px solid var(--border-light);padding:1.25rem 1rem;text-align:center;background:var(--surface)}
+    .callout-fig{font-family:'Crimson Pro',serif;font-size:2.2rem;color:var(--accent-warm);line-height:1;display:block;margin-bottom:.4rem;font-weight:400}
+    .callout-label{font-size:.62rem;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted);line-height:1.55;font-family:'Inter',sans-serif}
+    .chart-note{margin-top:1.25rem;padding:.85rem 1.1rem;border-left:2px solid var(--border-light);font-size:.9rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif;line-height:1.65}
+    .chart-note strong{color:var(--text-dim);font-style:normal}
 
-.context-block{border:1px solid var(--border-light);padding:2rem;margin:2.5rem 0;background:var(--surface)}
-.context-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-family:'Inter',sans-serif}
-.context-block h2{font-family:'Crimson Pro',serif;font-size:1.45rem;font-weight:400;color:var(--text);margin-bottom:1.25rem;line-height:1.3}
-.context-block p{font-family:'Crimson Pro',serif;font-size:1.1rem;color:var(--text-dim);line-height:1.8;margin-bottom:1.25rem;font-weight:300}
-.fact-item{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:start}
-.fact-item:last-child{border-bottom:none;padding-bottom:0}
-.fact-num{font-family:'Inter',sans-serif;font-size:.6rem;color:var(--accent);letter-spacing:1.5px;padding-top:.25rem;white-space:nowrap}
-.fact-body{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--text-dim);line-height:1.7;font-weight:300}
-.fact-body strong{color:var(--text);font-weight:500}
+    .context-block{border:1px solid var(--border-light);padding:2rem;margin:2.5rem 0;background:var(--surface)}
+    .context-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-family:'Inter',sans-serif}
+    .context-block h2{font-family:'Crimson Pro',serif;font-size:1.45rem;font-weight:400;color:var(--text);margin-bottom:1.25rem;line-height:1.3}
+    .context-block p{font-family:'Crimson Pro',serif;font-size:1.1rem;color:var(--text-dim);line-height:1.8;margin-bottom:1.25rem;font-weight:300}
+    .fact-item{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:start}
+    .fact-item:last-child{border-bottom:none;padding-bottom:0}
+    .fact-num{font-family:'Inter',sans-serif;font-size:.6rem;color:var(--accent);letter-spacing:1.5px;padding-top:.25rem;white-space:nowrap}
+    .fact-body{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--text-dim);line-height:1.7;font-weight:300}
+    .fact-body strong{color:var(--text);font-weight:500}
 
-.article-photo{margin:2.5rem -1rem;cursor:zoom-in;overflow:hidden;position:relative}
-.article-photo img{width:100%;display:block;filter:grayscale(25%) sepia(15%) brightness(.82) contrast(1.05);transition:filter .4s,transform .5s}
-.article-photo:hover img{filter:grayscale(10%) sepia(8%) brightness(.9);transform:scale(1.01)}
-.article-photo figcaption{padding:.65rem 1rem;font-size:.82rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif;background:var(--surface);border-top:1px solid var(--border);line-height:1.55}
-.photo-grid{display:grid;gap:.5rem;margin:2.5rem -1rem}
-.photo-grid-2{grid-template-columns:1fr 1fr}
-.photo-grid figure{cursor:zoom-in;overflow:hidden;position:relative;background:var(--surface)}
-.photo-grid figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;display:block;filter:grayscale(30%) sepia(15%) brightness(.8) contrast(1.05);transition:filter .4s,transform .5s}
-.photo-grid figure:hover img{filter:grayscale(12%) sepia(8%) brightness(.88);transform:scale(1.03)}
-.photo-grid figure figcaption{padding:.5rem .65rem;font-size:.75rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif;background:var(--surface);border-top:1px solid var(--border);line-height:1.4}
+    .article-photo{margin:2.5rem -1rem;cursor:zoom-in;overflow:hidden;position:relative}
+    .article-photo img{width:100%;display:block;filter:grayscale(25%) sepia(15%) brightness(.82) contrast(1.05);transition:filter .4s,transform .5s}
+    .article-photo:hover img{filter:grayscale(10%) sepia(8%) brightness(.9);transform:scale(1.01)}
+    .article-photo figcaption{padding:.65rem 1rem;font-size:.82rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif;background:var(--surface);border-top:1px solid var(--border);line-height:1.55}
+    .photo-grid{display:grid;gap:.5rem;margin:2.5rem -1rem}
+    .photo-grid-2{grid-template-columns:1fr 1fr}
+    .photo-grid figure{cursor:zoom-in;overflow:hidden;position:relative;background:var(--surface)}
+    .photo-grid figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;display:block;filter:grayscale(30%) sepia(15%) brightness(.8) contrast(1.05);transition:filter .4s,transform .5s}
+    .photo-grid figure:hover img{filter:grayscale(12%) sepia(8%) brightness(.88);transform:scale(1.03)}
+    .photo-grid figure figcaption{padding:.5rem .65rem;font-size:.75rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif;background:var(--surface);border-top:1px solid var(--border);line-height:1.4}
 
-.state-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.45rem;margin-top:1.25rem}
-.state-row{display:flex;align-items:center;justify-content:space-between;padding:.6rem .85rem;border:1px solid var(--border);background:var(--surface);transition:border-color .2s;cursor:default}
-.state-row:hover{border-color:var(--border-light)}
-.state-name{font-family:'Crimson Pro',serif;color:var(--text-dim);font-size:1rem;font-weight:300}
-.state-right{display:flex;align-items:center;gap:.65rem}
-.state-pct{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--accent);width:2.75rem;text-align:right;letter-spacing:.5px}
-.state-bar-bg{width:52px;height:1px;background:var(--border-light)}
-.state-bar-fill{height:1px;background:var(--accent)}
+    .state-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.45rem;margin-top:1.25rem}
+    .state-row{display:flex;align-items:center;justify-content:space-between;padding:.6rem .85rem;border:1px solid var(--border);background:var(--surface);transition:border-color .2s;cursor:default}
+    .state-row:hover{border-color:var(--border-light)}
+    .state-name{font-family:'Crimson Pro',serif;color:var(--text-dim);font-size:1rem;font-weight:300}
+    .state-right{display:flex;align-items:center;gap:.65rem}
+    .state-pct{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--accent);width:2.75rem;text-align:right;letter-spacing:.5px}
+    .state-bar-bg{width:52px;height:1px;background:var(--border-light)}
+    .state-bar-fill{height:1px;background:var(--accent)}
 
-.citations-wrap{border-top:1px solid var(--border);padding-top:2.5rem;margin-top:3rem}
-.citations-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.6rem}
-.citations-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
-.citations-wrap h2{font-family:'Crimson Pro',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:.5rem}
-.citations-preamble{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.75rem;line-height:1.65;padding:.75rem 1rem;border-left:2px solid var(--border-light)}
-.citation-group{margin-bottom:1.75rem}
-.citation-group-label{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
-.citation-entry{display:grid;grid-template-columns:1.25rem 1fr;gap:.3rem .6rem;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.82rem;line-height:1.6}
-.citation-entry:last-child{border-bottom:none}
-.cit-num{font-family:'Inter',sans-serif;font-size:.6rem;color:var(--accent);padding-top:.2rem}
-.cit-text{font-family:'Crimson Pro',serif;color:var(--text-muted);font-weight:300}
-.cit-text strong{color:var(--text-dim);font-weight:400}
-.cit-text em{font-style:italic}
-.method-note{margin-top:1.5rem;padding:1rem 1.1rem;border:1px solid var(--border);font-family:'Crimson Pro',serif;font-size:.88rem;color:var(--text-muted);line-height:1.65;font-style:italic}
-.method-note strong{color:var(--text-dim);font-style:normal;font-weight:400}
+    .citations-wrap{border-top:1px solid var(--border);padding-top:2.5rem;margin-top:3rem}
+    .citations-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.6rem}
+    .citations-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
+    .citations-wrap h2{font-family:'Crimson Pro',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:.5rem}
+    .citations-preamble{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.75rem;line-height:1.65;padding:.75rem 1rem;border-left:2px solid var(--border-light)}
+    .citation-group{margin-bottom:1.75rem}
+    .citation-group-label{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+    .citation-entry{display:grid;grid-template-columns:1.25rem 1fr;gap:.3rem .6rem;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.82rem;line-height:1.6}
+    .citation-entry:last-child{border-bottom:none}
+    .cit-num{font-family:'Inter',sans-serif;font-size:.6rem;color:var(--accent);padding-top:.2rem}
+    .cit-text{font-family:'Crimson Pro',serif;color:var(--text-muted);font-weight:300}
+    .cit-text strong{color:var(--text-dim);font-weight:400}
+    .cit-text em{font-style:italic}
+    .method-note{margin-top:1.5rem;padding:1rem 1.1rem;border:1px solid var(--border);font-family:'Crimson Pro',serif;font-size:.88rem;color:var(--text-muted);line-height:1.65;font-style:italic}
+    .method-note strong{color:var(--text-dim);font-style:normal;font-weight:400}
 
-.comments-wrap{border-top:1px solid var(--border);padding-top:2.5rem;margin-top:3rem}
-.comments-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.6rem}
-.comments-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
-.comments-wrap h2{font-family:'Crimson Pro',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:.5rem}
-.comments-intro{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.25rem;line-height:1.6}
-.comment-policy{border:1px solid var(--border);padding:.85rem 1rem;margin-bottom:1.5rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.4px;line-height:1.75;color:var(--text-muted)}
-.comment-policy-label{color:var(--accent);display:block;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.35rem;font-size:.6rem}
+    .comments-wrap{border-top:1px solid var(--border);padding-top:2.5rem;margin-top:3rem}
+    .comments-eyebrow{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:.6rem}
+    .comments-eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--accent-red)}
+    .comments-wrap h2{font-family:'Crimson Pro',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:.5rem}
+    .comments-intro{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.25rem;line-height:1.6}
+    .comment-policy{border:1px solid var(--border);padding:.85rem 1rem;margin-bottom:1.5rem;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.4px;line-height:1.75;color:var(--text-muted)}
+    .comment-policy-label{color:var(--accent);display:block;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.35rem;font-size:.6rem}
 
-.lightbox{position:fixed;inset:0;background:rgba(4,3,2,0.96);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;cursor:zoom-out;backdrop-filter:blur(4px)}
-.lightbox.active{opacity:1;pointer-events:all}
-.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;filter:grayscale(18%) sepia(10%) brightness(.9);box-shadow:0 8px 60px rgba(0,0,0,.9);animation:lbIn .3s ease}
-@keyframes lbIn{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
-.lightbox-caption{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-family:'Crimson Pro',serif;font-style:italic;font-size:.9rem;color:var(--text-muted);text-align:center;max-width:640px;padding:0 2rem;line-height:1.55}
-.lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:1px solid var(--border-light);color:var(--text-dim);font-size:1rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s,border-color .2s}
-.lightbox-close:hover{color:var(--accent);border-color:var(--accent)}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid var(--border-light);color:var(--text-dim);font-size:1.2rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s,border-color .2s}
-.lightbox-nav:hover{color:var(--accent);border-color:var(--accent)}
-.lightbox-prev{left:1.5rem}.lightbox-next{right:1.5rem}
+    .lightbox{position:fixed;inset:0;background:rgba(4,3,2,0.96);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;cursor:zoom-out;backdrop-filter:blur(4px)}
+    .lightbox.active{opacity:1;pointer-events:all}
+    .lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;filter:grayscale(18%) sepia(10%) brightness(.9);box-shadow:0 8px 60px rgba(0,0,0,.9);animation:lbIn .3s ease}
+    @keyframes lbIn{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
+    .lightbox-caption{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-family:'Crimson Pro',serif;font-style:italic;font-size:.9rem;color:var(--text-muted);text-align:center;max-width:640px;padding:0 2rem;line-height:1.55}
+    .lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:1px solid var(--border-light);color:var(--text-dim);font-size:1rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s,border-color .2s}
+    .lightbox-close:hover{color:var(--accent);border-color:var(--accent)}
+    .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid var(--border-light);color:var(--text-dim);font-size:1.2rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s,border-color .2s}
+    .lightbox-nav:hover{color:var(--accent);border-color:var(--accent)}
+    .lightbox-prev{left:1.5rem}.lightbox-next{right:1.5rem}
 
-.article-end{max-width:var(--max-article);margin:0 auto;padding:0 2rem 4rem}
-.article-tags{display:flex;gap:.5rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid var(--border);margin-bottom:3rem}
-.tag{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border-light);padding:.25rem .75rem;transition:color .2s,border-color .2s;cursor:pointer;font-family:'Inter',sans-serif}
-.tag:hover{color:var(--accent);border-color:var(--accent)}
-.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .25s,gap .2s;font-family:'Inter',sans-serif}
-.back-link:hover{color:var(--accent);gap:.75rem}
-footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--surface)}
-.footer-inner{max-width:var(--max-wide);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-brand{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--accent-warm);letter-spacing:1.5px;display:flex;align-items:center;gap:.4rem}
-.footer-copy{font-size:.78rem;color:var(--text-muted);font-family:'Inter',sans-serif}
+    .article-end{max-width:var(--max-article);margin:0 auto;padding:0 2rem 4rem}
+    .article-tags{display:flex;gap:.5rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid var(--border);margin-bottom:3rem}
+    .tag{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border-light);padding:.25rem .75rem;transition:color .2s,border-color .2s;cursor:pointer;font-family:'Inter',sans-serif}
+    .tag:hover{color:var(--accent);border-color:var(--accent)}
+    .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .25s,gap .2s;font-family:'Inter',sans-serif}
+    .back-link:hover{color:var(--accent);gap:.75rem}
+    footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--surface)}
+    .footer-inner{max-width:var(--max-wide);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-brand{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--accent-warm);letter-spacing:1.5px;display:flex;align-items:center;gap:.4rem}
+    .footer-copy{font-size:.78rem;color:var(--text-muted);font-family:'Inter',sans-serif}
 
-/* ── FURTHER VIEWING ── */
-.fv-block{border:1px solid var(--border);margin:1.75rem 0;background:var(--surface);overflow:hidden}
-.fv-header{padding:1.25rem 1.25rem .85rem}
-.fv-eye{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
-.fv-title{font-family:'Crimson Pro',serif;font-size:1.25rem;color:var(--text);font-weight:400;margin-bottom:.2rem}
-.fv-meta{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--text-muted);margin-bottom:.85rem;line-height:1.55}
-.fv-desc{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-dim);line-height:1.75;margin-bottom:.65rem;font-weight:300}
-.fv-rel{font-family:'Crimson Pro',serif;font-size:.88rem;color:var(--text-muted);font-style:italic;line-height:1.65;border-left:2px solid var(--border-light);padding-left:.85rem}
-.fv-player{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border-top:1px solid var(--border)}
-.fv-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-.fv-footer{padding:.55rem 1.25rem;font-family:'Inter',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.4px;border-top:1px solid var(--border)}
-.fv-footer a{color:var(--accent);text-decoration:none}
-.fv-footer a:hover{text-decoration:underline}
-/* ── BOOKS ── */
-.book-grid{display:flex;flex-direction:column;gap:1.25rem;margin:1.5rem 0}
-.book-card{display:grid;grid-template-columns:100px 1fr;gap:1.25rem;border:1px solid var(--border);padding:1.25rem;background:var(--surface);align-items:start}
-.book-cover-link{display:block;flex-shrink:0}
-.book-cover{width:100px;height:auto;display:block;filter:brightness(.85) contrast(1.05)}
-.book-eye{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
-.book-title{font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--text);font-weight:400;margin-bottom:.15rem;line-height:1.3}
-.book-author{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--text-muted);margin-bottom:.7rem;line-height:1.5}
-.book-desc{font-family:'Crimson Pro',serif;font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-bottom:.5rem;font-weight:300}
-.book-rel{font-family:'Crimson Pro',serif;font-size:.85rem;color:var(--text-muted);font-style:italic;line-height:1.6;border-left:2px solid var(--border-light);padding-left:.75rem}
-@media(max-width:480px){.book-card{grid-template-columns:80px 1fr;gap:.85rem}.book-cover{width:80px}}
-/* ── INSTITUTIONAL ── */
-.inst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.5rem;margin:1.5rem 0}
-.inst-card{display:block;border:1px solid var(--border);padding:1rem 1.1rem;text-decoration:none;background:var(--surface);transition:border-color .2s}
-.inst-card:hover{border-color:var(--border-light)}
-.inst-card-eye{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
-.inst-card-title{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--text);margin-bottom:.3rem}
-.inst-card-desc{font-size:.78rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif}
+    /* ── FURTHER VIEWING ── */
+    .fv-block{border:1px solid var(--border);margin:1.75rem 0;background:var(--surface);overflow:hidden}
+    .fv-header{padding:1.25rem 1.25rem .85rem}
+    .fv-eye{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
+    .fv-title{font-family:'Crimson Pro',serif;font-size:1.25rem;color:var(--text);font-weight:400;margin-bottom:.2rem}
+    .fv-meta{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--text-muted);margin-bottom:.85rem;line-height:1.55}
+    .fv-desc{font-family:'Crimson Pro',serif;font-size:.95rem;color:var(--text-dim);line-height:1.75;margin-bottom:.65rem;font-weight:300}
+    .fv-rel{font-family:'Crimson Pro',serif;font-size:.88rem;color:var(--text-muted);font-style:italic;line-height:1.65;border-left:2px solid var(--border-light);padding-left:.85rem}
+    .fv-thumb-link{display:block;position:relative;overflow:hidden;text-decoration:none;background:#000;border-top:1px solid var(--border)}
+    .fv-thumb-img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;filter:grayscale(30%) brightness(.75);transition:filter .4s}
+    .fv-thumb-link:hover .fv-thumb-img{filter:grayscale(15%) brightness(.85)}
+    .fv-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:60px;height:60px;transition:transform .3s}
+    .fv-thumb-link:hover .fv-play-btn{transform:translate(-50%,-55%) scale(1.1)}
+    .fv-thumb-label{position:absolute;bottom:0;left:0;right:0;padding:.5rem 1rem;background:rgba(7,6,4,0.85);font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.5px;color:var(--accent);text-align:center}
+    .fv-footer{padding:.55rem 1.25rem;font-family:'Inter',sans-serif;font-size:.6rem;color:var(--text-muted);letter-spacing:.4px;border-top:1px solid var(--border)}
+    .fv-footer a{color:var(--accent);text-decoration:none}
+    .fv-footer a:hover{text-decoration:underline}
+    /* ── BOOKS ── */
+    .book-grid{display:flex;flex-direction:column;gap:1.25rem;margin:1.5rem 0}
+    .book-card{display:grid;grid-template-columns:100px 1fr;gap:1.25rem;border:1px solid var(--border);padding:1.25rem;background:var(--surface);align-items:start}
+    .book-cover-link{display:block;flex-shrink:0}
+    .book-cover{width:100px;height:auto;display:block;filter:brightness(.85) contrast(1.05)}
+    .book-eye{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+    .book-title{font-family:'Crimson Pro',serif;font-size:1.05rem;color:var(--text);font-weight:400;margin-bottom:.15rem;line-height:1.3}
+    .book-author{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--text-muted);margin-bottom:.7rem;line-height:1.5}
+    .book-desc{font-family:'Crimson Pro',serif;font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-bottom:.5rem;font-weight:300}
+    .book-rel{font-family:'Crimson Pro',serif;font-size:.85rem;color:var(--text-muted);font-style:italic;line-height:1.6;border-left:2px solid var(--border-light);padding-left:.75rem}
+    .book-cover-placeholder{width:100px;min-height:140px;background:var(--surface2);border:1px solid var(--border-light);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:.5rem;text-align:center;gap:.4rem;transition:border-color .2s}
+    .book-cover-placeholder:hover{border-color:var(--accent)}
+    .book-cover-placeholder span{font-family:'Crimson Pro',serif;font-size:.8rem;color:var(--text-dim);line-height:1.3}
+    .book-cover-auth{font-family:'Inter',sans-serif!important;font-size:.58rem!important;color:var(--accent)!important;letter-spacing:.5px;text-transform:uppercase}
+    /* ── INSTITUTIONAL ── */
+    .inst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.5rem;margin:1.5rem 0}
+    .inst-card{display:block;border:1px solid var(--border);padding:1rem 1.1rem;text-decoration:none;background:var(--surface);transition:border-color .2s}
+    .inst-card:hover{border-color:var(--border-light)}
+    .inst-card-eye{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+    .inst-card-title{font-family:'Crimson Pro',serif;font-size:1rem;color:var(--text);margin-bottom:.3rem}
+    .inst-card-desc{font-size:.78rem;color:var(--text-muted);font-style:italic;font-family:'Crimson Pro',serif}
 
-@media(max-width:768px){
-  .header-content{flex-direction:column;gap:.9rem;align-items:flex-start}
-  .article-hero-text{padding:3.5rem 1.25rem 2.5rem}
-  .article-wrapper{padding:2.5rem 1.25rem 4rem}
-  .article-end{padding:0 1.25rem 3rem}
-  .viz-block{margin:2.5rem -1.25rem;padding:2.5rem 1.25rem}
-  .callout-grid{grid-template-columns:1fr}
-  .state-grid{grid-template-columns:1fr}
-  .photo-grid-2{grid-template-columns:1fr}
-  .article-photo{margin:2rem -1.25rem}
-  footer{flex-direction:column;gap:.75rem;text-align:center}
-}
-```
-
+    @media(max-width:768px){
+      .header-content{flex-direction:column;gap:.9rem;align-items:flex-start}
+      .article-hero-text{padding:3.5rem 1.25rem 2.5rem}
+      .article-wrapper{padding:2.5rem 1.25rem 4rem}
+      .article-end{padding:0 1.25rem 3rem}
+      .viz-block{margin:2.5rem -1.25rem;padding:2.5rem 1.25rem}
+      .callout-grid{grid-template-columns:1fr}
+      .state-grid{grid-template-columns:1fr}
+      .photo-grid-2{grid-template-columns:1fr}
+      .article-photo{margin:2rem -1.25rem}
+      footer{flex-direction:column;gap:.75rem;text-align:center}
+    }
   </style>
 </head>
 <body>
 
 <!-- LIGHTBOX -->
-
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
   <button class="lightbox-close" id="lbClose" aria-label="Close">&#x2715;</button>
   <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">&#x2039;</button>
@@ -277,7 +279,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
 </div><!-- /article-body -->
 
 <!-- CHART 1 -->
-
 <div class="viz-block">
   <div class="viz-block-inner">
     <div class="viz-eyebrow">Chart 01</div>
@@ -300,7 +301,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
 </div>
 
 <!-- CHART 2 -->
-
 <div class="viz-block">
   <div class="viz-block-inner">
     <div class="viz-eyebrow">Chart 02</div>
@@ -344,7 +344,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
   <p>The visual record that follows draws directly from the Library of Congress, the Smithsonian National Museum of African American History and Culture, and the National Archives. All items carry no known restrictions on publication. Each links to its original institutional record. These documents were not created to support any argument in this article. They were created to record what was happening at the time. What this article argues is simply what those records, read in sequence, show.</p>
 
   <!-- IMAGE 1: 1861 Coast Survey Map -->
-
   <figure class="article-photo" data-index="0">
     <a href="https://www.loc.gov/item/99447026/" target="_blank" rel="noopener">
       <img
@@ -362,7 +361,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
   <p>This map was not made by an advocate. It was made by the United States federal government and certified accurate by the Superintendent of the Census. The counties that appear darkest -- where enslaved people represented the highest percentage of the total population -- are the same counties where Freedmen's Bureau records and 1870 census continuity analysis show the deepest post-Emancipation Black American presence. The geography of forced labor became the geography of continuous presence. Two centuries of people growing in place, in the same counties, across the legal boundary of Emancipation.</p>
 
   <!-- IMAGE 2: Five Generations -->
-
   <figure class="article-photo" data-index="1">
     <a href="https://www.loc.gov/item/98504449/" target="_blank" rel="noopener">
       <img
@@ -380,7 +378,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
   <p>This photograph documents in a single frame what the census data confirms in aggregate. Five generations alive simultaneously means this family's continuous presence in Beaufort County, South Carolina stretches from the mid-1700s to the 1860s. The photograph was taken during the Civil War. The people in it had not yet been emancipated. The oldest member of this family was born before the American Revolution. The youngest was born into slavery. All of them were born in the same place. That is what continuous presence looks like on a human scale, before any statistic is calculated.</p>
 
   <!-- GRID: Gordon + First Vote -->
-
   <div class="photo-grid photo-grid-2">
     <figure data-index="2">
       <a href="https://www.loc.gov/item/2018648117/" target="_blank" rel="noopener">
@@ -407,18 +404,18 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
   <p>The Gordon photograph and the First Vote illustration together mark the span of eight years between 1863 and 1871 -- the period in which the reality of Black American life in the United States shifted from legally enforced enslavement to formal citizenship. Both documents were produced by mainstream American publications reporting on current events. Neither was created for historical commentary. The people depicted had been in the country for generations. The legal status assigned to them changed. The presence did not.</p>
 
   <!-- IMAGE 4: 1870 Statistical Atlas -->
-
   <figure class="article-photo" data-index="4">
-    <a href="https://www.loc.gov/resource/g3701gm.gct00008/?sp=71" target="_blank" rel="noopener">
+    <a href="https://www.loc.gov/item/05019329/" target="_blank" rel="noopener">
       <img
         src="https://tile.loc.gov/storage-services/service/gmd/gmd370m/g3701m/g3701gm/gct00008/ca000071.jpg"
         alt="Distribution of the Colored Population, Statistical Atlas of the United States, 1870 Census, Francis A. Walker, 1874"
-        data-caption="Distribution of the Colored Population. Plate from the Statistical Atlas of the United States Based on the Results of the Ninth Census, 1870. Prepared under the authority of Congress by Francis A. Walker, Superintendent of the Census. Published 1874. This federally produced atlas plate shows the geographic concentration of the Black American population five years after Emancipation. The density in the Mississippi Delta, coastal South Carolina, and the Virginia Tidewater -- the same states analyzed in this article -- is visible without annotation. Produced by the United States Census Bureau. Library of Congress Geography and Map Division. Public domain."
+        onerror="this.onerror=null;this.src='https://tile.loc.gov/storage-services/service/gmd/gmd370m/g3701m/g3701gm/gct00297/ca000071.jpg'"
+        data-caption="Distribution of the Colored Population. Plate from the Statistical Atlas of the United States Based on the Results of the Ninth Census, 1870. Prepared under the authority of Congress by Francis A. Walker, Superintendent of the Census. Published 1874. The geographic concentration of the Black American population five years after Emancipation. The density in the Mississippi Delta, coastal South Carolina, and the Virginia Tidewater corresponds precisely to the states analyzed in this article. Library of Congress Geography and Map Division. Public domain."
       >
     </a>
     <figcaption>
-      <strong>Distribution of the Colored Population</strong> -- Statistical Atlas of the United States, 1870 Census. Produced by the U.S. Census Bureau, 1874. The geographic concentration in the same 13 states analyzed in this article is visible five years after Emancipation.
-      <span style="display:block;margin-top:.4rem;font-size:.78rem">Library of Congress Geography and Map Division -- <a href="https://www.loc.gov/resource/g3701gm.gct00008/?sp=71" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">loc.gov/item/05019329</a> -- Public domain</span>
+      <strong>Distribution of the Colored Population</strong> -- Statistical Atlas of the United States, 1870 Census. U.S. Census Bureau, 1874. Five years after Emancipation, the same geographic concentration is documented.
+      <span style="display:block;margin-top:.4rem;font-size:.78rem">Library of Congress Geography and Map Division -- <a href="https://www.loc.gov/item/05019329/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">loc.gov/item/05019329</a> -- Public domain. <em>If the image does not load, view it directly at the source link.</em></span>
     </figcaption>
   </figure>
 
@@ -433,7 +430,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
   <div class="state-grid" id="state-grid"></div>
 
   <!-- INSTITUTIONAL LINKS -->
-
   <div class="article-section-head" style="margin-top:3rem"><h2>Primary Source Collections</h2><div class="section-rule"></div></div>
 
   <p>The records underlying this analysis are publicly accessible. The following collections hold the original documents, maps, photographs, and genealogical records cited throughout this article.</p>
@@ -482,177 +478,226 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
   </div>
 
   <!-- FURTHER VIEWING AND READING -->
-
   <div class="article-section-head" style="margin-top:3rem"><h2>Further Viewing and Reading</h2><div class="section-rule"></div></div>
 
   <p>The following documentaries and books cover the same historical ground this article draws from, each approaching it from a different angle. All four documentaries are available free on PBS.org or the PBS app with a free account. Where a full episode is embedded, some content may require a free PBS login to unlock. Trailers play without an account.</p>
 
   <!-- DOC 1: Many Rivers to Cross -->
-
+  <!-- DOC 1 -->
   <div class="fv-block">
     <div class="fv-header">
-      <div class="fv-eye">PBS Documentary &mdash; Most Directly Relevant</div>
+      <div class="fv-eye">PBS Documentary -- Most Directly Relevant</div>
       <div class="fv-title">The African Americans: Many Rivers to Cross</div>
-      <div class="fv-meta">Henry Louis Gates Jr.&nbsp;&nbsp;|&nbsp;&nbsp;PBS, 2013&nbsp;&nbsp;|&nbsp;&nbsp;6 episodes, 6 hours&nbsp;&nbsp;|&nbsp;&nbsp;Peabody Award</div>
-      <p class="fv-desc">The most comprehensive documentary treatment of the Black American founding-era presence. Episode 1, "The Black Atlantic," covers 1500 to 1800 -- the period this article's population analysis draws from most heavily. Gates traces the arrival of Africans at Jamestown in 1619, the growth of the plantation economy in the same Southern states analyzed in Chart 01, and the closing of the slave trade in 1808. Produced in collaboration with more than 30 historians. The series is the first comprehensive treatment of this full history since 1968.</p>
+      <div class="fv-meta">Henry Louis Gates Jr. | PBS, 2013 | 6 episodes, 6 hours | Peabody Award</div>
+      <p class="fv-desc">The most comprehensive documentary treatment of the Black American founding-era presence. Episode 1, "The Black Atlantic," covers 1500 to 1800 -- the period this article's population analysis draws from most heavily. Gates traces the arrival of Africans at Jamestown in 1619, the growth of the plantation economy in the same Southern states analyzed in Chart 01, and the closing of the slave trade in 1808. Produced in collaboration with more than 30 historians.</p>
       <p class="fv-rel">Relevance: Covers the exact founding-era population dynamics, geographic concentration, and legal closures documented in the charts above. Gates's narration on the 1808 trade closure and its demographic consequences directly parallels the population methodology used in this article.</p>
     </div>
-    <div class="fv-player">
-      <iframe src="https://player.pbs.org/viralplayer/2365215220/" allowfullscreen title="The African Americans: Many Rivers to Cross -- Episode 1 Preview"></iframe>
-    </div>
-    <div class="fv-footer">Full series at <a href="https://www.pbs.org/wnet/african-americans-many-rivers-to-cross/" target="_blank" rel="noopener">pbs.org</a> -- free with a PBS account</div>
+    <a href="https://www.pbs.org/wnet/african-americans-many-rivers-to-cross/" target="_blank" rel="noopener" class="fv-thumb-link">
+      <img src="https://image.pbs.org/video-assets/pbs/african-americans-many-rivers-cross/96590/images/Mezzanine_929.jpg" alt="The African Americans: Many Rivers to Cross" class="fv-thumb-img">
+      <div class="fv-play-btn"><svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="29" stroke="rgba(200,147,90,0.7)" stroke-width="1.5"/><polygon points="24,18 46,30 24,42" fill="#c8935a"/></svg></div>
+      <div class="fv-thumb-label">Watch on PBS.org -- free with a PBS account</div>
+    </a>
   </div>
 
-  <!-- DOC 2: Reconstruction -->
-
+  <!-- DOC 2 -->
   <div class="fv-block">
     <div class="fv-header">
-      <div class="fv-eye">PBS Documentary &mdash; Post-Emancipation Geography</div>
+      <div class="fv-eye">PBS Documentary -- Post-Emancipation Geography</div>
       <div class="fv-title">Reconstruction: America After the Civil War</div>
-      <div class="fv-meta">Henry Louis Gates Jr.&nbsp;&nbsp;|&nbsp;&nbsp;PBS, 2019&nbsp;&nbsp;|&nbsp;&nbsp;4 episodes, 4 hours&nbsp;&nbsp;|&nbsp;&nbsp;duPont-Columbia Award</div>
-      <p class="fv-desc">Covers the twelve years from 1865 to 1877 -- the exact period in which the Freedmen's Bureau records cited in this article were created. Gates examines what happened to Black Americans immediately after Emancipation: which counties they stayed in, how the Bureau documented labor contracts and family registrations, and why the geographic concentration that the 1870 census shows so clearly reflects the same counties where the 1860 slave schedules placed their ancestors.</p>
-      <p class="fv-rel">Relevance: The Freedmen's Bureau records and 1870 census continuity analysis in this article's methodology section are the same primary sources Gates builds his documentary narrative around. The geographic patterns he discusses match the state-by-state continuity figures in the table above.</p>
+      <div class="fv-meta">Henry Louis Gates Jr. | PBS, 2019 | 4 episodes, 4 hours | duPont-Columbia Award</div>
+      <p class="fv-desc">Covers the twelve years from 1865 to 1877 -- the exact period in which the Freedmen's Bureau records cited in this article were created. Gates examines what happened to Black Americans immediately after Emancipation: which counties they stayed in, how the Bureau documented labor contracts and family registrations, and why the 1870 census geographic concentration reflects the same counties where 1860 slave schedules placed their ancestors.</p>
+      <p class="fv-rel">Relevance: The Freedmen's Bureau records and 1870 census continuity analysis in this article's methodology section are the same primary sources Gates builds his documentary narrative around. The geographic patterns he discusses match the state-by-state figures in the table above.</p>
     </div>
-    <div class="fv-player">
-      <iframe src="https://player.pbs.org/viralplayer/3009930501/" allowfullscreen title="Reconstruction: America After the Civil War -- Episode 1"></iframe>
-    </div>
-    <div class="fv-footer">Full series at <a href="https://www.pbs.org/weta/reconstruction/" target="_blank" rel="noopener">pbs.org/weta/reconstruction</a> -- free with a PBS account</div>
+    <a href="https://www.pbs.org/weta/reconstruction/" target="_blank" rel="noopener" class="fv-thumb-link">
+      <img src="https://image.pbs.org/video-assets/ZJ6TcYt-asset-mezzanine-16x9-Kqj5GQN.JPG" alt="Reconstruction: America After the Civil War" class="fv-thumb-img">
+      <div class="fv-play-btn"><svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="29" stroke="rgba(200,147,90,0.7)" stroke-width="1.5"/><polygon points="24,18 46,30 24,42" fill="#c8935a"/></svg></div>
+      <div class="fv-thumb-label">Watch on PBS.org -- free with a PBS account</div>
+    </a>
   </div>
 
-  <!-- DOC 3: Ken Burns Civil War -->
-
+  <!-- DOC 3 -->
   <div class="fv-block">
     <div class="fv-header">
-      <div class="fv-eye">PBS Documentary &mdash; Foundational Context</div>
+      <div class="fv-eye">PBS Documentary -- Foundational Context</div>
       <div class="fv-title">The Civil War</div>
-      <div class="fv-meta">Ken Burns&nbsp;&nbsp;|&nbsp;&nbsp;PBS, 1990&nbsp;&nbsp;|&nbsp;&nbsp;9 episodes, 11.5 hours&nbsp;&nbsp;|&nbsp;&nbsp;Most-watched documentary in PBS history&nbsp;&nbsp;|&nbsp;&nbsp;2 Emmy Awards</div>
-      <p class="fv-desc">The foundational American Civil War documentary, built from 16,000 photographs and the letters and diaries of soldiers, freedpeople, and civilians. Burns draws on many of the same primary sources this article cites, including photographs from the Library of Congress Civil War collection. Historian Barbara J. Fields's commentary throughout the series directly addresses the demographic and legal status of Black Americans during the war years. Forty million viewers watched its original broadcast.</p>
-      <p class="fv-rel">Relevance: Burns uses the Gordon photograph and the O'Sullivan Smith Plantation series -- the same Library of Congress images in this article's visual evidence section. The series establishes the immediate context for the 1865 Freedmen's Bureau records this article's state continuity methodology relies on.</p>
+      <div class="fv-meta">Ken Burns | PBS, 1990 | 9 episodes, 11.5 hours | Most-watched documentary in PBS history | 2 Emmy Awards</div>
+      <p class="fv-desc">The foundational American Civil War documentary, built from 16,000 photographs and the letters and diaries of soldiers, freedpeople, and civilians. Historian Barbara J. Fields's commentary directly addresses the demographic and legal status of Black Americans during the war years. Burns uses the Gordon photograph and the O'Sullivan Smith Plantation series -- the same Library of Congress images in this article's visual evidence section.</p>
+      <p class="fv-rel">Relevance: Establishes the immediate human context for the 1865 Freedmen's Bureau records this article's state continuity methodology relies on. Forty million viewers watched its original broadcast, making it the shared visual reference point for most Americans' understanding of this period.</p>
     </div>
-    <div class="fv-player">
-      <iframe src="https://www.youtube.com/embed/4TH_HhEh5c4" allowfullscreen title="Ken Burns: The Civil War -- Official Trailer"></iframe>
-    </div>
-    <div class="fv-footer">Full series at <a href="https://www.pbs.org/kenburns/the-civil-war/" target="_blank" rel="noopener">pbs.org/kenburns/the-civil-war</a></div>
+    <a href="https://www.pbs.org/kenburns/the-civil-war/" target="_blank" rel="noopener" class="fv-thumb-link">
+      <img src="https://image.pbs.org/contentchannels/kq5Wkwy-white-logo-41-aozjQjH.png" alt="Ken Burns The Civil War" class="fv-thumb-img" style="object-fit:contain;background:#111">
+      <div class="fv-play-btn"><svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="29" stroke="rgba(200,147,90,0.7)" stroke-width="1.5"/><polygon points="24,18 46,30 24,42" fill="#c8935a"/></svg></div>
+      <div class="fv-thumb-label">Stream on PBS.org</div>
+    </a>
   </div>
 
-  <!-- DOC 4: Ken Burns American Revolution -->
-
+  <!-- DOC 4 -->
   <div class="fv-block">
     <div class="fv-header">
-      <div class="fv-eye">PBS Documentary &mdash; Black Americans at the Founding</div>
+      <div class="fv-eye">PBS Documentary -- Black Americans at the Founding</div>
       <div class="fv-title">The American Revolution</div>
-      <div class="fv-meta">Ken Burns, Sarah Botstein, David Schmidt&nbsp;&nbsp;|&nbsp;&nbsp;PBS, 2025&nbsp;&nbsp;|&nbsp;&nbsp;6 episodes, 12 hours&nbsp;&nbsp;|&nbsp;&nbsp;96% on Rotten Tomatoes</div>
-      <p class="fv-desc">The most recent major documentary treatment of the American founding, covering 1763 to 1789. Burns documents the presence of Black Americans -- enslaved and free -- throughout the Revolutionary War, including Black soldiers in the Continental Army. Amanda Gorman voices Phillis Wheatley, born enslaved, who became the first published African American poet. The series directly addresses the contradiction between the Declaration's language and the institution of slavery that its signers maintained.</p>
-      <p class="fv-rel">Relevance: The founding-era Black American presence documented in Chart 01 -- the period from 1619 to 1790 when the Black American population surpassed the original colonial line -- is the same period Burns covers. The role of Black soldiers at the founding is the human-scale version of the demographic pattern the chart documents.</p>
+      <div class="fv-meta">Ken Burns, Sarah Botstein, David Schmidt | PBS, 2025 | 6 episodes, 12 hours | 96% on Rotten Tomatoes</div>
+      <p class="fv-desc">The most recent major documentary treatment of the American founding, covering 1763 to 1789. Burns documents the presence of Black Americans -- enslaved and free -- throughout the Revolutionary War, including Black soldiers in the Continental Army. Amanda Gorman voices Phillis Wheatley, born enslaved, who became the first published African American poet. The series directly addresses the contradiction between the Declaration's language and the institution of slavery its signers maintained.</p>
+      <p class="fv-rel">Relevance: The founding-era Black American presence documented in Chart 01 -- the period from 1619 to 1790 when the Black American population surpassed the original colonial line -- is the same period Burns covers. Now streaming on PBS, Amazon Prime, and Apple TV.</p>
     </div>
-    <div class="fv-player">
-      <iframe src="https://www.youtube.com/embed/W8_kO7tA_Ls" allowfullscreen title="Ken Burns: The American Revolution -- Official Trailer"></iframe>
-    </div>
-    <div class="fv-footer">Full series at <a href="https://www.pbs.org/kenburns/the-american-revolution/" target="_blank" rel="noopener">pbs.org/kenburns/the-american-revolution</a></div>
+    <a href="https://www.pbs.org/kenburns/the-american-revolution/" target="_blank" rel="noopener" class="fv-thumb-link">
+      <img src="https://image.pbs.org/contentchannels/J1lWZla-white-logo-41-AYX5KU6.png" alt="Ken Burns The American Revolution" class="fv-thumb-img" style="object-fit:contain;background:#111">
+      <div class="fv-play-btn"><svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="29" stroke="rgba(200,147,90,0.7)" stroke-width="1.5"/><polygon points="24,18 46,30 24,42" fill="#c8935a"/></svg></div>
+      <div class="fv-thumb-label">Stream on PBS.org, Amazon Prime, and Apple TV</div>
+    </a>
   </div>
 
   <!-- BOOKS -->
-
   <div class="article-section-head" style="margin-top:2.5rem"><h2>Related Reading</h2><div class="section-rule"></div></div>
 
-  <p>The following books expand on the documentary, archival, and demographic record covered in this article. Each is written by a credentialed scholar and draws on primary sources. Covers link to publisher pages.</p>
+  <p>The following books address the same historical ground from different angles -- demographic scholarship, personal genealogy, primary narrative history, and cultural analysis. Some are peer-reviewed academic works. Others are written for a general audience. All are available through major booksellers and most public library systems.</p>
 
   <div class="book-grid">
 
-```
-<div class="book-card">
-  <a href="https://www.amazon.com/dp/140193515X" target="_blank" rel="noopener" class="book-cover-link">
-    <img src="https://covers.openlibrary.org/b/isbn/9781401935153-L.jpg" alt="The African Americans: Many Rivers to Cross book cover" class="book-cover">
-  </a>
-  <div class="book-info">
-    <div class="book-eye">Companion Book</div>
-    <div class="book-title">The African Americans: Many Rivers to Cross</div>
-    <div class="book-author">Henry Louis Gates Jr. and Donald Yacovone&nbsp;&nbsp;|&nbsp;&nbsp;SmileyBooks, 2013&nbsp;&nbsp;|&nbsp;&nbsp;304 pages</div>
-    <p class="book-desc">The companion volume to the PBS documentary series. Goes further than the film in examining the ethnic diversity of Africans who arrived during the slave trade, the regional differences in how slavery was practiced across the Southern states, and the specific mechanisms by which the post-1808 closed population grew in place. Professor Ira Berlin of the University of Maryland described it as one of the few accounts that captures the changing texture of Black life as people remade their society on new ground.</p>
-    <p class="book-rel">Relevance: Chapter coverage of 1619 to 1808 directly supplements the population data in Chart 01. The book's treatment of geographic concentration in South Carolina, Mississippi, and Virginia aligns with the state continuity figures in this article.</p>
-  </div>
-</div>
+    <div class="book-card">
+      <a href="https://www.penguinrandomhouse.com/books/601164/the-african-americans-by-henry-louis-gates-jr-and-donald-yacovone/" target="_blank" rel="noopener" class="book-cover-link">
+        <div class="book-cover-placeholder">
+          <span>The African Americans</span>
+          <span class="book-cover-auth">Gates Jr.</span>
+        </div>
+      </a>
+      <div class="book-info">
+        <div class="book-eye">Population History -- Companion to PBS Series</div>
+        <div class="book-title">The African Americans: Many Rivers to Cross</div>
+        <div class="book-author">Henry Louis Gates Jr. and Donald Yacovone | SmileyBooks, 2013</div>
+        <p class="book-desc">Five hundred years of Black American history, from the first Africans in the Spanish Americas in 1513 through 2013. Goes further than the documentary in examining the ethnic diversity of Africans brought during the slave trade, how slavery was practiced differently across Southern states, and how the post-1808 closed population grew in place. Yale historian David Blight called it everyone's American and African American history.</p>
+        <p class="book-rel">Relevance: The chapter on 1619 to 1808 directly supplements Chart 01. Geographic coverage of South Carolina, Mississippi, and Virginia matches the state continuity figures in this article.</p>
+      </div>
+    </div>
 
-<div class="book-card">
-  <a href="https://www.amazon.com/dp/0525559531" target="_blank" rel="noopener" class="book-cover-link">
-    <img src="https://covers.openlibrary.org/b/isbn/9780525559535-L.jpg" alt="Stony the Road book cover" class="book-cover">
-  </a>
-  <div class="book-info">
-    <div class="book-eye">Companion to the Reconstruction Documentary</div>
-    <div class="book-title">Stony the Road: Reconstruction, White Supremacy, and the Rise of Jim Crow</div>
-    <div class="book-author">Henry Louis Gates Jr.&nbsp;&nbsp;|&nbsp;&nbsp;Penguin Press, 2019&nbsp;&nbsp;|&nbsp;&nbsp;320 pages</div>
-    <p class="book-desc">The scholarly companion to Gates's Reconstruction documentary. Covers the collapse of Reconstruction from 1877 onward and documents the specific mechanisms -- voter suppression, convict leasing, redlining, and the systematic destruction of Black wealth -- that constrained Black American population growth after the brief post-Emancipation gains. Addresses directly why the current Black American population reflects growth achieved under documented constraint.</p>
-    <p class="book-rel">Relevance: Provides the documented historical basis for Finding 02 in this article's contextual note -- that the Black American population's current size reflects suppressed growth, not an absence of founding-era presence.</p>
-  </div>
-</div>
+    <div class="book-card">
+      <a href="https://www.penguinrandomhouse.com/books/557952/stony-the-road-by-henry-louis-gates-jr/" target="_blank" rel="noopener" class="book-cover-link">
+        <div class="book-cover-placeholder">
+          <span>Stony the Road</span>
+          <span class="book-cover-auth">Gates Jr.</span>
+        </div>
+      </a>
+      <div class="book-info">
+        <div class="book-eye">Post-Emancipation Suppression -- Why the Numbers Are What They Are</div>
+        <div class="book-title">Stony the Road: Reconstruction, White Supremacy, and the Rise of Jim Crow</div>
+        <div class="book-author">Henry Louis Gates Jr. | Penguin Press, 2019</div>
+        <p class="book-desc">Documents the dismantling of Reconstruction from 1877 onward -- voter suppression, convict leasing, redlining, and the systematic destruction of Black wealth and political power. Explains with primary source documentation why the Black American population's current size reflects growth achieved under sustained, institutionalized constraint, not an absence of founding-era roots. Essential context for Finding 02 in this article.</p>
+        <p class="book-rel">Relevance: The post-1865 suppression mechanisms Gates documents are the documented reason the Black American population is smaller than it would otherwise be -- one of the three core findings in this article's contextual section.</p>
+      </div>
+    </div>
 
-<div class="book-card">
-  <a href="https://www.amazon.com/dp/0521496667" target="_blank" rel="noopener" class="book-cover-link">
-    <img src="https://covers.openlibrary.org/b/isbn/9780521496667-L.jpg" alt="A Population History of North America book cover" class="book-cover">
-  </a>
-  <div class="book-info">
-    <div class="book-eye">Primary Demographic Source</div>
-    <div class="book-title">A Population History of North America</div>
-    <div class="book-author">Michael R. Haines and Richard H. Steckel, eds.&nbsp;&nbsp;|&nbsp;&nbsp;Cambridge University Press, 2000&nbsp;&nbsp;|&nbsp;&nbsp;536 pages</div>
-    <p class="book-desc">The peer-reviewed academic source for the pre-1790 population estimates used in Chart 01. Haines and Steckel compile demographic data from colonial records, estate inventories, church registers, and archaeological evidence to estimate population sizes before the first federal census. Chapter coverage of the colonial-era enslaved population in the Southern states provides the scholarly foundation for the founding-era comparison this article makes. This is citation number 2 in this article's methodology section.</p>
-    <p class="book-rel">Relevance: The 1607 to 1790 data points in Chart 01 are sourced from this volume. Readers who want to examine the underlying demographic methodology behind those figures will find it here.</p>
-  </div>
-</div>
-```
+    <div class="book-card">
+      <a href="https://www.amazon.com/dp/0679724656" target="_blank" rel="noopener" class="book-cover-link">
+        <div class="book-cover-placeholder">
+          <span>The Warmth of Other Suns</span>
+          <span class="book-cover-auth">Wilkerson</span>
+        </div>
+      </a>
+      <div class="book-info">
+        <div class="book-eye">The Great Migration -- Why People Left and What They Left Behind</div>
+        <div class="book-title">The Warmth of Other Suns: The Epic Story of America's Great Migration</div>
+        <div class="book-author">Isabel Wilkerson | Random House, 2010 | National Book Critics Circle Award</div>
+        <p class="book-desc">The definitive account of the six million Black Americans who left the South between 1915 and 1970, told through three individual life stories across three decades. Wilkerson spent fifteen years interviewing more than 1,200 people. The book documents why families left the states with the highest population continuity figures in this article -- and what leaving cost them in terms of roots, land, and community. It is simultaneously a story of presence and departure.</p>
+        <p class="book-rel">Relevance: The Great Migration partially explains why states like Mississippi and South Carolina, which show the highest pre-Emancipation continuity, have lower current Black populations than Northern cities. The depth of roots left behind is what this article's geographic analysis documents.</p>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <a href="https://www.amazon.com/dp/0399590986" target="_blank" rel="noopener" class="book-cover-link">
+        <div class="book-cover-placeholder">
+          <span>Caste</span>
+          <span class="book-cover-auth">Wilkerson</span>
+        </div>
+      </a>
+      <div class="book-info">
+        <div class="book-eye">Structural Analysis -- How Continuity Became Hierarchy</div>
+        <div class="book-title">Caste: The Origins of Our Discontents</div>
+        <div class="book-author">Isabel Wilkerson | Random House, 2020 | #1 New York Times Bestseller</div>
+        <p class="book-desc">Argues that American society operates through a hidden caste system -- not merely a race problem -- in which Black Americans, as the founding-era enslaved population, occupy the bottom caste regardless of individual achievement. Wilkerson draws on primary sources, comparative history, and personal narrative to document how a population that has been continuously present since the founding became simultaneously the most foundational and most systematically disadvantaged group in the country.</p>
+        <p class="book-rel">Relevance: Provides the structural framework for understanding why the demographic continuity documented in this article has not translated into proportional civic and economic standing -- the gap between length of presence and quality of treatment.</p>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <a href="https://www.amazon.com/dp/0385540302" target="_blank" rel="noopener" class="book-cover-link">
+        <div class="book-cover-placeholder">
+          <span>Roots</span>
+          <span class="book-cover-auth">Haley</span>
+        </div>
+      </a>
+      <div class="book-info">
+        <div class="book-eye">Personal Genealogy -- What Continuity Looks Like From Inside a Family</div>
+        <div class="book-title">Roots: The Saga of an American Family</div>
+        <div class="book-author">Alex Haley | Doubleday, 1976 | Pulitzer Prize Special Citation</div>
+        <p class="book-desc">Alex Haley's account of tracing his family from Kunta Kinte's capture in The Gambia in 1767 through seven generations of American slavery, Emancipation, and the early 20th century. What Haley documented through years of archival research is the same genealogical continuity this article examines statistically -- a single family line, unbroken, from 1767 to the 1970s, rooted in the same geographic corridor of the American South. The 1977 TV adaptation reached 130 million viewers over eight nights.</p>
+        <p class="book-rel">Relevance: The individual genealogical story Haley tells is the human-scale version of the population continuity this article documents in aggregate. His methodology -- tracing family through slave schedules, Freedmen's Bureau records, and census rolls -- is the same methodology this article's state analysis draws on.</p>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <a href="https://www.amazon.com/dp/0521496667" target="_blank" rel="noopener" class="book-cover-link">
+        <div class="book-cover-placeholder">
+          <span>A Population History of North America</span>
+          <span class="book-cover-auth">Haines / Steckel</span>
+        </div>
+      </a>
+      <div class="book-info">
+        <div class="book-eye">Primary Demographic Source -- The Numbers Behind Chart 01</div>
+        <div class="book-title">A Population History of North America</div>
+        <div class="book-author">Michael R. Haines and Richard H. Steckel, eds. | Cambridge University Press, 2000</div>
+        <p class="book-desc">The peer-reviewed source for the pre-1790 population estimates in Chart 01. Haines and Steckel compile data from colonial records, estate inventories, church registers, and archaeological evidence to estimate population sizes before the first federal census. Chapter coverage of the colonial-era enslaved population in the Southern states provides the scholarly foundation for the founding-era comparison this article makes. This is Citation 2 in this article's methodology section.</p>
+        <p class="book-rel">Relevance: The 1607 to 1790 data points in Chart 01 come from this volume. Readers who want to examine the underlying demographic methodology will find it here.</p>
+      </div>
+    </div>
 
   </div><!-- /book-grid -->
 
   <!-- CITATIONS -->
-
   <div class="citations-wrap">
     <div class="citations-eyebrow">Sources &amp; Methodology</div>
     <h2>Citations and Data Notes</h2>
     <p class="citations-preamble">All population figures, immigration counts, and genealogical estimates used in this article are drawn from primary federal records or peer-reviewed demographic scholarship. Sources are listed below by category. The Freedmen Star Research Desk has not modified source data. Figures are presented as published or enumerated in the cited records. Readers are encouraged to access the originals directly.</p>
 
-```
-<div class="citation-group">
-  <div class="citation-group-label">Population History</div>
-  <div class="citation-entry"><span class="cit-num">1</span><span class="cit-text"><strong>Gibson, Campbell J. and Kay Jung.</strong> <em>Historical Census Statistics on Population Totals By Race, 1790 to 1990.</em> U.S. Census Bureau, Population Division Working Paper No. 56, February 2002. Available at census.gov.</span></div>
-  <div class="citation-entry"><span class="cit-num">2</span><span class="cit-text"><strong>Haines, Michael R. and Richard H. Steckel, eds.</strong> <em>A Population History of North America.</em> Cambridge University Press, 2000. Used for 1607 to 1790 data points predating the federal census.</span></div>
-  <div class="citation-entry"><span class="cit-num">3</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Decennial Census of Population, 1790 to 2020.</em> Population schedules, race and nativity tables. Available at census.gov/programs-surveys/decennial-census.</span></div>
-</div>
+    <div class="citation-group">
+      <div class="citation-group-label">Population History</div>
+      <div class="citation-entry"><span class="cit-num">1</span><span class="cit-text"><strong>Gibson, Campbell J. and Kay Jung.</strong> <em>Historical Census Statistics on Population Totals By Race, 1790 to 1990.</em> U.S. Census Bureau, Population Division Working Paper No. 56, February 2002. Available at census.gov.</span></div>
+      <div class="citation-entry"><span class="cit-num">2</span><span class="cit-text"><strong>Haines, Michael R. and Richard H. Steckel, eds.</strong> <em>A Population History of North America.</em> Cambridge University Press, 2000. Used for 1607 to 1790 data points predating the federal census.</span></div>
+      <div class="citation-entry"><span class="cit-num">3</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Decennial Census of Population, 1790 to 2020.</em> Population schedules, race and nativity tables. Available at census.gov/programs-surveys/decennial-census.</span></div>
+    </div>
 
-<div class="citation-group">
-  <div class="citation-group-label">Immigration and Nativity Data</div>
-  <div class="citation-entry"><span class="cit-num">4</span><span class="cit-text"><strong>U.S. Department of Homeland Security / USCIS.</strong> <em>Yearbook of Immigration Statistics, Historical Series.</em> Annual immigration arrivals by country of origin, 1820 to present.</span></div>
-  <div class="citation-entry"><span class="cit-num">5</span><span class="cit-text"><strong>Ellis Island Foundation.</strong> <em>Passenger Arrival Records, 1892 to 1957.</em> Digitized arrival logs covering peak European immigration. Available at libertyellisfoundation.org.</span></div>
-  <div class="citation-entry"><span class="cit-num">6</span><span class="cit-text"><strong>U.S. Congress.</strong> <em>Act Prohibiting Importation of Slaves, 1807.</em> Enacted March 2, 1807, effective January 1, 1808. Statutes at Large, 2:426.</span></div>
-</div>
+    <div class="citation-group">
+      <div class="citation-group-label">Immigration and Nativity Data</div>
+      <div class="citation-entry"><span class="cit-num">4</span><span class="cit-text"><strong>U.S. Department of Homeland Security / USCIS.</strong> <em>Yearbook of Immigration Statistics, Historical Series.</em> Annual immigration arrivals by country of origin, 1820 to present.</span></div>
+      <div class="citation-entry"><span class="cit-num">5</span><span class="cit-text"><strong>Ellis Island Foundation.</strong> <em>Passenger Arrival Records, 1892 to 1957.</em> Digitized arrival logs covering peak European immigration. Available at libertyellisfoundation.org.</span></div>
+      <div class="citation-entry"><span class="cit-num">6</span><span class="cit-text"><strong>U.S. Congress.</strong> <em>Act Prohibiting Importation of Slaves, 1807.</em> Enacted March 2, 1807, effective January 1, 1808. Statutes at Large, 2:426.</span></div>
+    </div>
 
-<div class="citation-group">
-  <div class="citation-group-label">Genealogical and Archival Sources</div>
-  <div class="citation-entry"><span class="cit-num">7</span><span class="cit-text"><strong>National Archives and Records Administration (NARA).</strong> <em>Records of the Bureau of Refugees, Freedmen, and Abandoned Lands, 1865 to 1872.</em> Series M1875, M1907. Available at archives.gov.</span></div>
-  <div class="citation-entry"><span class="cit-num">8</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Slave Schedules, Eighth Census of the United States, 1860.</em> Digitized via Ancestry.com and FamilySearch.</span></div>
-  <div class="citation-entry"><span class="cit-num">9</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Population Schedules, Ninth and Tenth Census, 1870 and 1880.</em> First federal censuses to individually enumerate formerly enslaved persons by name.</span></div>
-</div>
+    <div class="citation-group">
+      <div class="citation-group-label">Genealogical and Archival Sources</div>
+      <div class="citation-entry"><span class="cit-num">7</span><span class="cit-text"><strong>National Archives and Records Administration (NARA).</strong> <em>Records of the Bureau of Refugees, Freedmen, and Abandoned Lands, 1865 to 1872.</em> Series M1875, M1907. Available at archives.gov.</span></div>
+      <div class="citation-entry"><span class="cit-num">8</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Slave Schedules, Eighth Census of the United States, 1860.</em> Digitized via Ancestry.com and FamilySearch.</span></div>
+      <div class="citation-entry"><span class="cit-num">9</span><span class="cit-text"><strong>U.S. Census Bureau.</strong> <em>Population Schedules, Ninth and Tenth Census, 1870 and 1880.</em> First federal censuses to individually enumerate formerly enslaved persons by name.</span></div>
+    </div>
 
-<div class="citation-group">
-  <div class="citation-group-label">Genomic and DNA Population Studies</div>
-  <div class="citation-entry"><span class="cit-num">10</span><span class="cit-text"><strong>Harvard Medical School / HMS News.</strong> <em>"Historical DNA Study Connects Living People to Enslaved Ancestors."</em> 2023. Available at hms.harvard.edu.</span></div>
-  <div class="citation-entry"><span class="cit-num">11</span><span class="cit-text"><strong>23andMe Ancestry Research.</strong> <em>Population structure and mixed-race history in the American South.</em> 2022. Available at blog.23andme.com.</span></div>
-</div>
+    <div class="citation-group">
+      <div class="citation-group-label">Genomic and DNA Population Studies</div>
+      <div class="citation-entry"><span class="cit-num">10</span><span class="cit-text"><strong>Harvard Medical School / HMS News.</strong> <em>"Historical DNA Study Connects Living People to Enslaved Ancestors."</em> 2023. Available at hms.harvard.edu.</span></div>
+      <div class="citation-entry"><span class="cit-num">11</span><span class="cit-text"><strong>23andMe Ancestry Research.</strong> <em>Population structure and mixed-race history in the American South.</em> 2022. Available at blog.23andme.com.</span></div>
+    </div>
 
-<div class="citation-group">
-  <div class="citation-group-label">Visual and Cartographic Evidence</div>
-  <div class="citation-entry"><span class="cit-num">12</span><span class="cit-text"><strong>Hergesheimer, E. (Edwin).</strong> <em>Map showing the distribution of the slave population of the southern states of the United States. Compiled from the census of 1860.</em> U.S. Coast Survey, Washington, 1861. Library of Congress Geography and Map Division. Available at loc.gov/item/99447026.</span></div>
-  <div class="citation-entry"><span class="cit-num">13</span><span class="cit-text"><strong>O'Sullivan, Timothy H.</strong> <em>Five generations on Smith's Plantation, Beaufort, South Carolina.</em> 1862. Library of Congress Prints and Photographs Division, Civil War Photographs Collection. Available at loc.gov/item/98504449.</span></div>
-  <div class="citation-entry"><span class="cit-num">14</span><span class="cit-text"><strong>McPherson and Oliver.</strong> <em>Gordon (Whipped Peter), Baton Rouge, Louisiana.</em> April 2, 1863. Library of Congress, Liljenquist Family Collection. Available at loc.gov/item/2018648117.</span></div>
-  <div class="citation-entry"><span class="cit-num">15</span><span class="cit-text"><strong>Waud, Alfred R.</strong> <em>The First Vote.</em> Harper's Weekly, November 16, 1867. Library of Congress Prints and Photographs Division. Available at loc.gov/item/2011648984.</span></div>
-  <div class="citation-entry"><span class="cit-num">16</span><span class="cit-text"><strong>Walker, Francis A. (Superintendent of the Census).</strong> <em>Statistical Atlas of the United States Based on the Results of the Ninth Census, 1870.</em> U.S. Census Bureau, 1874. Plate: Distribution of the Colored Population. Library of Congress Geography and Map Division. Available at loc.gov/item/05019329.</span></div>
-</div>
+    <div class="citation-group">
+      <div class="citation-group-label">Visual and Cartographic Evidence</div>
+      <div class="citation-entry"><span class="cit-num">12</span><span class="cit-text"><strong>Hergesheimer, E. (Edwin).</strong> <em>Map showing the distribution of the slave population of the southern states of the United States. Compiled from the census of 1860.</em> U.S. Coast Survey, Washington, 1861. Library of Congress Geography and Map Division. Available at loc.gov/item/99447026.</span></div>
+      <div class="citation-entry"><span class="cit-num">13</span><span class="cit-text"><strong>O'Sullivan, Timothy H.</strong> <em>Five generations on Smith's Plantation, Beaufort, South Carolina.</em> 1862. Library of Congress Prints and Photographs Division, Civil War Photographs Collection. Available at loc.gov/item/98504449.</span></div>
+      <div class="citation-entry"><span class="cit-num">14</span><span class="cit-text"><strong>McPherson and Oliver.</strong> <em>Gordon (Whipped Peter), Baton Rouge, Louisiana.</em> April 2, 1863. Library of Congress, Liljenquist Family Collection. Available at loc.gov/item/2018648117.</span></div>
+      <div class="citation-entry"><span class="cit-num">15</span><span class="cit-text"><strong>Waud, Alfred R.</strong> <em>The First Vote.</em> Harper's Weekly, November 16, 1867. Library of Congress Prints and Photographs Division. Available at loc.gov/item/2011648984.</span></div>
+      <div class="citation-entry"><span class="cit-num">16</span><span class="cit-text"><strong>Walker, Francis A. (Superintendent of the Census).</strong> <em>Statistical Atlas of the United States Based on the Results of the Ninth Census, 1870.</em> U.S. Census Bureau, 1874. Plate: Distribution of the Colored Population. Library of Congress Geography and Map Division. Available at loc.gov/item/05019329.</span></div>
+    </div>
 
-<div class="method-note"><strong>Methodology note:</strong> State-level continuity percentages represent the Freedmen Star Research Desk's synthesis of sources 7, 8, and 9 above, cross-referenced with 2020 Census state population data. They are informed estimates, not certified genealogical findings. They reflect the estimated share of each state's current Black population whose lineage traces with high probability to documented pre-1865 presence in that state or immediately contiguous region. Population chart figures are drawn from sources 1 through 3. Pre-1790 figures represent scholarly estimates rather than enumerated census counts.</div>
-```
-
+    <div class="method-note"><strong>Methodology note:</strong> State-level continuity percentages represent the Freedmen Star Research Desk's synthesis of sources 7, 8, and 9 above, cross-referenced with 2020 Census state population data. They are informed estimates, not certified genealogical findings. They reflect the estimated share of each state's current Black population whose lineage traces with high probability to documented pre-1865 presence in that state or immediately contiguous region. Population chart figures are drawn from sources 1 through 3. Pre-1790 figures represent scholarly estimates rather than enumerated census counts.</div>
   </div>
 
   <!-- COMMENTS -->
-
   <div class="comments-wrap">
     <div class="comments-eyebrow">Discussion</div>
     <h2>Reader Comments</h2>
@@ -711,7 +756,11 @@ footer{border-top:1px solid var(--border);padding:2.5rem 2rem;background:var(--s
     if (!img) return;
     imgs.push({ src: img.src, caption: img.dataset.caption || '' });
     var idx = parseInt(el.dataset.index);
-    el.addEventListener('click', function(){ open(idx); });
+    el.addEventListener('click', function(e){
+      // Do not intercept clicks on anchor tags inside the figure
+      if (e.target.closest('a')) return;
+      open(idx);
+    });
   });
 
   function open(i){ cur=i; show(i); lb.classList.add('active'); document.body.style.overflow='hidden'; }
@@ -1000,6 +1049,5 @@ drawAll();
 var resizeTimer;
 window.addEventListener('resize', function(){ clearTimeout(resizeTimer); resizeTimer=setTimeout(drawAll,120); });
 </script>
-
 </body>
 </html>
