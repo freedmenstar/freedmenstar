@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where the Word Arrived Last | Freedmen Star</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg: #070604;
+        --surface: #0d0c09;
+        --surface2: #121009;
+        --text: #d8d2c8;
+        --text-dim: #7a7060;
+        --text-muted: #443e32;
+        --accent: #c8935a;
+        --accent-warm: #d4a574;
+        --accent-dim: rgba(200,147,90,0.1);
+        --accent-red: #7a1f2e;
+        --border: #1a1710;
+        --border-light: #221f16;
+        --max: 760px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        background-size: 256px 256px;
+    }
+
+    .demo-banner {
+        background: var(--accent-red);
+        color: rgba(255,255,255,0.92);
+        text-align: center;
+        font-size: 0.74rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 0.55rem 1rem;
+    }
+
+    header {
+        padding: 1.4rem 2rem;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        background: rgba(7,6,4,0.97);
+        backdrop-filter: blur(16px);
+        z-index: 200;
+    }
+    .header-content {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-family: 'Crimson Pro', serif;
+        font-size: 1.55rem;
+        letter-spacing: 2.5px;
+        color: var(--accent-warm);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding-bottom: 0.35rem;
+        border-bottom: 1.5px solid var(--accent-red);
+        text-decoration: none;
+    }
+    .brand-star { width: 1em; height: 1em; fill: currentColor; overflow: visible; }
+    nav { display: flex; gap: 1.75rem; }
+    nav a {
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 0.88rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent-warm); }
+
+    .article { max-width: var(--max); margin: 0 auto; padding: 0 2rem 6rem; }
+
+    .article-head { padding: 4rem 0 0; }
+    .kicker {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+    .kicker-cat { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+    .meta-dot { width: 2px; height: 2px; border-radius: 50%; background: var(--text-muted); }
+    .kicker-meta { font-size: 0.82rem; color: var(--text-muted); }
+    .kicker-loc { font-size: 0.82rem; color: var(--text-muted); font-style: italic; font-family: 'Crimson Pro', serif; }
+
+    h1.headline {
+        font-family: 'Crimson Pro', serif;
+        font-size: clamp(2.3rem, 5.5vw, 3.4rem);
+        font-weight: 400;
+        line-height: 1.12;
+        color: var(--text);
+        letter-spacing: 0.2px;
+        margin-bottom: 1.2rem;
+    }
+    .standfirst {
+        font-family: 'Crimson Pro', serif;
+        font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+        font-style: italic;
+        font-weight: 300;
+        color: var(--text-dim);
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+    }
+
+    .signature-rule {
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(to right, var(--accent-red) 0%, var(--accent-warm) 100%);
+        opacity: 0.85;
+        margin: 0 0 2.5rem;
+    }
+
+    .lead-photo { width: 100%; margin: 0 0 0.6rem; border: 1px solid var(--border); background: var(--surface); }
+    .lead-photo .frame {
+        width: 100%; aspect-ratio: 3/2;
+        display: flex; align-items: center; justify-content: center;
+        background: repeating-linear-gradient(45deg, #16130d 0 14px, #131009 14px 28px);
+        color: var(--text-muted); font-size: 0.78rem; letter-spacing: 1.5px;
+        text-transform: uppercase; text-align: center; padding: 1rem;
+    }
+    .caption {
+        font-size: 0.82rem; color: var(--text-muted); font-style: italic;
+        font-family: 'Crimson Pro', serif; margin-bottom: 3rem; line-height: 1.6;
+    }
+
+    .article-body p {
+        font-family: 'Crimson Pro', serif;
+        font-size: 1.18rem; font-weight: 300; line-height: 1.95;
+        color: var(--text); margin-bottom: 1.6rem; letter-spacing: 0.1px;
+    }
+    .article-body p.first::first-letter {
+        font-size: 3.4rem; line-height: 0.8; float: left;
+        padding: 0.3rem 0.6rem 0 0; color: var(--accent-warm); font-weight: 400;
+    }
+    .article-body .section-marker { text-align: center; margin: 2.8rem 0; color: var(--accent); font-size: 1rem; letter-spacing: 4px; }
+
+    blockquote { margin: 2.6rem 0; padding: 0 0 0 1.6rem; border-left: 2px solid var(--accent-red); }
+    blockquote p {
+        font-family: 'Crimson Pro', serif; font-size: 1.32rem; font-style: italic;
+        font-weight: 400; line-height: 1.7; color: var(--accent-warm);
+    }
+    blockquote cite {
+        display: block; margin-top: 0.8rem; font-size: 0.85rem; font-style: normal;
+        letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted);
+    }
+
+    .doc-figure { margin: 2.8rem 0 0.6rem; border: 1px solid var(--border-light); background: #1c1810; padding: 1.2rem; }
+    .doc-figure img { width: 100%; display: block; border: 1px solid rgba(0,0,0,0.4); }
+
+    /* Immersive scene */
+    .scene {
+        position: relative; margin: 3.5rem -2rem; min-height: 460px;
+        display: flex; align-items: flex-end; overflow: hidden;
+        border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .scene-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: grayscale(55%) sepia(18%) brightness(0.5) contrast(1.05); }
+    .scene-veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,6,4,0.97) 2%, rgba(7,6,4,0.55) 45%, rgba(7,6,4,0.7) 100%); }
+    .scene-inner { position: relative; z-index: 2; padding: 2.5rem 2rem 2.2rem; width: 100%; }
+    .scene-eyebrow { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
+    .scene-figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+    .scene-fig .num { font-family: 'Crimson Pro', serif; font-size: 2.4rem; color: var(--accent-warm); line-height: 1; margin-bottom: 0.4rem; }
+    .scene-fig .lbl { font-family: 'Crimson Pro', serif; font-size: 0.95rem; font-weight: 300; color: var(--text); line-height: 1.55; }
+    .scene-src { margin-top: 1.6rem; font-size: 0.72rem; color: var(--text-muted); font-style: italic; font-family: 'Crimson Pro', serif; }
+    @media (max-width: 560px) { .scene { margin: 3rem -2rem; } .scene-figures { grid-template-columns: 1fr; gap: 1.3rem; } }
+
+    /* Flag inset */
+    .flag-inset { margin: 3.2rem 0; border: 1px solid var(--border-light); background: var(--surface2); display: grid; grid-template-columns: 200px 1fr; }
+    .flag-art { background: #1c1810; display: flex; align-items: center; justify-content: center; padding: 1.4rem; border-right: 1px solid var(--border); }
+    .flag-art img { width: 100%; display: block; }
+    .flag-copy { padding: 1.6rem 1.7rem; }
+    .flag-copy h4 { font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-weight: 400; color: var(--text); margin-bottom: 0.7rem; }
+    .flag-copy p { font-family: 'Crimson Pro', serif; font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--text-dim); margin-bottom: 0.8rem; }
+    .flag-copy p:last-child { margin-bottom: 0; }
+    @media (max-width: 560px) { .flag-inset { grid-template-columns: 1fr; } .flag-art { border-right: none; border-bottom: 1px solid var(--border); } }
+
+    .press { margin: 3rem 0; text-align: center; }
+    .press-label { font-size: 0.68rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+    .press-headline { font-family: 'Crimson Pro', serif; font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-style: italic; font-weight: 400; color: var(--accent-warm); line-height: 1.35; }
+    .press-attr { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+
+    .inline-photo { margin: 2.8rem 0 0.6rem; border: 1px solid var(--border); background: var(--surface); }
+    .inline-photo .frame {
+        width: 100%; aspect-ratio: 16/10;
+        display: flex; align-items: center; justify-content: center;
+        background: repeating-linear-gradient(45deg, #16130d 0 14px, #131009 14px 28px);
+        color: var(--text-muted); font-size: 0.76rem; letter-spacing: 1.5px;
+        text-transform: uppercase; text-align: center; padding: 1rem;
+    }
+
+    /* Reading list */
+    .reading {
+        margin: 4rem 0 0;
+        border-top: 1px solid var(--border);
+        padding-top: 2.5rem;
+    }
+    .reading-head {
+        font-family: 'Crimson Pro', serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+    }
+    .reading-sub {
+        font-size: 0.95rem;
+        color: var(--text-dim);
+        font-family: 'Crimson Pro', serif;
+        font-style: italic;
+        margin-bottom: 2rem;
+    }
+    .book {
+        display: grid;
+        grid-template-columns: 4px 1fr;
+        gap: 1.2rem;
+        padding: 1.3rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+    .book:last-child { border-bottom: none; }
+    .book-spine { background: var(--accent-red); border-radius: 2px; }
+    .book-title { font-family: 'Crimson Pro', serif; font-size: 1.18rem; color: var(--text); line-height: 1.3; margin-bottom: 0.2rem; }
+    .book-author { font-size: 0.85rem; color: var(--accent); letter-spacing: 0.5px; margin-bottom: 0.6rem; }
+    .book-note { font-family: 'Crimson Pro', serif; font-size: 1rem; font-weight: 300; color: var(--text-dim); line-height: 1.65; }
+
+    .byline-foot { margin-top: 3.5rem; padding-top: 1.8rem; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 0.9rem; }
+    .byline-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(200,147,90,0.2); display: flex; align-items: center; justify-content: center; font-family: 'Crimson Pro', serif; color: var(--accent); flex-shrink: 0; }
+    .byline-name { font-size: 0.95rem; color: var(--text-dim); }
+    .byline-filed { font-size: 0.85rem; color: var(--text-muted); font-style: italic; font-family: 'Crimson Pro', serif; }
+
+    footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; color: var(--text-muted); font-size: 0.84rem; background: var(--surface); }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">Demonstration dispatch — historical facts verified · imagery + first-person witness are placeholders for your own</div>
+
+<header>
+    <div class="header-content">
+        <a href="#" class="logo">
+            <svg class="brand-star" viewBox="0 0 200 200"><path d="M100 20L112 82L160 40L118 88L180 100L118 112L160 160L112 118L100 180L88 118L40 160L82 112L20 100L82 88L40 40L88 82Z"/></svg>
+            FREEDMEN STAR
+        </a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Archive</a>
+            <a href="#">About</a>
+        </nav>
+    </div>
+</header>
+
+<article class="article">
+    <div class="article-head">
+        <div class="kicker">
+            <span class="kicker-cat">People &amp; Places</span>
+            <span class="meta-dot"></span>
+            <span class="kicker-meta">June 19</span>
+            <span class="meta-dot"></span>
+            <span class="kicker-loc">Galveston, Texas</span>
+        </div>
+        <h1 class="headline">Where the Word Arrived Last</h1>
+        <p class="standfirst">On a corner of 22nd and Strand, the news that the rest of the country already knew finally reached the people it was about. The island has never let the date go.</p>
+    </div>
+
+    <div class="signature-rule"></div>
+
+    <div class="lead-photo">
+        <div class="frame">[ Your photograph: the Absolute Equality mural, east wall of Old Galveston Square, 22nd &amp; Strand ]</div>
+    </div>
+    <p class="caption">The 5,000-square-foot mural stands on the property overlooking the site of Granger's former headquarters, where General Order No. 3 was written and issued.</p>
+
+    <div class="article-body">
+        <p class="first">The Emancipation Proclamation took effect on the first day of 1863. In Texas it changed almost nothing for two and a half more years. There were too few Union troops to enforce it, too much distance, and too many men with reason to keep the news to themselves. Slavery in Texas did not end when the law said it ended. It held on until the army arrived to say so out loud.</p>
+
+        <p>That happened here. On June 19, 1865, Major General Gordon Granger came ashore at Galveston with more than two thousand troops, many of them United States Colored Troops, and issued the order that gave the day its name. His men fanned out across the island and read it at the Customs House, at the courthouse, from the balcony of Ashton Villa, at the church on Broadway. Copies were posted on doors. The word was carried, in part, by soldiers who had themselves once been the subject of orders like it.</p>
+
+        <blockquote>
+            <p>The people of Texas are informed that, in accordance with a proclamation from the Executive of the United States, all slaves are free.</p>
+            <cite>General Order No. 3, June 19, 1865</cite>
+        </blockquote>
+
+        <p>The order did more than announce freedom. Its second sentence declared an absolute equality of personal rights and rights of property between former masters and former slaves, language more forward than the proclamation that preceded it. It also asked the freed to remain where they were and work for wages, a request the order had no means to make fair. Freedom and its limits arrived in the same breath.</p>
+
+        <div class="doc-figure">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/General_Order_No._3%2C_06-19-1865_-_NARA_-_182778372.jpg" alt="The original handwritten General Order No. 3, June 19, 1865, held by the National Archives">
+        </div>
+        <p class="caption">The original manuscript of General Order No. 3, handwritten by Granger's aide in a District of Texas order book. Though printed copies circulated for generations, the original sat unidentified in the National Archives stacks until an archivist located it in June 2020. It then received more than 100 hours of conservation before public display. <span style="color:var(--text-dim);">Source: U.S. National Archives, RG 393 (public domain).</span></p>
+
+        <p>The number it freed is easy to say and hard to hold. By the 1860 census, Texas counted 182,566 enslaved people, just over thirty percent of the entire state. By June 1865 the figure had grown toward a quarter million. These were not people freed early by an advancing army. They were the last, held in the most remote corner of the Confederacy, where some enslavers had moved human property precisely because it sat far from the war and the reach of the proclamation.</p>
+
+        <div class="scene">
+            <div class="scene-bg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/c/c8/Strand_Historic_District%2C_Galveston%2C_Texas.jpg');"></div>
+            <div class="scene-veil"></div>
+            <div class="scene-inner">
+                <div class="scene-eyebrow">Galveston, June 1865 · by the record</div>
+                <div class="scene-figures">
+                    <div class="scene-fig">
+                        <div class="num">182,566</div>
+                        <div class="lbl">enslaved in Texas at the 1860 census, 30.2% of the state</div>
+                    </div>
+                    <div class="scene-fig">
+                        <div class="num">2&frac12; yrs</div>
+                        <div class="lbl">between the Proclamation taking effect and the word reaching the island</div>
+                    </div>
+                    <div class="scene-fig">
+                        <div class="num">1866</div>
+                        <div class="lbl">first Juneteenth held at Reedy Chapel, every year since</div>
+                    </div>
+                </div>
+                <div class="scene-src">The Strand, Galveston. Sources: U.S. Census Bureau; Texas State Historical Association; National Archives.</div>
+            </div>
+        </div>
+
+        <p>For the people standing in those streets, the news did not stay quiet for long. By many accounts the celebration began within hours of the reading, in the churches and in the open spaces where gathering had been forbidden the day before. What freedom would actually mean was an open question. What it felt like in that first moment was not.</p>
+
+        <div class="section-marker">✦</div>
+
+        <p>What lasts about Galveston is what the people did with the date after they received it. The first formal celebration came the very next year, in 1866, at the church on Broadway now known as Reedy Chapel. It has happened every June since. Before it was a federal holiday, before it was a state holiday, before it was a hashtag, it was a congregation on an island marking the morning the word finally reached them.</p>
+
+        <div class="inline-photo">
+            <div class="frame">[ Your photograph: Reedy Chapel A.M.E., 2015 Broadway, site of the first Emancipation celebration in 1866 ]</div>
+        </div>
+        <p class="caption">Reedy Chapel A.M.E. A place where enslaved people, and later free Black islanders, worshiped. It has carried the June 19 observance without interruption for more than a century and a half.</p>
+
+        <p>Stand at 22nd and Strand and the layers are hard to separate. There is the corner itself, where a historical marker went up in 2012 after a local preservationist raised the money for it. There is the mural behind it, painted in 2021, naming the order by its own words. And there is the ordinary commercial street around all of it, people walking past on errands, the way people walk past the things they live beside.</p>
+
+        <div class="flag-inset">
+            <div class="flag-art">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Juneteenth_flag.svg" alt="The Juneteenth flag, a bursting white star on a blue and red field">
+            </div>
+            <div class="flag-copy">
+                <h4>A new star, by design</h4>
+                <p>The flag now flown for the day was created in 1997 by activist Ben Haith, with illustrator Lisa Jeanne Graf giving it form. The white star at the center stands for Texas, where the last enslaved were freed, and for the freedom of Black Americans in every state.</p>
+                <p>The burst around it was drawn from a nova, an astronomer's word for a new star. The arc across the field is a new horizon. Haith chose red, white, and blue on purpose, saying his ancestors were part of this country even while held in captivity.</p>
+            </div>
+        </div>
+
+        <p>The symbolism in that flag does quiet work. A star for a people who stayed, breaking new over an American horizon, in the colors of the only nation they have ever known.</p>
+
+        <div class="section-marker">✦</div>
+
+        <p>Freedom in Galveston did not end as a single morning's celebration. It became a generation. The island that received the last word of emancipation produced, in the decades right after, some of the most consequential Black Americans the country would know, and the line runs directly from the streets where the order was read.</p>
+
+        <p>Norris Wright Cuney was nineteen when slavery ended. Born enslaved on a plantation near Hempstead, he came to Galveston after the war and built something the postwar South had little precedent for. He organized the Black dockworkers, the cotton jammers, into a union and won them equal pay on the wharves. He served as city alderman and school director, and in 1889 was appointed United States Collector of Customs at the port, the highest federal post held by any Black American in the South at the time. When the city refused to integrate its schools, he raised the funds himself and founded Central High School, the first high school for Black students in Texas. He worshiped at Reedy Chapel, the same church that held the first Juneteenth, and is buried on the island still.</p>
+
+        <p>His daughter, Maud Cuney Hare, born in Galveston in the first full generation of freedom, studied at the New England Conservatory and became a concert pianist, a writer, and one of the early scholars to take Black American music seriously as a tradition worth documenting. One generation out of bondage, the family was already shaping the cultural record of the nation.</p>
+
+        <p>In 1878, in a house on the island, Jack Johnson was born. He would become the first Black heavyweight champion of the world, the Galveston Giant, who refused every instruction to make himself smaller. The city later named the boulevard past Cuney's park for him. Barry White, the voice, came from the same island in 1944. The place where freedom arrived last did not settle into a footnote. It kept producing.</p>
+
+        <p>The country took until 2021 to make June 19 a national holiday. Galveston had already been keeping it for a hundred and fifty-five years.</p>
+
+        <p>There is one more thing the island holds quietly, one most people never hear. The first known person of African descent to set foot in Texas did not arrive in chains in the cotton years. He came in 1528, on the Gulf coast near Galveston, with a Spanish expedition, an explorer the records name Estevanico. More than three centuries separate his landing from Granger's order. Across that span runs a long, unbroken presence: people who were here, who stayed, who built, and who marked their own freedom on their own calendar before the rest of the country thought to.</p>
+
+        <!-- READING LIST -->
+        <div class="reading">
+            <div class="reading-head">For Further Reading</div>
+            <div class="reading-sub">Vetted works by Black American authors. Begin here.</div>
+
+            <div class="book">
+                <div class="book-spine"></div>
+                <div>
+                    <div class="book-title">On Juneteenth</div>
+                    <div class="book-author">Annette Gordon-Reed</div>
+                    <div class="book-note">A Pulitzer Prize–winning historian and Texas native, descended from people brought to Texas in the 1820s, weaves memoir and history into the definitive short account of the holiday's origins. Named a best book of the year across outlets and the cornerstone of the Smithsonian's own Juneteenth reading list.</div>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="book-spine"></div>
+                <div>
+                    <div class="book-title">Norris Wright Cuney: A Tribune of the Black People</div>
+                    <div class="book-author">Maud Cuney Hare</div>
+                    <div class="book-note">Written in 1913 by Cuney's own daughter, a Galveston-born pianist and folklorist. Still the most comprehensive account of the island's great Reconstruction leader, and a primary record from one of the first families of free Galveston.</div>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="book-spine"></div>
+                <div>
+                    <div class="book-title">Negro Musicians and Their Music</div>
+                    <div class="book-author">Maud Cuney Hare</div>
+                    <div class="book-note">Cuney Hare's 1936 study, long respected as an early and serious documentation of Black American musical tradition by a Black American scholar who lived it.</div>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="book-spine"></div>
+                <div>
+                    <div class="book-title">A Black Women's History of the United States</div>
+                    <div class="book-author">Daina Ramey Berry &amp; Kali Nicole Gross</div>
+                    <div class="book-note">Two leading Black historians trace the full arc from the first African women in America to the present. Featured on the National Museum of African American History and Culture's recommended list.</div>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="book-spine"></div>
+                <div>
+                    <div class="book-title">Envisioning Emancipation: Black Americans and the End of Slavery</div>
+                    <div class="book-author">Deborah Willis &amp; Barbara Krauthamer</div>
+                    <div class="book-note">A photographic history of what freedom actually looked like in the Civil War era, assembled by a celebrated Black photographic historian. A natural companion to documentary and archival work.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="byline-foot">
+            <div class="byline-avatar">F</div>
+            <div>
+                <div class="byline-name">Author's Note</div>
+                <div class="byline-filed">Filed from Galveston, Texas</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<footer>
+    &copy; 2025 Freedmen Star. Richmond, Virginia.
+</footer>
+
+</body>
+</html>
