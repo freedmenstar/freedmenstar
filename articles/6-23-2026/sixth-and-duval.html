@@ -42,8 +42,8 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9;
 
 .site-header{position:sticky;top:0;z-index:100;background:rgba(7,6,4,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-2);height:60px;display:flex;align-items:center}
 .header-inner{width:100%;max-width:var(--col-wide);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.wordmark{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.20em;text-transform:uppercase;color:var(--text);text-decoration:none;display:inline-flex;align-items:center;gap:9px;padding-bottom:4px;border-bottom:2px solid var(--accent-red)}
-.wordmark .star{color:var(--accent-warm);font-size:11px;line-height:1}
+.wordmark{font-family:'Crimson Pro',serif;font-size:1.55rem;font-weight:400;letter-spacing:2.5px;color:var(--accent-warm);text-decoration:none;display:inline-flex;align-items:center;gap:0.6rem;padding-bottom:0.35rem;border-bottom:1.5px solid var(--accent-red)}
+.brand-star{width:1em;height:1em;fill:currentColor;flex-shrink:0;display:inline-block;overflow:visible;shape-rendering:geometricPrecision}
 .site-nav{display:flex;gap:26px}
 .site-nav a{font-family:'Inter',sans-serif;font-size:12px;font-weight:400;letter-spacing:.07em;color:var(--text-dim);text-decoration:none;transition:color .2s ease}
 .site-nav a:hover,.site-nav a:focus-visible{color:var(--accent)}
@@ -98,8 +98,7 @@ figcaption{padding:12px 0 0;font-family:'Crimson Pro',serif;font-style:italic;fo
 .back:hover,.back:focus-visible{color:var(--accent)}
 
 .site-footer{margin-top:96px;border-top:1px solid var(--border-2);padding:44px 28px;text-align:center}
-.footer-mark{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.20em;text-transform:uppercase;color:var(--text);display:inline-block;padding-bottom:4px;border-bottom:2px solid var(--accent-red)}
-.footer-mark .star{color:var(--accent-warm);font-size:10px}
+.footer-mark{font-family:'Crimson Pro',serif;font-size:1.2rem;font-weight:400;letter-spacing:2px;color:var(--accent-warm);display:inline-flex;align-items:center;gap:0.5rem;padding-bottom:0.35rem;border-bottom:1.5px solid var(--accent-red)}
 .footer-line{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.05em;color:var(--text-muted);margin-top:19px}
 a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-offset:3px}
 
@@ -114,12 +113,17 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="wordmark" href="/"><span class="star">★</span>Freedmen Star</a>
+    <a class="wordmark" href="/">
+      <svg class="brand-star" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <path d="M100 20 L112 82 L160 40 L118 88 L180 100 L118 112 L160 160 L112 118 L100 180 L88 118 L40 160 L82 112 L20 100 L82 88 L40 40 L88 82 Z"/>
+      </svg>
+      FREEDMEN STAR
+    </a>
     <nav class="site-nav">
-      <a href="/people-places/">People &amp; Places</a>
-      <a href="/archive/">Archive</a>
-      <a href="/commentary/">Commentary</a>
-      <a href="/culture/">Culture</a>
+      <a href="/#home">Home</a>
+      <a href="/#stories">Archive</a>
+      <a href="/#stories">Stories</a>
+      <a href="/#about">About</a>
     </nav>
   </div>
 </header>
@@ -472,7 +476,12 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 </article>
 
 <footer class="site-footer">
-  <span class="footer-mark"><span class="star">★</span> Freedmen Star</span>
+  <span class="footer-mark">
+    <svg class="brand-star" viewBox="0 0 200 200" aria-hidden="true" focusable="false" style="width:0.85rem;height:0.85rem;color:var(--accent-warm);">
+      <path d="M100 20 L112 82 L160 40 L118 88 L180 100 L118 112 L160 160 L112 118 L100 180 L88 118 L40 160 L82 112 L20 100 L82 88 L40 40 L88 82 Z"/>
+    </svg>
+    FREEDMEN STAR
+  </span>
   <p class="footer-line">An independent archival and educational project · Richmond, Virginia</p>
 </footer>
 
