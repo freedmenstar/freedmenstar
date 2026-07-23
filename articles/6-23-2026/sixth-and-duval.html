@@ -108,17 +108,6 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 .lightbox-overlay.open{display:flex}
 .lightbox-overlay img{max-width:92vw;max-height:90vh;object-fit:contain;filter:grayscale(1) sepia(.25) contrast(1.04) brightness(.96)}
 .lightbox-caption{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);font-family:'Crimson Pro',serif;font-style:italic;font-size:.9rem;color:var(--text-dim);text-align:center;max-width:600px;padding:0 20px}
-
-/* map comparison slider */
-.map-compare{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;margin:2.8em 0;border:1px solid var(--border);cursor:col-resize;user-select:none;-webkit-user-select:none;touch-action:none}
-.map-compare .map-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.map-compare .map-now{clip-path:inset(0 0 0 50%)}
-.map-compare .map-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--accent-red);z-index:10;transform:translateX(-50%)}
-.map-compare .map-handle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:var(--accent-red);border:2px solid var(--accent-warm);display:flex;align-items:center;justify-content:center}
-.map-compare .map-label{position:absolute;top:12px;z-index:5;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-warm);background:rgba(7,6,4,0.8);padding:4px 10px}
-.map-compare .label-then{left:12px}
-.map-compare .label-now{right:12px}
-.map-compare figcaption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(7,6,4,0.85));font-family:'Crimson Pro',serif;font-style:italic;font-size:.85rem;color:var(--text-dim);z-index:5}
 </style>
 </head>
 <body>
@@ -186,7 +175,7 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>The Richmond Educational Association ran a school for Black children in a cluster of frame buildings on the hill, staffed by Black teachers, under a principal named R. M. Manly, a former Union Army chaplain who secured its funding through the Freedmen's Bureau. When the city finally built a public system, the School Board rented the Navy Hill buildings and kept the Black teachers on.</p>
 
-    <p>That decision had a long tail. For decades afterward, Navy Hill School was the only public school in Richmond with a Black faculty. The principal's chair went to a white appointee for many years. The classrooms did not.</p>
+    <p>For decades afterward, Navy Hill School was the only public school in Richmond with a Black faculty. The principal's chair went to a white appointee for many years. The classrooms did not.</p>
 
     <p class="standfirst">The teachers are named in the record</p>
 
@@ -240,7 +229,7 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
       <figcaption>Navy Hill Barber Shop, 404 East Duval Street.<span class="fig-credit">Edith Shelton Collection, The Valentine</span></figcaption>
     </figure>
 
-    <p>The Sixth Street Market was the real one, not the failed 1980s marketplace that later took the name. It sold produce and live chickens, carried home in paper bags cut with holes so the birds could breathe. Flower sellers set up under the gallery arches of the Blues Armory.</p>
+    <p>The Sixth Street Market preceded the 1980s Sixth Street Marketplace, which took the name and later closed. It sold produce and live chickens, carried home in paper bags cut with holes so the birds could breathe. Flower sellers set up under the gallery arches of the Blues Armory.</p>
 
     <p>The Blues Armory is still standing. It sits inside the nine and a half acres coming down this year. Built in 1910 for the Richmond Light Infantry Blues, the composite steel-reinforced structure was designed by Averill and Hall of Washington and clad in brick and rusticated stone. The castellated design was not decorative. The building was engineered to withstand attack during riots. The ground floor was separated entirely from the military upper floors. Five bays on Marshall Street and seven on Sixth Street formed the arcade where the flower sellers set up. Listed on the National Register of Historic Places in 1976.</p>
 
@@ -317,16 +306,122 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
     <h2>The ground</h2>
     <div class="rule"></div>
 
-    <div class="map-compare" id="mapCompare">
-      <img class="map-layer map-then" src="https://tile.openstreetmap.org/15/9372/12708.png" alt="Map tile placeholder for historic Navy Hill overlay" crossorigin="anonymous">
-      <img class="map-layer map-now" src="https://tile.openstreetmap.org/15/9372/12708.png" alt="Current street map of the Navy Hill site" crossorigin="anonymous">
-      <div class="map-handle" id="mapHandle"></div>
-      <span class="map-label label-then">Then</span>
-      <span class="map-label label-now">Now</span>
-      <figcaption>Drag to compare. Replace the "Then" image with a Sanborn sheet or aerial photograph of Navy Hill before clearance. The "Now" layer shows the current street grid.</figcaption>
-    </div>
+    <figure>
+      <svg viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0d0c09;border:1px solid #2b2619">
+        <!-- street grid -->
+        <defs>
+          <style>
+            .st{stroke:#2b2619;stroke-width:1;fill:none}
+            .st-name{font-family:'Inter',sans-serif;font-size:8px;fill:#7d7565;letter-spacing:1px}
+            .st-name-lg{font-family:'Inter',sans-serif;font-size:9px;fill:#8f8676;letter-spacing:1.2px}
+            .bound{stroke:#c8935a;stroke-width:1.5;stroke-dasharray:6,4;fill:rgba(200,147,90,0.04)}
+            .loc-dot{fill:#7a1f2e}
+            .loc-label{font-family:'Crimson Pro',serif;font-size:10px;fill:#d4a574}
+            .loc-sub{font-family:'Inter',sans-serif;font-size:7px;fill:#7d7565;letter-spacing:0.5px}
+            .title-label{font-family:'Inter',sans-serif;font-size:10px;fill:#c8935a;letter-spacing:2px;text-transform:uppercase}
+            .i95{fill:rgba(122,31,46,0.12);stroke:#7a1f2e;stroke-width:1.5}
+            .i95-label{font-family:'Inter',sans-serif;font-size:9px;fill:#7a1f2e;letter-spacing:1.5px}
+          </style>
+        </defs>
 
-    <p>The slider above is built to hold two map images of the same ground. The left layer accepts a Sanborn fire insurance sheet or pre-clearance aerial photograph. The right layer shows the same footprint today. Drag the handle to move between them. To complete it: download the relevant Sanborn sheet from the Library of Congress (Richmond, Vol. 2, 1925, sheets covering the blocks north of Leigh between Third and Tenth), crop to the Navy Hill area, and replace the placeholder image source in the HTML.</p>
+        <!-- Navy Hill boundary (approximate) -->
+        <polygon class="bound" points="120,80 540,80 540,340 440,340 440,400 120,400"/>
+
+        <!-- I-95 corridor cutting through -->
+        <path class="i95" d="M 380,0 L 400,80 L 420,200 L 460,340 L 500,520" stroke-width="40" fill="none" opacity="0.08"/>
+        <path d="M 390,0 L 410,80 L 430,200 L 470,340 L 510,520" stroke="#7a1f2e" stroke-width="1.5" fill="none" stroke-dasharray="4,6" opacity="0.5"/>
+        <text class="i95-label" x="445" y="160" transform="rotate(12,445,160)">I-95</text>
+
+        <!-- East-West Streets -->
+        <line class="st" x1="60" y1="400" x2="620" y2="400"/>
+        <text class="st-name-lg" x="62" y="415">LEIGH ST</text>
+
+        <line class="st" x1="60" y1="300" x2="620" y2="300"/>
+        <text class="st-name" x="62" y="315">CLAY ST</text>
+
+        <line class="st" x1="60" y1="220" x2="620" y2="220"/>
+        <text class="st-name" x="62" y="235">MARSHALL ST</text>
+
+        <line class="st" x1="60" y1="140" x2="620" y2="140"/>
+        <text class="st-name-lg" x="62" y="155">DUVAL ST</text>
+
+        <line class="st" x1="60" y1="80" x2="620" y2="80"/>
+        <text class="st-name" x="62" y="75">PRESTON ST</text>
+
+        <!-- North-South Streets -->
+        <line class="st" x1="120" y1="40" x2="120" y2="460"/>
+        <text class="st-name" x="105" y="450" transform="rotate(-90,105,450)">N 3RD ST</text>
+
+        <line class="st" x1="200" y1="40" x2="200" y2="460"/>
+        <text class="st-name" x="185" y="450" transform="rotate(-90,185,450)">N 4TH ST</text>
+
+        <line class="st" x1="280" y1="40" x2="280" y2="460"/>
+        <text class="st-name" x="265" y="450" transform="rotate(-90,265,450)">N 5TH ST</text>
+
+        <line class="st" x1="350" y1="40" x2="350" y2="460"/>
+        <text class="st-name-lg" x="335" y="450" transform="rotate(-90,335,450)">N 6TH ST</text>
+
+        <line class="st" x1="420" y1="40" x2="420" y2="460"/>
+        <text class="st-name-lg" x="405" y="450" transform="rotate(-90,405,450)">N 7TH ST</text>
+
+        <line class="st" x1="500" y1="40" x2="500" y2="460"/>
+        <text class="st-name" x="485" y="450" transform="rotate(-90,485,450)">N 10TH ST</text>
+
+        <line class="st" x1="540" y1="40" x2="540" y2="460"/>
+        <text class="st-name" x="525" y="450" transform="rotate(-90,525,450)">N 13TH ST</text>
+
+        <!-- Key locations -->
+        <!-- Navy Hill School at 6th and Duval -->
+        <circle class="loc-dot" cx="350" cy="140" r="5"/>
+        <text class="loc-label" x="310" y="128">Navy Hill School</text>
+        <text class="loc-sub" x="310" y="118">6th &amp; Duval</text>
+
+        <!-- Barber Shop at 404 E. Duval -->
+        <circle class="loc-dot" cx="230" cy="140" r="4"/>
+        <text class="loc-label" x="155" y="170">Barber Shop</text>
+        <text class="loc-sub" x="155" y="180">404 E. Duval</text>
+
+        <!-- 1015 N. 7th (Norrell house) -->
+        <circle class="loc-dot" cx="420" cy="170" r="4"/>
+        <text class="loc-label" x="430" y="168">Norrell, 1015 N. 7th</text>
+        <text class="loc-sub" x="430" y="178">Taylor family, same block</text>
+
+        <!-- Blues Armory at 6th and Marshall -->
+        <circle class="loc-dot" cx="350" cy="220" r="5"/>
+        <text class="loc-label" x="360" y="218">Blues Armory</text>
+        <text class="loc-sub" x="360" y="228">6th &amp; Marshall, built 1910</text>
+
+        <!-- Coliseum footprint (approximate) -->
+        <rect x="330" y="260" width="80" height="60" rx="2" fill="none" stroke="#7a1f2e" stroke-width="1" stroke-dasharray="3,3"/>
+        <text class="loc-sub" x="340" y="295">COLISEUM</text>
+        <text class="loc-sub" x="340" y="305">1971 - 2019</text>
+
+        <!-- Bojangles home -->
+        <circle class="loc-dot" cx="280" cy="110" r="3"/>
+        <text class="loc-sub" x="200" y="105">Robinson home</text>
+
+        <!-- 904 Turpin (Player family) -->
+        <circle class="loc-dot" cx="460" cy="120" r="3"/>
+        <text class="loc-sub" x="470" y="118">904 Turpin (Player)</text>
+
+        <!-- Boundary label -->
+        <text class="title-label" x="130" y="96">Navy Hill</text>
+        <text class="loc-sub" x="130" y="108">N. 3rd to N. 13th, north of Leigh</text>
+
+        <!-- Sixth St Market -->
+        <circle class="loc-dot" cx="350" cy="260" r="3"/>
+        <text class="loc-sub" x="240" y="258">6th St Market</text>
+
+        <!-- Compass -->
+        <text class="st-name" x="600" y="480">N ↑</text>
+
+        <!-- Credit -->
+        <text class="loc-sub" x="60" y="500">Drawn from documented addresses and boundaries. Approximate positions. Freedmen Star, 2026.</text>
+      </svg>
+      <figcaption>Navy Hill, approximate extent and documented locations. Every point is drawn from a named address in the record. The dashed line marks the I-95 corridor that cut through the neighborhood in the late 1950s. The Coliseum footprint is shown where it stood from 1971 to 2019.<span class="fig-credit">Freedmen Star, built from state marker SA-85, city directories, and sourced testimony</span></figcaption>
+    </figure>
+
+    <p>The Sanborn Fire Insurance Company mapped Navy Hill at building-level detail across multiple decades. Every structure is drawn to footprint, keyed to its street number, with construction material and use noted. The 1905 and 1925 editions show the neighborhood at its densest. The Library of Congress holds the full set, public domain and freely accessible: <a href="https://www.loc.gov/collections/sanborn-maps/?fa=location:virginia|location:richmond" style="color:var(--accent);border-bottom:1px solid rgba(200,147,90,0.35)">Sanborn Maps, Richmond, Virginia</a>. The sheets covering the blocks north of Leigh between Third and Tenth contain the Navy Hill footprint.</p>
 
     <div class="sources">
       <h2>Sources</h2>
@@ -408,29 +503,6 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
   }
 })();
 
-// Map comparison slider
-(function(){
-  var box = document.getElementById('mapCompare');
-  if (!box) return;
-  var handle = document.getElementById('mapHandle');
-  var nowLayer = box.querySelector('.map-now');
-  var dragging = false;
-
-  function setPos(x) {
-    var rect = box.getBoundingClientRect();
-    var pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
-    handle.style.left = (pct * 100) + '%';
-    nowLayer.style.clipPath = 'inset(0 0 0 ' + (pct * 100) + '%)';
-  }
-
-  box.addEventListener('mousedown', function(e){ dragging = true; setPos(e.clientX); });
-  window.addEventListener('mousemove', function(e){ if (dragging) setPos(e.clientX); });
-  window.addEventListener('mouseup', function(){ dragging = false; });
-
-  box.addEventListener('touchstart', function(e){ dragging = true; setPos(e.touches[0].clientX); }, {passive: true});
-  window.addEventListener('touchmove', function(e){ if (dragging) setPos(e.touches[0].clientX); }, {passive: true});
-  window.addEventListener('touchend', function(){ dragging = false; });
-})();
 </script>
 </body>
 </html>
