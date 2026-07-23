@@ -12,7 +12,6 @@
 :root{
   --bg:#070604;
   --surface-1:#0d0c09;
-  --surface-2:#111008;
   --text:#d8d2c8;
   --text-dim:#8f8676;
   --text-muted:#7d7565;
@@ -25,256 +24,82 @@
   --col:760px;
   --col-wide:1040px;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Crimson Pro',Georgia,serif;
-  font-size:20px;
-  line-height:1.78;
-  font-weight:400;
+  background:var(--bg);color:var(--text);
+  font-family:'Crimson Pro',Georgia,serif;font-size:20px;line-height:1.78;font-weight:400;
   -webkit-font-smoothing:antialiased;
-  position:relative;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   background-size:256px 256px;
 }
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:9;
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)' opacity='0.025'/%3E%3C/svg%3E");
   background-size:256px 256px;
 }
 
-/* ---------- header ---------- */
-.site-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(7,6,4,0.96);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border-2);
-  height:60px;display:flex;align-items:center;
-}
-.header-inner{
-  width:100%;max-width:var(--col-wide);margin:0 auto;
-  padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;
-}
-.wordmark{
-  font-family:'Inter',sans-serif;font-size:13px;font-weight:500;
-  letter-spacing:.20em;text-transform:uppercase;color:var(--text);
-  text-decoration:none;display:inline-flex;align-items:center;gap:9px;
-  padding-bottom:4px;border-bottom:2px solid var(--accent-red);
-}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(7,6,4,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-2);height:60px;display:flex;align-items:center}
+.header-inner{width:100%;max-width:var(--col-wide);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.wordmark{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.20em;text-transform:uppercase;color:var(--text);text-decoration:none;display:inline-flex;align-items:center;gap:9px;padding-bottom:4px;border-bottom:2px solid var(--accent-red)}
 .wordmark .star{color:var(--accent-warm);font-size:11px;line-height:1}
 .site-nav{display:flex;gap:26px}
-.site-nav a{
-  font-family:'Inter',sans-serif;font-size:12px;font-weight:400;
-  letter-spacing:.07em;color:var(--text-dim);text-decoration:none;
-  transition:color .2s ease;
-}
+.site-nav a{font-family:'Inter',sans-serif;font-size:12px;font-weight:400;letter-spacing:.07em;color:var(--text-dim);text-decoration:none;transition:color .2s ease}
 .site-nav a:hover,.site-nav a:focus-visible{color:var(--accent)}
 @media(max-width:620px){.site-nav{display:none}}
 
-/* ---------- article shell ---------- */
 .article{max-width:var(--col);margin:0 auto;padding:0 28px}
-.breakout{max-width:var(--col-wide);margin-left:50%;transform:translateX(-50%);width:100vw;padding:0 28px}
-@media(max-width:1100px){.breakout{width:100%;margin-left:0;transform:none;padding:0}}
 
-/* ---------- masthead of piece ---------- */
 .piece-head{padding:76px 0 0}
-.eyebrow{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;
-  letter-spacing:.19em;text-transform:uppercase;color:var(--accent);
-  display:flex;align-items:center;gap:14px;margin-bottom:26px;
-}
+.eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:14px;margin-bottom:26px}
 .eyebrow::after{content:'';flex:1;height:1px;background:var(--border-2)}
-h1{
-  font-family:'Crimson Pro',serif;font-weight:500;
-  font-size:clamp(2.6rem,6.6vw,4.05rem);
-  line-height:1.06;letter-spacing:-.022em;color:#efe9dd;
-  margin-bottom:22px;
-}
-.deck{
-  font-family:'Crimson Pro',serif;font-weight:300;font-style:italic;
-  font-size:clamp(1.16rem,2.5vw,1.42rem);line-height:1.5;
-  color:var(--text-dim);max-width:38ch;
-}
-.byline{
-  display:flex;align-items:center;gap:13px;
-  margin:40px 0 0;padding:19px 0;
-  border-top:1px solid var(--border-2);border-bottom:1px solid var(--border-2);
-}
-.avatar{
-  width:34px;height:34px;border-radius:50%;flex:none;
-  background:var(--surface-2);border:1px solid var(--border-2);
-  object-fit:cover;filter:grayscale(1) sepia(.3) contrast(1.05);
-}
+h1{font-family:'Crimson Pro',serif;font-weight:500;font-size:clamp(2.6rem,6.6vw,4.05rem);line-height:1.06;letter-spacing:-.022em;color:#efe9dd;margin-bottom:22px}
+.deck{font-family:'Crimson Pro',serif;font-weight:300;font-style:italic;font-size:clamp(1.16rem,2.5vw,1.42rem);line-height:1.5;color:var(--text-dim);max-width:38ch}
+.byline{display:flex;align-items:center;gap:13px;margin:40px 0 0;padding:19px 0;border-top:1px solid var(--border-2);border-bottom:1px solid var(--border-2)}
 .byline-text{font-family:'Inter',sans-serif;font-size:12px;line-height:1.55;color:var(--text-dim)}
 .byline-text strong{display:block;font-weight:500;color:var(--text);letter-spacing:.01em}
 .byline-date{margin-left:auto;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--text-muted)}
 @media(max-width:520px){.byline-date{display:none}}
 
-/* ---------- prose ---------- */
 .prose{padding:46px 0 0}
 .prose p{margin-bottom:1.42em}
 .prose p em{font-style:italic;color:#e6e0d4}
-.prose > p:first-of-type::first-letter{
-  font-family:'Crimson Pro',serif;font-weight:400;
-  float:left;font-size:4.05em;line-height:.82;
-  padding:.06em .10em 0 0;color:var(--accent-warm);
-}
-.prose h2{
-  font-family:'Crimson Pro',serif;font-weight:500;
-  font-size:1.86rem;line-height:1.2;letter-spacing:-.01em;color:#eae4d8;
-  margin:3.15em 0 .1em;
-}
+.prose > p:first-of-type::first-letter{font-family:'Crimson Pro',serif;font-weight:400;float:left;font-size:4.05em;line-height:.82;padding:.06em .10em 0 0;color:var(--accent-warm)}
+.prose h2{font-family:'Crimson Pro',serif;font-weight:500;font-size:1.86rem;line-height:1.2;letter-spacing:-.01em;color:#eae4d8;margin:3.15em 0 .1em}
 .rule{height:1px;background:var(--border-2);margin:.95em 0 1.6em}
 .prose ul{list-style:none;margin:0 0 1.5em}
-.prose li{
-  padding:.62em 0 .62em 24px;border-bottom:1px solid var(--border);
-  font-size:.96em;line-height:1.62;position:relative;
-}
+.prose li{padding:.62em 0 .62em 24px;border-bottom:1px solid var(--border);font-size:.96em;line-height:1.62;position:relative}
 .prose li:first-child{border-top:1px solid var(--border)}
-.prose li::before{
-  content:'';position:absolute;left:2px;top:1.32em;
-  width:7px;height:1px;background:var(--accent);
-}
+.prose li::before{content:'';position:absolute;left:2px;top:1.32em;width:7px;height:1px;background:var(--accent)}
 .prose li strong{font-weight:600;color:#ece6da}
+.standfirst{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2.4em}
 
-.standfirst{
-  font-family:'Inter',sans-serif;font-size:.72rem;font-weight:400;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);
-  margin-bottom:2.4em;
-}
+/* ---- images ---- */
+figure{margin:2.8em 0}
+figure img{width:100%;display:block;filter:grayscale(1) sepia(.30) contrast(1.06) brightness(.94)}
+figcaption{padding:12px 0 0;font-family:'Crimson Pro',serif;font-style:italic;font-weight:300;font-size:.93rem;line-height:1.5;color:var(--text-dim)}
+.wide{max-width:var(--col-wide);margin-left:50%;transform:translateX(-50%);width:100vw;padding:0 28px}
+@media(max-width:1100px){.wide{width:100%;margin-left:0;transform:none;padding:0}}
+.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:720px){.img-pair{grid-template-columns:1fr}}
 
-/* ---------- pull line ---------- */
-.pull{
-  margin:2.6em 0;padding:0 0 0 26px;
-  border-left:2px solid var(--accent-red);
-  font-family:'Crimson Pro',serif;font-weight:300;font-style:italic;
-  font-size:1.36rem;line-height:1.44;color:#e8e2d6;
-}
-
-/* ---------- PLATE SYSTEM (the signature) ---------- */
-.plates{margin:3.1em 0}
-.plate-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media(max-width:720px){.plate-grid{grid-template-columns:1fr}}
-
-figure.plate{margin:0}
-.plate-frame{
-  position:relative;width:100%;overflow:hidden;
-  background:var(--surface-1);
-  border:1px solid var(--border-2);
-  aspect-ratio:3/2;
-}
-.plate-frame.tall{aspect-ratio:4/5}
-.plate-frame.pano{aspect-ratio:21/9}
-.plate-frame.square{aspect-ratio:1/1}
-
-.plate-frame img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  filter:grayscale(1) sepia(.30) contrast(1.06) brightness(.94);
-}
-
-/* empty state = archival call slip */
-.plate-frame::before{
-  content:'';position:absolute;inset:0;
-  background-image:repeating-linear-gradient(
-    -45deg,transparent 0 11px,rgba(200,147,90,.028) 11px 12px);
-}
-.plate-frame::after{
-  content:attr(data-slip);
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:22px;
-  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:400;
-  letter-spacing:.15em;text-transform:uppercase;
-  color:var(--text-muted);line-height:2.1;white-space:pre-line;
-}
-.plate-frame:has(img)::before,
-.plate-frame:has(img)::after{display:none}
-
-figcaption{
-  padding:14px 2px 0;
-  border-top:1px solid var(--border);margin-top:11px;
-}
-.cap-text{
-  display:block;
-  font-family:'Crimson Pro',serif;font-style:italic;font-weight:300;
-  font-size:.93rem;line-height:1.5;color:var(--text);
-}
-.cap-credit{
-  display:flex;
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:400;
-  letter-spacing:.05em;color:var(--text-muted);margin-top:7px;
-  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
-}
-.status{
-  display:inline-flex;align-items:center;gap:5px;
-  font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-}
-.status::before{content:'';width:5px;height:5px;flex:none}
-.status.open::before{background:var(--accent)}
-.status.open{color:var(--accent)}
-.status.held::before{border:1px solid var(--accent-red);background:transparent}
-.status.held{color:#a86e79}
-
-/* ---------- sources ---------- */
-.sources{
-  margin-top:4.4em;padding:34px 0 0;border-top:1px solid var(--accent-red);
-}
-.sources h2{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:500;
-  letter-spacing:.19em;text-transform:uppercase;color:var(--accent);
-  margin:0 0 22px;
-}
-.sources p{
-  font-family:'Crimson Pro',serif;font-size:1rem;line-height:1.66;
-  color:#9b9280;margin-bottom:1.1em;
-}
+.sources{margin-top:4.4em;padding:34px 0 0;border-top:1px solid var(--accent-red)}
+.sources h2{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.19em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}
+.sources p{font-family:'Crimson Pro',serif;font-size:1rem;line-height:1.66;color:#9b9280;margin-bottom:1.1em}
 .sources p strong{color:var(--text);font-weight:500}
-.note{
-  margin-top:26px;padding:19px 22px;
-  background:var(--accent-dim);border-left:2px solid var(--accent);
-}
-.note p{margin:0 0 .7em;color:var(--text-dim)}
-.note p:last-child{margin:0}
+.note{margin-top:26px;padding:19px 22px;background:var(--accent-dim);border-left:2px solid var(--accent)}
+.note p{margin:0 0 .7em;color:var(--text-dim)}.note p:last-child{margin:0}
 
 .tags{display:flex;flex-wrap:wrap;gap:9px;margin:38px 0 0}
-.tag{
-  font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--text-dim);
-  padding:6px 13px;border:1px solid var(--border-2);border-radius:2px;
-}
-
-.back{
-  display:inline-flex;align-items:center;gap:9px;margin:52px 0 0;
-  font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.07em;
-  color:var(--text-dim);text-decoration:none;transition:color .2s ease;
-}
+.tag{font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--text-dim);padding:6px 13px;border:1px solid var(--border-2);border-radius:2px}
+.back{display:inline-flex;align-items:center;gap:9px;margin:52px 0 0;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.07em;color:var(--text-dim);text-decoration:none;transition:color .2s ease}
 .back:hover,.back:focus-visible{color:var(--accent)}
 
-/* ---------- footer ---------- */
-.site-footer{
-  margin-top:96px;border-top:1px solid var(--border-2);
-  padding:44px 28px;text-align:center;
-}
-.footer-mark{
-  font-family:'Inter',sans-serif;font-size:12px;font-weight:500;
-  letter-spacing:.20em;text-transform:uppercase;color:var(--text);
-  display:inline-block;padding-bottom:4px;border-bottom:2px solid var(--accent-red);
-}
+.site-footer{margin-top:96px;border-top:1px solid var(--border-2);padding:44px 28px;text-align:center}
+.footer-mark{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.20em;text-transform:uppercase;color:var(--text);display:inline-block;padding-bottom:4px;border-bottom:2px solid var(--accent-red)}
 .footer-mark .star{color:var(--accent-warm);font-size:10px}
-.footer-line{
-  font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.05em;
-  color:var(--text-muted);margin-top:19px;
-}
-
+.footer-line{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.05em;color:var(--text-muted);margin-top:19px}
 a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-offset:3px}
 </style>
 </head>
@@ -293,12 +118,10 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 </header>
 
 <article class="article">
-
   <div class="piece-head">
     <div class="eyebrow">People &amp; Places</div>
     <h1>Sixth and Duval</h1>
     <p class="deck">Navy Hill had a school with Black teachers before Richmond had public schools at all. The city put a highway and an arena on top of it.</p>
-
     <div class="byline">
       <div class="byline-text">
         <strong>Freedmen Star</strong>
@@ -312,7 +135,7 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>The Richmond Coliseum comes down this year. The Commonwealth has put $15 million toward the demolition, bids may go out in September, and nine and a half acres of downtown will be graded and sold for a hotel.</p>
 
-    <p>Before the arena there was a highway. Before the highway there was a neighborhood.</p>
+    <p>Before the arena there was a highway. Before the highway there was a neighborhood, and this is that neighborhood.</p>
 
     <h2>The hill</h2>
     <div class="rule"></div>
@@ -324,30 +147,6 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
     <p>German immigrants settled it from the 1810s through the 1850s. Then the electric streetcar arrived in 1888, a line eventually ran up Fifth Street toward Highland Park, and the ravines stopped mattering. By the turn of the century Navy Hill was a Black neighborhood.</p>
 
     <p>Its edges moved depending on who was describing them. Mid-nineteenth-century accounts put it north of Leigh between Third and Tenth. The state historical marker gives North Third to Thirteenth. The northern line runs at least to Duval and Preston, possibly to Shockoe Hill Cemetery. Nobody has ever fixed it precisely, because the people who lived there did not need it fixed.</p>
-
-    <div class="plates breakout">
-      <div class="plate-grid">
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Navy Hill streetscape&#10;request from repository">
-            <!-- <img src="/img/navy-hill/01-streetscape.jpg" alt="Residential blocks on Navy Hill, early twentieth century"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Navy Hill residential blocks, early twentieth century.</span>
-              <span class="cap-credit">The Valentine; Library of Virginia <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Sanborn fire insurance map&#10;free to download">
-            <!-- <img src="/img/navy-hill/02-sanborn.jpg" alt="Sanborn fire insurance map of Navy Hill showing building footprints"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Fire insurance map showing Navy Hill footprints, c. 1925 — every building, keyed to street number.</span>
-              <span class="cap-credit">Library of Congress <span class="status open">Public domain</span></span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
 
     <h2>Third Street</h2>
     <div class="rule"></div>
@@ -361,30 +160,6 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
     <p>People moved between the two, and some Jackson Ward business owners kept houses on the hill. Bill "Bojangles" Robinson had a home in Navy Hill — the same man who paid out of pocket for a traffic light in Jackson Ward so children could cross safely. One account places Maggie Lena Walker's early years on Navy Hill before her Jackson Ward house; that rests on a single source, and her documented home is on East Leigh.</p>
 
     <p>Navy Hill had its own school, its own market corner, its own barber shop, its own restaurants and grocery stores and churches. It had its own name a half-century before there was a Jackson Ward.</p>
-
-    <div class="plates breakout">
-      <div class="plate-grid">
-        <figure class="plate">
-          <div class="plate-frame pano" data-slip="Street grid, 1950 and today&#10;Sanborn + current survey">
-            <!-- <img src="/img/navy-hill/03-street-grid.svg" alt="The Navy Hill street grid in 1950 beside the same ground today, showing which streets survive"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">The Navy Hill street grid in 1950, and the same ground now. Sixth Street ends. Duval survives in pieces. Navy Hill Drive is a service road.</span>
-              <span class="cap-credit">Built from Sanborn sheets and current survey <span class="status open">Public domain</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame pano" data-slip="Robinson residence&#10;request from repository">
-            <!-- <img src="/img/navy-hill/04-robinson-home.jpg" alt="Bill Bojangles Robinson's residence on Navy Hill"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Bill "Bojangles" Robinson's residence, Navy Hill.</span>
-              <span class="cap-credit">The Valentine <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
 
     <h2>The school</h2>
     <div class="rule"></div>
@@ -408,29 +183,10 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>One detail from 1952 is worth holding. When the school added an auditorium and cafeteria that year, builders had to drive piling roughly sixty-five feet down, because part of the site sat on fill. The ground under Navy Hill was itself made ground — a ravine filled, built on, and eventually filled a second time with the neighborhood's own rubble.</p>
 
-    <div class="plates breakout">
-      <div class="plate-grid">
-        <figure class="plate">
-          <div class="plate-frame tall" data-slip="Navy Hill School, 1893 building&#10;request from repository">
-            <!-- <img src="/img/navy-hill/05-school-1893.jpg" alt="Navy Hill School, the 1893 brick building at Sixth and Duval"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Navy Hill School, the 1893 building. Two stories, seventeen rooms, Sixth and Duval.</span>
-              <span class="cap-credit">The Valentine; Richmond Public Schools <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame tall" data-slip="Schoolchildren, 16 Sept 1965&#10;request from repository">
-            <!-- <img src="/img/navy-hill/06-students-1965.jpg" alt="Children leaving Navy Hill School in September 1965"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Children leaving Navy Hill School on North Sixth Street, September 16, 1965 — days before it closed without notice.</span>
-              <span class="cap-credit">Richmond Times-Dispatch Collection, The Valentine <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+    <figure class="wide">
+      <img src="https://richmondmagazine.com/downloads/27860/download/Local_Flashback_NavyHillSchool_RIHCMONDTIMESDISPATCHCOLLECTIONTHEVALENTINE.jpg?cb=5794103408304603308683b59a7b4a03" alt="Children leaving Navy Hill School on North Sixth Street, September 16, 1965">
+      <figcaption>Children leaving Navy Hill School on North Sixth Street, September 16, 1965. The school closed without notice days later.</figcaption>
+    </figure>
 
     <h2>One street</h2>
     <div class="rule"></div>
@@ -441,53 +197,12 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>Earle P. Taylor's family lived in the 1000 block of North Seventh — the same block. Taylor became a photographer and an educator. When the bulldozers came for his family's house, he stood in the street and photographed it, and that photograph is now in the Valentine's collection.</p>
 
+    <figure class="wide">
+      <img src="https://richmondmagazine.com/downloads/27867/download/Local_Opener_NavyHill_THEVALENTINE_rp0120.jpg?cb=4fccaa8e7c5279d0f1fa1e06f18d2380" alt="Earle P. Taylor photographed the destruction of his family home, 1965">
+      <figcaption>Earle P. Taylor photographed the destruction of his family home in the 1000 block of North Seventh Street, 1965.</figcaption>
+    </figure>
+
     <p>Kia Player's great-grandparents raised thirteen children in a wood-frame house at 904 Turpin Street. Three generations later the family still refers to the place by its number.</p>
-
-    <div class="plates breakout">
-      <div class="plate-grid">
-        <figure class="plate">
-          <div class="plate-frame" data-slip="1000 block, N. Seventh Street&#10;request from repository">
-            <!-- <img src="/img/navy-hill/07-north-seventh.jpg" alt="The 1000 block of North Seventh Street before demolition"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">The 1000 block of North Seventh Street. The Norrells held four houses here. The Taylors lived on the same block.</span>
-              <span class="cap-credit">The Valentine <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Taylor family home, demolition&#10;request from repository">
-            <!-- <img src="/img/navy-hill/08-taylor-demolition.jpg" alt="Earle P. Taylor's photograph of his family home being destroyed"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Earle P. Taylor photographed the destruction of his own family's home, 1965.</span>
-              <span class="cap-credit">The Valentine, Taylor accession <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="plate-grid" style="margin-top:22px">
-        <figure class="plate">
-          <div class="plate-frame square" data-slip="City directory page&#10;free to download">
-            <!-- <img src="/img/navy-hill/09-directory.jpg" alt="Page from Hill's Richmond City Directory listing North Seventh Street residents"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Hill's Richmond City Directory — North Seventh Street listings, resident by resident, address by address.</span>
-              <span class="cap-credit">Internet Archive <span class="status open">Public domain</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame square" data-slip="1950 census enumeration sheet&#10;free to download">
-            <!-- <img src="/img/navy-hill/10-census-1950.jpg" alt="1950 federal census enumeration sheet for the Navy Hill blocks"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">1950 federal census sheet for the Navy Hill blocks — a full block of named households, five years before the taking.</span>
-              <span class="cap-credit">National Archives <span class="status open">Public domain</span></span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
 
     <h2>The blocks</h2>
     <div class="rule"></div>
@@ -498,57 +213,16 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>The Navy Hill Barber Shop stood at 404 East Duval Street.</p>
 
+    <figure class="wide">
+      <img src="https://richmondmagazine.com/downloads/27858/download/Local_Flashback_NavyHillBarbershop_EDITHSHELTONCOLLECTIONTHEVALENTINE_rp0120.jpg?cb=8569429ec182a17c5295c19b3565b6a1" alt="Navy Hill Barber Shop, 404 East Duval Street, around 1965">
+      <figcaption>Navy Hill Barber Shop, 404 East Duval Street.</figcaption>
+    </figure>
+
     <p>The Sixth Street Market was the real one, not the failed 1980s marketplace that later took the name. It sold produce and live chickens, carried home in paper bags cut with holes so the birds could breathe. Flower sellers set up under the gallery arches of the Blues Armory.</p>
 
     <p>The Blues Armory is still standing. It sits inside the nine and a half acres coming down this year.</p>
 
     <p>Around all of it: the Good Samaritan Society, the Phyllis Wheatley YMCA, and — in the state marker's phrasing, which is as specific as the marker gets — numerous churches.</p>
-
-    <div class="plates breakout">
-      <div class="plate-grid">
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Navy Hill Barber Shop&#10;404 E. Duval Street">
-            <!-- <img src="/img/navy-hill/11-barber-shop.jpg" alt="The Navy Hill Barber Shop at 404 East Duval Street"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Navy Hill Barber Shop, 404 East Duval Street.</span>
-              <span class="cap-credit">The Valentine <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Sixth Street Market&#10;request from repository">
-            <!-- <img src="/img/navy-hill/12-sixth-street-market.jpg" alt="Vendors and shoppers at the Sixth Street Market"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Sixth Street Market — produce, and live chickens carried home in bags cut for their beaks.</span>
-              <span class="cap-credit">The Valentine; Library of Virginia <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="plate-grid" style="margin-top:22px">
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Flower sellers, Blues Armory&#10;request from repository">
-            <!-- <img src="/img/navy-hill/13-armory-arches-archival.jpg" alt="Flower sellers under the Blues Armory arcade"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">Flower sellers under the Blues Armory arcade.</span>
-              <span class="cap-credit">The Valentine <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame" data-slip="The same arches, 2026&#10;shoot before demolition">
-            <!-- <img src="/img/navy-hill/14-armory-arches-today.jpg" alt="The Blues Armory arcade photographed in 2026"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">The same arches, 2026. Still standing, inside the demolition footprint.</span>
-              <span class="cap-credit">Freedmen Star <span class="status open">Original</span></span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
 
     <h2>Two months</h2>
     <div class="rule"></div>
@@ -565,39 +239,10 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>The Coliseum broke ground in 1969 on the cleared land and opened on August 21, 1971.</p>
 
-    <div class="plates breakout">
-      <figure class="plate">
-        <div class="plate-frame pano" data-slip="Aerial pair — before and after&#10;free to download">
-          <!-- <img src="/img/navy-hill/15-aerial-pair.jpg" alt="Aerial photographs showing Navy Hill intact and then cut by the turnpike"> -->
-        </div>
-        <figcaption>
-          <span class="cap-text">Navy Hill intact, then the turnpike cut. The single most direct image in this piece, and you can assemble it yourself.</span>
-            <span class="cap-credit">USGS EarthExplorer; Virginia aerial survey series <span class="status open">Public domain</span></span>
-          </figcaption>
-      </figure>
-
-      <div class="plate-grid" style="margin-top:22px">
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Coliseum under construction&#10;27 January 1970">
-            <!-- <img src="/img/navy-hill/16-coliseum-construction.jpg" alt="The Richmond Coliseum under construction, photographed from East Clay Street"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">The Coliseum rising, photographed from in front of a house in the 400 block of East Clay Street, January 27, 1970. Someone still lived on that block.</span>
-              <span class="cap-credit">Richmond Times-Dispatch Collection, The Valentine <span class="status held">Rights held</span></span>
-          </figcaption>
-        </figure>
-
-        <figure class="plate">
-          <div class="plate-frame" data-slip="Coliseum, vacant, 2026&#10;shoot before demolition">
-            <!-- <img src="/img/navy-hill/17-coliseum-2026.jpg" alt="The Richmond Coliseum standing empty in 2026"> -->
-          </div>
-          <figcaption>
-            <span class="cap-text">The Coliseum, empty since 2019, in the months before demolition.</span>
-              <span class="cap-credit">Freedmen Star <span class="status open">Original</span></span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+    <figure class="wide">
+      <img src="https://richmondmagazine.com/downloads/27857/download/Local_Flashback_EastClaySt_RICHMONDTIMESDISPATCHCOLLECTIONTHEVALENTINE_rp0120.jpg?cb=fa156f318e4c11b525a700907602d87e" alt="Coliseum construction from the 400 block of East Clay Street, January 27, 1970">
+      <figcaption>The Coliseum rising, photographed from in front of a house in the 400 block of East Clay Street, January 27, 1970. Someone still lived on that block.</figcaption>
+    </figure>
 
     <h2>What stands there now</h2>
     <div class="rule"></div>
@@ -606,17 +251,10 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>In 1993 a former resident named Rob Curry got a commemorative stone placed near the old school gymnasium. It opens: <em>Love and memories never die.</em> Construction later displaced it, and for years the stone sat on top of a stormwater cover behind a parking deck at Navy Hill Drive and East Duval. The historian Selden Richardson noticed and told the columnist Michael Paul Williams, whose 2011 piece reached Earle Taylor and the retired police chief Willie C. Jones. They got it moved. It rests now on a bed of pebbles beneath a state marker near Fourth and Jackson.</p>
 
-    <div class="plates breakout">
-      <figure class="plate">
-        <div class="plate-frame pano" data-slip="The stone and the marker&#10;Fourth and Jackson Streets">
-          <!-- <img src="/img/navy-hill/18-stone-marker.jpg" alt="The Navy Hill commemorative stone beneath the state historical marker at Fourth and Jackson"> -->
-        </div>
-        <figcaption>
-          <span class="cap-text">The 1993 stone on its bed of pebbles, beneath the state marker at Fourth and Jackson.</span>
-            <span class="cap-credit">Freedmen Star <span class="status open">Original</span></span>
-          </figcaption>
-      </figure>
-    </div>
+    <figure class="wide">
+      <img src="https://richmondmagazine.com/downloads/27859/download/Local_Flashback_NavyHillMarker_JAYPAUL_rp0120.jpg?cb=2912a1ed4c0e920a3b835ffd5d8b1ede" alt="Historical marker and commemorative stone at Fourth and Jackson Streets">
+      <figcaption>The commemorative stone and historical marker near Fourth and Jackson Streets.</figcaption>
+    </figure>
 
     <p>Two of the neighborhood's names are still on the street grid. Duval Street survives on both sides of the interstate, in three pieces that no longer connect to each other. Navy Hill Drive is the service road behind the parking deck.</p>
 
@@ -648,6 +286,8 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
       <p><em>Richmond Magazine</em>, <strong>"Inalienable Rights,"</strong> 2022 — the scope of city and RRHA takings.</p>
 
       <p>VPM News and <em>Richmond BizSense</em>, July 2026 — the $15 million appropriation and the demolition timeline.</p>
+
+      <p><strong>Photographs:</strong> Edith Shelton Collection, The Valentine (barber shop); Richmond Times-Dispatch Collection, The Valentine (school, Taylor home, Coliseum construction); Jay Paul (historical marker).</p>
 
       <div class="note">
         <p><strong>On dates.</strong> Sources give September 16 and September 17, 1965 for the school's closing. Both agree it came without notice.</p>
