@@ -66,8 +66,8 @@ h1{font-family:'Crimson Pro',serif;font-weight:500;font-size:clamp(2.6rem,6.6vw,
 .prose p{margin-bottom:1.42em}
 .prose p em{font-style:italic;color:#e6e0d4}
 .prose > p:first-of-type::first-letter{font-family:'Crimson Pro',serif;font-weight:400;float:left;font-size:4.05em;line-height:.82;padding:.06em .10em 0 0;color:var(--accent-warm)}
-.prose h2{font-family:'Crimson Pro',serif;font-weight:500;font-size:1.86rem;line-height:1.2;letter-spacing:-.01em;color:#eae4d8;margin:3.15em 0 .1em}
-.rule{height:1px;background:var(--border-2);margin:.95em 0 1.6em}
+.prose h2{font-family:'Crimson Pro',serif;font-weight:500;font-size:1.86rem;line-height:1.2;letter-spacing:-.01em;color:var(--accent-warm);margin:3.15em 0 .1em}
+.rule{height:2px;background:var(--accent-red);margin:.95em 0 1.6em}
 .prose ul{list-style:none;margin:0 0 1.5em}
 .prose li{padding:.62em 0 .62em 24px;border-bottom:1px solid var(--border);font-size:.96em;line-height:1.62;position:relative}
 .prose li:first-child{border-top:1px solid var(--border)}
@@ -77,10 +77,11 @@ h1{font-family:'Crimson Pro',serif;font-weight:500;font-size:clamp(2.6rem,6.6vw,
 
 /* ---- images ---- */
 figure{margin:2.8em 0}
-figure img{width:100%;display:block;filter:grayscale(1) sepia(.30) contrast(1.06) brightness(.94)}
+figure img{width:100%;display:block;filter:grayscale(1) sepia(.30) contrast(1.06) brightness(.94);cursor:pointer;transition:filter .3s ease}
+figure img:hover{filter:grayscale(.6) sepia(.20) contrast(1.04) brightness(.98)}
 figcaption{padding:12px 0 0;font-family:'Crimson Pro',serif;font-style:italic;font-weight:300;font-size:.93rem;line-height:1.5;color:var(--text-dim)}
-.wide{max-width:var(--col-wide);margin-left:50%;transform:translateX(-50%);width:100vw;padding:0 28px}
-@media(max-width:1100px){.wide{width:100%;margin-left:0;transform:none;padding:0}}
+.fig-credit{display:block;font-family:'Inter',sans-serif;font-style:normal;font-size:.7rem;letter-spacing:.05em;color:var(--text-muted);margin-top:5px}
+
 .img-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:720px){.img-pair{grid-template-columns:1fr}}
 
@@ -101,6 +102,23 @@ figcaption{padding:12px 0 0;font-family:'Crimson Pro',serif;font-style:italic;fo
 .footer-mark .star{color:var(--accent-warm);font-size:10px}
 .footer-line{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.05em;color:var(--text-muted);margin-top:19px}
 a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-offset:3px}
+
+/* lightbox */
+.lightbox-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(4,3,2,0.94);align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox-overlay.open{display:flex}
+.lightbox-overlay img{max-width:92vw;max-height:90vh;object-fit:contain;filter:grayscale(1) sepia(.25) contrast(1.04) brightness(.96)}
+.lightbox-caption{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);font-family:'Crimson Pro',serif;font-style:italic;font-size:.9rem;color:var(--text-dim);text-align:center;max-width:600px;padding:0 20px}
+
+/* map comparison slider */
+.map-compare{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;margin:2.8em 0;border:1px solid var(--border);cursor:col-resize;user-select:none;-webkit-user-select:none;touch-action:none}
+.map-compare .map-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.map-compare .map-now{clip-path:inset(0 0 0 50%)}
+.map-compare .map-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--accent-red);z-index:10;transform:translateX(-50%)}
+.map-compare .map-handle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:var(--accent-red);border:2px solid var(--accent-warm);display:flex;align-items:center;justify-content:center}
+.map-compare .map-label{position:absolute;top:12px;z-index:5;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-warm);background:rgba(7,6,4,0.8);padding:4px 10px}
+.map-compare .label-then{left:12px}
+.map-compare .label-now{right:12px}
+.map-compare figcaption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(7,6,4,0.85));font-family:'Crimson Pro',serif;font-style:italic;font-size:.85rem;color:var(--text-dim);z-index:5}
 </style>
 </head>
 <body>
@@ -183,9 +201,9 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>In 1952, when the school added an auditorium and cafeteria that year, builders had to drive piling roughly sixty-five feet down, because part of the site sat on fill. The ground under Navy Hill was itself made ground: a ravine filled, built on, and eventually filled a second time with the neighborhood's own rubble.</p>
 
-    <figure class="wide">
+    <figure>
       <img src="https://richmondmagazine.com/downloads/27860/download/Local_Flashback_NavyHillSchool_RIHCMONDTIMESDISPATCHCOLLECTIONTHEVALENTINE.jpg?cb=5794103408304603308683b59a7b4a03" alt="Children leaving Navy Hill School on North Sixth Street, September 16, 1965">
-      <figcaption>Children leaving Navy Hill School on North Sixth Street, September 16, 1965. The school closed without notice days later.</figcaption>
+      <figcaption>Children leaving Navy Hill School on North Sixth Street, September 16, 1965. The school closed without notice days later.<span class="fig-credit">Richmond Times-Dispatch Collection, The Valentine</span></figcaption>
     </figure>
 
     <p>On Fridays, the children were allowed to visit the house of a man everyone called Mr. Folly. He played the piano and the children danced. They stayed one hour. Robnette Moore, who grew up in Navy Hill from the 1920s, remembered this seventy years later. They always knew when it was time to come home.</p>
@@ -199,9 +217,9 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>Earle P. Taylor's family lived in the 1000 block of North Seventh. The same block. Taylor became a photographer and an educator. When the bulldozers came for his family's house, he stood in the street and photographed it, and that photograph is now in the Valentine's collection.</p>
 
-    <figure class="wide">
+    <figure>
       <img src="https://richmondmagazine.com/downloads/27867/download/Local_Opener_NavyHill_THEVALENTINE_rp0120.jpg?cb=4fccaa8e7c5279d0f1fa1e06f18d2380" alt="Earle P. Taylor photographed the destruction of his family home, 1965">
-      <figcaption>Earle P. Taylor photographed the destruction of his family home in the 1000 block of North Seventh Street, 1965.</figcaption>
+      <figcaption>Earle P. Taylor photographed the destruction of his family home in the 1000 block of North Seventh Street, 1965.<span class="fig-credit">The Valentine</span></figcaption>
     </figure>
 
     <p>Kia Player's great-grandparents raised thirteen children in a wood-frame house at 904 Turpin Street. Three generations later the family still refers to the place by its number.</p>
@@ -217,9 +235,9 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>The Navy Hill Barber Shop stood at 404 East Duval Street.</p>
 
-    <figure class="wide">
+    <figure>
       <img src="https://richmondmagazine.com/downloads/27858/download/Local_Flashback_NavyHillBarbershop_EDITHSHELTONCOLLECTIONTHEVALENTINE_rp0120.jpg?cb=8569429ec182a17c5295c19b3565b6a1" alt="Navy Hill Barber Shop, 404 East Duval Street, around 1965">
-      <figcaption>Navy Hill Barber Shop, 404 East Duval Street.</figcaption>
+      <figcaption>Navy Hill Barber Shop, 404 East Duval Street.<span class="fig-credit">Edith Shelton Collection, The Valentine</span></figcaption>
     </figure>
 
     <p>The Sixth Street Market was the real one, not the failed 1980s marketplace that later took the name. It sold produce and live chickens, carried home in paper bags cut with holes so the birds could breathe. Flower sellers set up under the gallery arches of the Blues Armory.</p>
@@ -243,14 +261,14 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>The Coliseum broke ground in 1969 on the cleared land and opened on August 21, 1971.</p>
 
-    <figure class="wide">
+    <figure>
       <img src="https://richmondmagazine.com/downloads/27857/download/Local_Flashback_EastClaySt_RICHMONDTIMESDISPATCHCOLLECTIONTHEVALENTINE_rp0120.jpg?cb=fa156f318e4c11b525a700907602d87e" alt="Coliseum construction from the 400 block of East Clay Street, January 27, 1970">
-      <figcaption>The Coliseum rising, photographed from in front of a house in the 400 block of East Clay Street, January 27, 1970. Someone still lived on that block.</figcaption>
+      <figcaption>The Coliseum rising, photographed from in front of a house in the 400 block of East Clay Street, January 27, 1970.<span class="fig-credit">Richmond Times-Dispatch Collection, The Valentine</span></figcaption>
     </figure>
 
-    <figure class="wide">
+    <figure>
       <img src="https://rvamag.com/wp-content/uploads/2020/01/49134708637_8591a98da3_k.jpg" alt="Interstate 95 running through what was once Navy Hill">
-      <figcaption>Interstate 95 running through what was once Navy Hill.</figcaption>
+      <figcaption>Interstate 95 running through what was once Navy Hill.<span class="fig-credit">Jimmy O'Keefe, Capital News Service</span></figcaption>
     </figure>
 
     <h2>What stands there now</h2>
@@ -260,29 +278,29 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
 
     <p>In 1966, Albert Norrell's family was displaced from Navy Hill. Faithe Norrell later said that her relatives were so rooted in the community that many of them died within a year or two of being forced to move. In 2022, Janis Allen, board president of the Historic Jackson Ward Association, marched in Richmond. Her family had lost their home to the same highway.</p>
 
-    <figure class="wide">
+    <figure>
       <div class="img-pair">
         <figure>
           <img src="https://rvamag.com/wp-content/uploads/2020/01/49134708747_704df893f5_c.jpg" alt="A parking lot where 1015 North Seventh Street once stood">
-          <figcaption>1015 North Seventh Street. The Norrell family's house stood here. It is a parking lot.</figcaption>
+          <figcaption>1015 North Seventh Street. The Norrell family's house stood here.<span class="fig-credit">Jimmy O'Keefe, Capital News Service</span></figcaption>
         </figure>
         <figure>
           <img src="https://rvamag.com/wp-content/uploads/2020/01/49134025688_da50d2336c_c.jpg" alt="The Blues Armory standing unused">
-          <figcaption>The Blues Armory. Built 1910. Listed on the National Register, 1976. Standing unused.</figcaption>
+          <figcaption>The Blues Armory. Built 1910. National Register, 1976.<span class="fig-credit">Jimmy O'Keefe, Capital News Service</span></figcaption>
         </figure>
       </div>
     </figure>
 
-    <figure class="wide">
+    <figure>
       <img src="https://rvamag.com/wp-content/uploads/2020/01/49134513941_d596ae8fb9_c.jpg" alt="The Richmond Coliseum, closed since 2018">
-      <figcaption>The Richmond Coliseum. Opened 1971. Closed 2018. Demolition funded, 2026.</figcaption>
+      <figcaption>The Richmond Coliseum. Opened 1971. Closed 2018. Demolition funded, 2026.<span class="fig-credit">Jimmy O'Keefe, Capital News Service</span></figcaption>
     </figure>
 
     <p>In 1993 a former resident named Rob Curry got a commemorative stone placed near the old school gymnasium. It opens: <em>Love and memories never die.</em> Construction later displaced it, and for years the stone sat on top of a stormwater cover behind a parking deck at Navy Hill Drive and East Duval. The historian Selden Richardson noticed and told the columnist Michael Paul Williams, whose 2011 piece reached Earle Taylor and the retired police chief Willie C. Jones. They got it moved. It rests now on a bed of pebbles beneath a state marker near Fourth and Jackson.</p>
 
-    <figure class="wide">
+    <figure>
       <img src="https://richmondmagazine.com/downloads/27859/download/Local_Flashback_NavyHillMarker_JAYPAUL_rp0120.jpg?cb=2912a1ed4c0e920a3b835ffd5d8b1ede" alt="Historical marker and commemorative stone at Fourth and Jackson Streets">
-      <figcaption>The commemorative stone and historical marker near Fourth and Jackson Streets.</figcaption>
+      <figcaption>The commemorative stone and historical marker near Fourth and Jackson Streets.<span class="fig-credit">Jay Paul</span></figcaption>
     </figure>
 
     <p>Two of the neighborhood's names are still on the street grid. Duval Street survives on both sides of the interstate, in three pieces that no longer connect to each other. Navy Hill Drive is the service road behind the parking deck.</p>
@@ -294,6 +312,21 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
     <p>The condemnation files, the right-of-way plats, and the assessment rolls are in the Library of Virginia, at VDOT, and in city hall. They record who owned this ground and what the city paid for it.</p>
 
     
+
+
+    <h2>The ground</h2>
+    <div class="rule"></div>
+
+    <div class="map-compare" id="mapCompare">
+      <img class="map-layer map-then" src="https://tile.openstreetmap.org/15/9372/12708.png" alt="Map tile placeholder for historic Navy Hill overlay" crossorigin="anonymous">
+      <img class="map-layer map-now" src="https://tile.openstreetmap.org/15/9372/12708.png" alt="Current street map of the Navy Hill site" crossorigin="anonymous">
+      <div class="map-handle" id="mapHandle"></div>
+      <span class="map-label label-then">Then</span>
+      <span class="map-label label-now">Now</span>
+      <figcaption>Drag to compare. Replace the "Then" image with a Sanborn sheet or aerial photograph of Navy Hill before clearance. The "Now" layer shows the current street grid.</figcaption>
+    </div>
+
+    <p>The slider above is built to hold two map images of the same ground. The left layer accepts a Sanborn fire insurance sheet or pre-clearance aerial photograph. The right layer shows the same footprint today. Drag the handle to move between them. To complete it: download the relevant Sanborn sheet from the Library of Congress (Richmond, Vol. 2, 1925, sheets covering the blocks north of Leigh between Third and Tenth), crop to the Navy Hill area, and replace the placeholder image source in the HTML.</p>
 
     <div class="sources">
       <h2>Sources</h2>
@@ -348,5 +381,56 @@ a:focus-visible,.wordmark:focus-visible{outline:1px solid var(--accent);outline-
   <p class="footer-line">An independent archival and educational project · Richmond, Virginia</p>
 </footer>
 
+
+<script>
+// Lightbox
+(function(){
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  var lbImg = document.createElement('img');
+  var lbCap = document.createElement('div');
+  lbCap.className = 'lightbox-caption';
+  overlay.appendChild(lbImg);
+  overlay.appendChild(lbCap);
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener('click', function(){ overlay.classList.remove('open'); });
+
+  var figs = document.querySelectorAll('.prose figure img');
+  for (var i = 0; i < figs.length; i++) {
+    figs[i].addEventListener('click', function(e){
+      lbImg.src = this.src;
+      lbImg.alt = this.alt;
+      var cap = this.parentElement.querySelector('figcaption');
+      lbCap.textContent = cap ? cap.firstChild.textContent : '';
+      overlay.classList.add('open');
+    });
+  }
+})();
+
+// Map comparison slider
+(function(){
+  var box = document.getElementById('mapCompare');
+  if (!box) return;
+  var handle = document.getElementById('mapHandle');
+  var nowLayer = box.querySelector('.map-now');
+  var dragging = false;
+
+  function setPos(x) {
+    var rect = box.getBoundingClientRect();
+    var pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+    handle.style.left = (pct * 100) + '%';
+    nowLayer.style.clipPath = 'inset(0 0 0 ' + (pct * 100) + '%)';
+  }
+
+  box.addEventListener('mousedown', function(e){ dragging = true; setPos(e.clientX); });
+  window.addEventListener('mousemove', function(e){ if (dragging) setPos(e.clientX); });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+
+  box.addEventListener('touchstart', function(e){ dragging = true; setPos(e.touches[0].clientX); }, {passive: true});
+  window.addEventListener('touchmove', function(e){ if (dragging) setPos(e.touches[0].clientX); }, {passive: true});
+  window.addEventListener('touchend', function(){ dragging = false; });
+})();
+</script>
 </body>
 </html>
